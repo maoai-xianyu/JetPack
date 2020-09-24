@@ -21,10 +21,9 @@ import com.mao.jetpack.utils.Logger;
  * @time 2020/9/24 5:45 PM
  * @Description
  */
-public class LiveDataJavaActivity extends AppCompatActivity {
+public class LiveDataJavaSingleActivity extends AppCompatActivity {
 
     private MutableLiveData<String> liveData;
-    private MutableLiveData<String> liveDataString;
     private Button tvButton;
 
     @Override
@@ -32,9 +31,8 @@ public class LiveDataJavaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_livedata);
 
-        liveData = new MutableLiveData<>();
 
-        liveDataString = LiveDataBus.getInstance().with("lisan", String.class);
+        liveData = LiveDataBus.getInstance().with("lisan", String.class);
 
         // 设置参数  setValue 和 postValue 的区别 有一个线程的概念
         // setValue  只能在主线程中使用
@@ -51,7 +49,7 @@ public class LiveDataJavaActivity extends AppCompatActivity {
         // this 是因为 AppCompatActivity extends FragmentActivity extends ComponentActivity
         // implements  LifecycleOwner 接口
         // 如果是继承Activity，需要单独处理
-        liveData.observe(this, new Observer<String>() {
+        LiveDataBus.getInstance().with("lisan", String.class).observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
 
@@ -60,7 +58,7 @@ public class LiveDataJavaActivity extends AppCompatActivity {
             }
         });
 
-        liveData.observe(this, new Observer<String>() {
+        LiveDataBus.getInstance().with("lisan", String.class).observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
 
@@ -74,7 +72,7 @@ public class LiveDataJavaActivity extends AppCompatActivity {
 
 
         initListener();
-        LiveDataJavaActivity.this.getLifecycle().addObserver(new MyListener());
+        LiveDataJavaSingleActivity.this.getLifecycle().addObserver(new MyListener());
 
     }
 
