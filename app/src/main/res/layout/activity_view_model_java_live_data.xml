@@ -5,16 +5,11 @@
 
         <variable
             name="viewModel"
-            type="com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaActivityViewModel" />
-
-        <!--有多少个数据源，对应的 ActivityViewModelJavaBinding 就有多少个 setViewModel-->
-        <!-- <variable
-             name="viewModelString"
-             type="com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaActivityViewModel" />-->
+            type="com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaLiveDataActivityViewModel" />
 
         <variable
             name="presenter"
-            type="com.mao.jetpack.ui.viewmodelfile.ViewModelJavaActivity.Presenter" />
+            type="com.mao.jetpack.ui.viewmodelfile.ViewModelJavaLiveDataActivity.Presenter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,6 +19,9 @@
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize">
 
+
+        <!--没有使用 TextView 中的数据是不更新，是因为 User 没有继承 BaseObservable
+        同时没有绑定对应的属性-->
         <TextView
             android:id="@+id/tvText"
             android:layout_width="wrap_content"
