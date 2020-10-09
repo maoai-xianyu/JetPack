@@ -1,4 +1,4 @@
-package com.mao.jetpack.ui.viewmodelfile.model
+package com.mao.lib_cache.model
 
 /**
  *

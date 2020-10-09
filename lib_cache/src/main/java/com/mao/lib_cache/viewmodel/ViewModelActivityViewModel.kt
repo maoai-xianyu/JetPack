@@ -1,6 +1,6 @@
-package com.mao.jetpack.ui.viewmodelfile.viewmodel
+package com.mao.lib_cache.viewmodel
 
-import com.mao.jetpack.ui.viewmodelfile.model.UserKotlin
+import com.mao.lib_cache.model.UserKotlin
 
 /**
  *

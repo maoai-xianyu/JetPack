@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.mao.jetpack.R
-import com.mao.jetpack.utils.Logger
+import com.mao.lib_common.utils.Logger
 import kotlinx.android.synthetic.main.activity_livedata.*
 import kotlin.concurrent.thread
 

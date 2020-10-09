@@ -14,7 +14,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 
 import com.mao.jetpack.R;
-import com.mao.jetpack.utils.Logger;
+import com.mao.lib_common.utils.Logger;
 
 /**
  * @author zhangkun

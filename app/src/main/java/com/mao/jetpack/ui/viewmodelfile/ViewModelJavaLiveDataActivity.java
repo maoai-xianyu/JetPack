@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer;
 
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityViewModelJavaLiveDataBinding;
-import com.mao.jetpack.ui.viewmodelfile.model.UserLiveData;
-import com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaLiveDataActivityViewModel;
-import com.mao.jetpack.utils.Logger;
+import com.mao.lib_common.utils.Logger;
+import com.mao.lib_cache.model.UserLiveData;
+import com.mao.lib_cache.viewmodel.ViewModelJavaLiveDataActivityViewModel;
 
 /**
  * @author zhangkun

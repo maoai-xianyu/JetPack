@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityViewModelBinding
-import com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelActivityViewModel
-import com.mao.jetpack.utils.Logger
+import com.mao.lib_cache.viewmodel.ViewModelActivityViewModel
+import com.mao.lib_common.utils.Logger
 
 /**
  *

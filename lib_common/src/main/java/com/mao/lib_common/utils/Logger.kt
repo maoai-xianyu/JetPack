@@ -1,4 +1,4 @@
-package com.mao.jetpack.utils
+package com.mao.lib_common.utils
 
 import android.util.Log
 import org.apache.commons.lang3.time.FastDateFormat

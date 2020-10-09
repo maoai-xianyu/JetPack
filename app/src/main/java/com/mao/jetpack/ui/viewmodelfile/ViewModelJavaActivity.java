@@ -11,8 +11,8 @@ import androidx.databinding.DataBindingUtil;
 
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityViewModelJavaBinding;
-import com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaActivityViewModel;
-import com.mao.jetpack.utils.Logger;
+import com.mao.lib_common.utils.Logger;
+import com.mao.lib_cache.viewmodel.ViewModelJavaActivityViewModel;
 
 /**
  * @author zhangkun

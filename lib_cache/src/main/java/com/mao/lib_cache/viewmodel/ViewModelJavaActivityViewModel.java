@@ -1,8 +1,9 @@
-package com.mao.jetpack.ui.viewmodelfile.viewmodel;
+package com.mao.lib_cache.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 
-import com.mao.jetpack.ui.viewmodelfile.model.User;
+import com.mao.lib_cache.model.User;
+
 
 /**
  * @author zhangkun

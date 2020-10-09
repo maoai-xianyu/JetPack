@@ -1,9 +1,10 @@
-package com.mao.jetpack.ui.viewmodelfile.viewmodel;
+package com.mao.lib_cache.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.mao.jetpack.ui.viewmodelfile.model.UserLiveData;
+import com.mao.lib_cache.model.UserLiveData;
+
 
 /**
  * @author zhangkun
