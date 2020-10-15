@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_a"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_a"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_b"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_b"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_c"
+        android:enabled="true"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_c"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/navigation_d"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_d"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/navigation_e"
+        android:enabled="true"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="@string/title_e"
+        app:showAsAction="ifRoom" />
+
+</menu>

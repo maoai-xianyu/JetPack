@@ -1,5 +1,6 @@
 package com.mao.jetpack.ui.viewmodelfile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer;
 
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityViewModelJavaLoginBinding;
+import com.mao.jetpack.ui.navigation.NavigationIndexActivity;
 import com.mao.lib_cache.model.UserLogin;
 import com.mao.lib_cache.viewmodel.LoginUserViewModel;
 import com.mao.lib_common.utils.Logger;
@@ -42,8 +44,11 @@ public class ViewModelUserLoginActivity extends AppCompatActivity {
         viewModel.getUser().observe(this, new Observer<UserLogin>() {
             @Override
             public void onChanged(UserLogin userLogin) {
-                if (userLogin != null && userLogin.getAccount().equals("zhang")) {
+                if (userLogin != null && userLogin.getAccount().equals("zhangsan")) {
                     Logger.debug("登录成功了");
+                    Intent intent = new Intent(ViewModelUserLoginActivity.this, NavigationIndexActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
 
             }

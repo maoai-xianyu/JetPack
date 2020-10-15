@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/navigation_a">
+
+    <fragment
+        android:id="@+id/navigation_a"
+        android:name="com.mao.jetpack.ui.navigation.fragment.AFragment"
+        android:label="@string/title_a"
+        tools:layout="@layout/fragment_a" />
+
+    <fragment
+        android:id="@+id/navigation_b"
+        android:name="com.mao.jetpack.ui.navigation.fragment.BFragment"
+        android:label="@string/title_b"
+        tools:layout="@layout/fragment_b" />
+
+
+    <fragment
+        android:id="@+id/navigation_c"
+        android:name="com.mao.jetpack.ui.navigation.fragment.CFragment"
+        android:label="@string/title_c"
+        tools:layout="@layout/fragment_c" />
+
+    <fragment
+        android:id="@+id/navigation_d"
+        android:name="com.mao.jetpack.ui.navigation.fragment.DFragment"
+        android:label="@string/title_d"
+        tools:layout="@layout/fragment_d" />
+    <fragment
+        android:id="@+id/navigation_e"
+        android:name="com.mao.jetpack.ui.navigation.fragment.EFragment"
+        android:label="@string/title_e"
+        tools:layout="@layout/fragment_e" />
+
+
+</navigation>

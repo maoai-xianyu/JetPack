@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        
+     <!--   <variable
+            name="viewModel"
+            type="" />-->
+        
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/aDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="AAAA"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="300dp"
+            android:background="@android:color/holo_red_light"
+            android:layout_height="300dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</layout>

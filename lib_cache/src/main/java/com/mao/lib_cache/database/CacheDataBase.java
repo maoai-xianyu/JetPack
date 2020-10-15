@@ -15,7 +15,7 @@ import com.mao.lib_common.utils.AppGlobals;
  * @time 2020/9/27 8:15 PM
  * @Description
  */
-@Database(entities = {UserLiveData.class, UserLogin.class}, version = 1)
+@Database(entities = {UserLiveData.class, UserLogin.class}, version = 1,exportSchema = false)
 public abstract class CacheDataBase extends RoomDatabase {
 
     private static final CacheDataBase databaseName;
