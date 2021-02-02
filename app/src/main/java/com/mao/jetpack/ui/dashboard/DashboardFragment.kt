@@ -9,10 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
+import com.mao.jetpack.lifecycle.MyPresenter
 
 class DashboardFragment : Fragment() {
 
     private lateinit var dashboardViewModel: DashboardViewModel
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -27,5 +33,11 @@ class DashboardFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        lifecycle.addObserver(MyPresenter())
     }
 }
