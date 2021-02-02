@@ -18,7 +18,6 @@ class DashboardFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        lifecycle.addObserver(MyPresenter())
     }
 
     override fun onCreateView(
@@ -39,5 +38,6 @@ class DashboardFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        lifecycle.addObserver(MyPresenter())
     }
 }
