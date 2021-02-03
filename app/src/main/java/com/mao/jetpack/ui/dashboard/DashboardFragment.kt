@@ -44,7 +44,7 @@ class DashboardFragment : Fragment() {
         btnJump.setOnClickListener {
             startActivity(Intent(activity, LiveDataActivity::class.java))
             //LiveDataBus.getInstance().with("dashboard", String::class.java).value = "发送消消了"
-            LiveDataBusX.getInstance().with("dashboard").setStickyData("LiveDataBusX 发送消消了")
+            LiveDataBusX.getInstance().with<String>("dashboard").setStickyData("LiveDataBusX 发送消消了")
             //LiveDataNewBus.with<String>("dashboard").setStickyData("LiveDataNewBus kotlin 发送消消了")
         }
         return root

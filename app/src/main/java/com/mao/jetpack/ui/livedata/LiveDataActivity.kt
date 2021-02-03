@@ -33,7 +33,7 @@ class LiveDataActivity : AppCompatActivity() {
             )*/
 
 
-        LiveDataBusX.getInstance().with("dashboard")
+        LiveDataBusX.getInstance().with<String>("dashboard")
             .observerSticky(this, Observer<String> {
                 tvLiveData.text = it
             }, true)

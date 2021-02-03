@@ -30,11 +30,11 @@ public class LiveDataBusX {
         private static final LiveDataBusX instance = new LiveDataBusX();
     }
 
-    public synchronized StickyLiveData with(String eventName) {
+    public synchronized <T> StickyLiveData<T> with(String eventName) {
         if (!mHashMap.containsKey(eventName)) {
             mHashMap.put(eventName, new StickyLiveData<>(eventName));
         }
-        return mHashMap.get(eventName);
+        return (StickyLiveData<T>) mHashMap.get(eventName);
     }
 
     private static class StickyObserver<T> implements Observer<T> {
@@ -119,7 +119,7 @@ public class LiveDataBusX {
                     }
                 }
             });
-            super.observe(owner, new StickyObserver(this, observer, sticky));
+            super.observe(owner, new StickyObserver<T>(this, (Observer<T>) observer, sticky));
         }
     }
 }
