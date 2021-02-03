@@ -10,11 +10,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
 import com.mao.jetpack.lifecycle.MyPresenter
 import com.mao.jetpack.ui.livedata.LiveDataActivity
-import com.mao.jetpack.ui.livedata.LiveDataJavaSingleActivity
+import com.mao.jetpack.ui.livedata.LiveDataBus
+import com.mao.jetpack.utils.LiveDataBusX
+import com.mao.jetpack.utils.LiveDataNewBus
 
 class DashboardFragment : Fragment() {
 
@@ -42,6 +43,9 @@ class DashboardFragment : Fragment() {
         val btnJump: Button = root.findViewById(R.id.btn_jump)
         btnJump.setOnClickListener {
             startActivity(Intent(activity, LiveDataActivity::class.java))
+            //LiveDataBus.getInstance().with("dashboard", String::class.java).value = "发送消消了"
+            LiveDataBusX.getInstance().with("dashboard").setStickyData("LiveDataBusX 发送消消了")
+            //LiveDataNewBus.with<String>("dashboard").setStickyData("LiveDataNewBus kotlin 发送消消了")
         }
         return root
     }

@@ -1,12 +1,13 @@
 package com.mao.jetpack.ui.livedata
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.mao.jetpack.R
+import com.mao.jetpack.utils.LiveDataBusX
+import com.mao.jetpack.utils.LiveDataNewBus
 import com.mao.jetpack.utils.Logger
 import kotlinx.android.synthetic.main.activity_livedata.*
 import kotlin.concurrent.thread
@@ -23,10 +24,38 @@ class LiveDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_livedata)
         viewModel = ViewModelProvider(this).get(LiveDataViewModel::class.java)
 
+        /*LiveDataBus.getInstance().with("dashboard", String::class.java)
+            .observe(
+                this,
+                Observer<String> {
+                    tvLiveData.text = it
+                }, true
+            )*/
+
+
+        LiveDataBusX.getInstance().with("dashboard")
+            .observerSticky(this, Observer<String> {
+                tvLiveData.text = it
+            }, true)
+
+        // 不接收粘性事件
+        /*LiveDataNewBus.with<String>("dashboard").observe(this, Observer {
+            tvLiveData.text = it
+        })*/
+
+        // 接收粘性事件
+        /*LiveDataNewBus.with<String>("dashboard").observerSticky(this, true, Observer {
+            tvLiveData.text = it
+        })*/
+
         liveData = viewModel.getLiveData()
+
+        //如果先发射数据，后订阅观察者，会受到之前发送的消息
+        //liveData.value = "我发射数据了"
 
         // 需要一个观察者观察数据
         val observer = Observer<String> {
+            Logger.debug("接受到消息")
             tvLiveData.text = "liveData kotlin 1 $it"
         }
 
