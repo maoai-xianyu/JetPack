@@ -24,19 +24,19 @@ class LiveDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_livedata)
         viewModel = ViewModelProvider(this).get(LiveDataViewModel::class.java)
 
-        /*LiveDataBus.getInstance().with("dashboard", String::class.java)
+        LiveDataBus.getInstance().with("dashboard", String::class.java)
             .observe(
                 this,
                 Observer<String> {
                     tvLiveData.text = it
                 }, true
-            )*/
+            )
 
 
-        LiveDataBusX.getInstance().with<String>("dashboard")
+        /*LiveDataBusX.getInstance().with<String>("dashboard")
             .observerSticky(this, Observer<String> {
                 tvLiveData.text = it
-            }, true)
+            }, true)*/
 
         // 不接收粘性事件
         /*LiveDataNewBus.with<String>("dashboard").observe(this, Observer {
@@ -69,11 +69,13 @@ class LiveDataActivity : AppCompatActivity() {
             // liveData.value = "11111"
             /*}*/
 
-            thread {
+            /*thread {
                 // 任意线程
                 liveData.postValue("22222222")
-            }
+            }*/
+            viewModel.i++
 
+            liveData.value = "" + viewModel.i
         }
 
     }

@@ -20,4 +20,6 @@ class LiveDataViewModel : ViewModel() {
         return liveData!!
     }
 
+    var i = 0
+
 }
