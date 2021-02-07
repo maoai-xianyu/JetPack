@@ -21,6 +21,7 @@ public class UserLiveData extends BaseObservable {
 
     public void setName(String name) {
         this.name = name;
+
         notifyPropertyChanged(BR.name);
     }
 

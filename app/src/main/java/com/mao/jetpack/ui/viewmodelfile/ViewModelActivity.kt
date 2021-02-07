@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityViewModelBinding
+import com.mao.jetpack.ui.viewmodelfile.model.UserKotlin
 import com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelActivityViewModel
 import com.mao.jetpack.utils.Logger
 
@@ -17,7 +20,7 @@ import com.mao.jetpack.utils.Logger
  */
 class ViewModelActivity : AppCompatActivity() {
 
-    private var viewModelActivityViewModel: ViewModelActivityViewModel? = null
+    private lateinit var viewModelActivityViewModel: ViewModelActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +30,22 @@ class ViewModelActivity : AppCompatActivity() {
         // 绑定生命周期
         viewModelBinding.lifecycleOwner = this
         // 初始化化数据源
+        //viewModelActivityViewModel = ViewModelProvider(this).get(ViewModelActivityViewModel::class.java)
         viewModelActivityViewModel = ViewModelActivityViewModel()
         // 绑定数据源
         viewModelBinding.viewModel = viewModelActivityViewModel
-        // 获取数据
-        viewModelActivityViewModel!!.getUser()
         viewModelBinding.presenter = Presenter()
+        val userKotlin = UserKotlin()
+        userKotlin.name = "测试"
+        //viewModelBinding.user = viewModelActivityViewModel.getUser()
+
+//        viewModelActivityViewModel.name.observe(this) {
+//
+//        }
     }
 
     fun send(view: View) {
-        Logger.debug(" 发送1 ${viewModelActivityViewModel!!.userKotlin.name}")
+        Logger.debug(" 发送1 ${viewModelActivityViewModel.userKotlin.name}")
     }
 
     class Presenter {

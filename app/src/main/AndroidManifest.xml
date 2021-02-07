@@ -22,6 +22,8 @@
         <activity android:name=".ui.livedata.LiveDataActivity" />
         <activity android:name=".ui.livedata.LiveDataJavaSingleActivity" />
         <activity android:name=".ui.viewmodelfile.ViewModelJavaLiveDataActivity" />
+        <activity android:name=".ui.viewmodelfile.ViewModelActivity" />
+        <activity android:name=".ui.viewmodelfile.ViewModelJavaActivity" />
     </application>
 
 </manifest>

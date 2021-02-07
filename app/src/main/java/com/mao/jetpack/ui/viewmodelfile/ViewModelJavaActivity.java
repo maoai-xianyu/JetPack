@@ -45,6 +45,7 @@ public class ViewModelJavaActivity extends AppCompatActivity {
         viewModelJavaActivityViewModel = new ViewModelJavaActivityViewModel();
         // 绑定数据源
         viewDataBinding.setViewModel(viewModelJavaActivityViewModel);
+        viewDataBinding.setLifecycleOwner(this);
         // 添加点击事件
         viewDataBinding.setPresenter(new Presenter());
         // 请求服务器，得到User, xml 就更新了数据
