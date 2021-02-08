@@ -3,6 +3,7 @@ package com.mao.jetpack.ui.viewmodelfile
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
@@ -35,22 +36,38 @@ class ViewModelActivity : AppCompatActivity() {
         // 绑定数据源
         viewModelBinding.viewModel = viewModelActivityViewModel
         viewModelBinding.presenter = Presenter()
-        val userKotlin = UserKotlin()
-        userKotlin.name = "测试"
-        //viewModelBinding.user = viewModelActivityViewModel.getUser()
 
-//        viewModelActivityViewModel.name.observe(this) {
-//
-//        }
+        // 双向绑定 UserKotlin 需要继承 BaseObservable
+        /*val userKotlin = UserKotlin()
+        userKotlin.name = "测试"
+        viewModelBinding.user = viewModelActivityViewModel.getUser()*/
+
+        // MutableLiveData<String>() 的双向绑定实现原理
+        /*viewModelBinding.tvTextEdit.addTextChangedListener {
+            viewModelActivityViewModel.name.value = it.toString()
+        }
+        viewModelActivityViewModel.name.observe(this,onChanged = {
+            viewModelBinding.tvText.text = it
+        })*/
+
+
+        // 动态改变，那么 xml 中的 @={viewmodel.user.name} 就没有用了，可以删除
+        viewModelBinding.tvTextEdit1.addTextChangedListener {
+            viewModelActivityViewModel.changeUserName(it.toString())
+        }
+
+        viewModelActivityViewModel.user.observe(this, onChanged = {
+            viewModelBinding.tvText1.text = it.name
+        })
     }
 
     fun send(view: View) {
-        Logger.debug(" 发送1 ${viewModelActivityViewModel.userKotlin.name}")
+        /* Logger.debug(" 发送1 ${viewModelActivityViewModel.user}")*/
     }
 
     class Presenter {
         fun onClick(viewModel: ViewModelActivityViewModel) {
-            Logger.debug(" 发送2  ${viewModel.userKotlin.name}")
+            /*Logger.debug(" 发送2  ${viewModel.user}")*/
         }
     }
 }

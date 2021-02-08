@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mao.jetpack.ui.viewmodelfile.model.User
 import com.mao.jetpack.ui.viewmodelfile.model.UserKotlin
+import com.mao.jetpack.ui.viewmodelfile.model.UserKotlinNew
 import com.mao.jetpack.ui.viewmodelfile.model.UserLiveData
 
 /**
@@ -14,70 +15,57 @@ import com.mao.jetpack.ui.viewmodelfile.model.UserLiveData
  * @time 2020/9/25 12:03 PM
  * @Description
  */
+class ViewModelActivityViewModel {
+    //方案一：LiveData 和 DataBinding 双向绑定：需要 viewModelBinding.lifecycleOwner 需要绑定 viewModelBinding.lifecycleOwner
+    val name = MutableLiveData<String>()
 
-/*
-class ViewModelActivityViewModel */
-/*: ViewModel()*//*
- {
+    //方案二：DataBinding 和 BaseObservable 双向绑定，不需要 viewModelBinding.lifecycleOwner， UserKotlin 实现 BaseObservable
+    //val user = UserKotlin()
+    init {
+        name.value = "MutableLiveData<String> 测试"
+        //user.name = "同在布局中设置 user 一样"
+        //user.age = 111
+    }
 
-    var liveData: MutableLiveData<UserKotlin>? = null
-
+    //方案二：DataBinding 和 BaseObservable 双向绑定，不需要 viewModelBinding.lifecycleOwner，UserKotlin 实现 BaseObservable
+    // UserKotlin 实现了 BaseObservable 可以双向绑定，这个其实和   val user = UserKotlin() 一样
+    /*var liveData: MutableLiveData<UserKotlin>? = null
     val user: MutableLiveData<UserKotlin>
         get() {
             // 发送一个请求, 获取  UserLiveData 对象
             if (liveData == null) {
                 liveData = MutableLiveData()
-                val user = UserKotlin()
-                user.name = "zhangsan"
-                user.age = 12
-                liveData!!.postValue(user)
+                val userKotlin = UserKotlin()
+                userKotlin.name = "MutableLiveData<UserKotlin>()"
+                userKotlin.age = 1111
+                liveData!!.value = userKotlin
             }
             return liveData!!
-        }
-
+        }*/
 
     val userKotlin = UserKotlin()
 
 
-    val listData = MutableLiveData<UserKotlin>()
-
-    val user: MutableLiveData<UserKotlin>
+    // UserKotlinNew 没有实现 BaseObservable 不能双向绑定 写法有问题
+    /*var liveData: MutableLiveData<UserKotlinNew>? = null
+    val user: MutableLiveData<UserKotlinNew>
         get() {
             // 发送一个请求, 获取  UserLiveData 对象
-            val user = UserKotlin()
-            user.name = "zhangsan"
-            user.age = 12
-            listData.postValue(user)
-            return listData
-        }
+            if (liveData == null) {
+                liveData = MutableLiveData()
+                val userKotlinNew = UserKotlinNew("MutableLiveData<UserKotlinNew>()", 123)
+                liveData!!.value = userKotlinNew
+            }
+            return liveData!!
+        }*/
 
+    val user = MutableLiveData<UserKotlinNew>(UserKotlinNew("MutableLiveData<UserKotlinNew>()",123))
 
-    fun getUser(): MutableLiveData<UserKotlin> {
-        return listData
+    fun changeUserName(str: String) {
+        val value = user.value
+        value?.name = str
+        user.value = value
     }
-}
-*/
 
 
-// 这种方式，达不到双向绑定的效果
-class ViewModelActivityViewModel :ViewModel(){
-    val name = MutableLiveData<String>()
-    val age = ObservableInt()
-    val user = User()
-
-    var userKotlin = UserKotlin()
-        set(value) {
-            value.name = "内部"
-            value.age = 1111
-            field = value
-        }
-
-
-
-    /*val user = UserKotlin()*/
-    fun getUser(): UserKotlin {
-        val userKotlin = UserKotlin()
-        userKotlin.name = "测试"
-        return userKotlin
-    }
 }
