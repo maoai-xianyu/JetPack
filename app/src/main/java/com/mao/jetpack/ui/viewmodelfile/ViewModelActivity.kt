@@ -5,8 +5,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import com.mao.jetpack.BR
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityViewModelBinding
 import com.mao.jetpack.ui.viewmodelfile.model.UserKotlin
@@ -38,9 +38,11 @@ class ViewModelActivity : AppCompatActivity() {
         viewModelBinding.presenter = Presenter()
 
         // 双向绑定 UserKotlin 需要继承 BaseObservable
-        /*val userKotlin = UserKotlin()
+        val userKotlin = UserKotlin()
         userKotlin.name = "测试"
-        viewModelBinding.user = viewModelActivityViewModel.getUser()*/
+        //viewModelBinding.user = userKotlin
+        viewModelBinding.setVariable(BR.user, userKotlin)
+
 
         // MutableLiveData<String>() 的双向绑定实现原理
         /*viewModelBinding.tvTextEdit.addTextChangedListener {
@@ -62,12 +64,12 @@ class ViewModelActivity : AppCompatActivity() {
     }
 
     fun send(view: View) {
-        /* Logger.debug(" 发送1 ${viewModelActivityViewModel.user}")*/
+         Logger.debug(" 发送1 ${viewModelActivityViewModel.user}")
     }
 
     class Presenter {
         fun onClick(viewModel: ViewModelActivityViewModel) {
-            /*Logger.debug(" 发送2  ${viewModel.user}")*/
+            Logger.debug(" 发送2  ${viewModel.user}")
         }
     }
 }
