@@ -67,7 +67,10 @@ class DashboardFragment : Fragment() {
         btn_viewmodel_d.setOnClickListener {
             startActivity(Intent(activity, ViewModelJavaLiveDataActivity::class.java))
         }
+    }
 
-
+    override fun onResume() {
+        super.onResume()
+        //lifecycle.addObserver(MyPresenter())
     }
 }

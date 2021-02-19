@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityViewModelJavaBinding;
@@ -42,7 +44,8 @@ public class ViewModelJavaActivity extends AppCompatActivity {
         ActivityViewModelJavaBinding viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_view_model_java);
         // 绑定当前窗体的生命周期
         viewDataBinding.setLifecycleOwner(this);
-        viewModelJavaActivityViewModel = new ViewModelJavaActivityViewModel();
+
+        viewModelJavaActivityViewModel = new ViewModelProvider(this).get(ViewModelJavaActivityViewModel.class);
         // 绑定数据源
         viewDataBinding.setViewModel(viewModelJavaActivityViewModel);
         // 添加点击事件
@@ -50,10 +53,13 @@ public class ViewModelJavaActivity extends AppCompatActivity {
         // 请求服务器，得到User, xml 就更新了数据
         viewModelJavaActivityViewModel.getUser();
 
-        // 准备引入DataBinding 和 ViewModel 联合使用
-        // 把 User 对象绑定到 activity_view_model.xml 有两种方式：
-        // 1. 直接把 User 绑定到 activity_view_model.xml
-        // 2. 将 ViewModelJavaActivityViewModel 绑定到  activity_view_model.xml  一般的选择
+        viewModelJavaActivityViewModel.getCurrentName().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                viewDataBinding.tvTextShow.setText(s);
+            }
+        });
+
 
     }
 
@@ -64,8 +70,38 @@ public class ViewModelJavaActivity extends AppCompatActivity {
 
     public static class Presenter {
 
-        public void onClick(ViewModelJavaActivityViewModel viewModel) {
-            Logger.debug("发送1 点击事件 " + viewModel.user.getName());
+        public void onClick(ViewModelJavaActivityViewModel viewModel, View view) {
+            if (view.getId() == R.id.btnClick) {
+                String currentName = "maoai_xianyu " + viewModel.i++;
+                viewModel.getCurrentName().setValue(currentName);
+            } else {
+                Logger.debug("发送1 点击事件 " + viewModel.user.getName());
+            }
         }
     }
+
+
+    /**
+     * 屏幕切换时保存状态，修改系统配置，修改系统的字体大小，或者屏幕旋转
+     * @return
+     */
+    @Nullable
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        Logger.debug("数据状态的保存  修改系统属性，变更回调方法 onRetainCustomNonConfigurationInstance ");
+        return super.onRetainCustomNonConfigurationInstance();
+    }
+
+
+    /**
+     * 数据状态的获取 -> 打开时会调用，屏幕切换的时候会调用
+     * @return
+     */
+    @Nullable
+    @Override
+    public Object getLastNonConfigurationInstance() {
+        Logger.debug("数据状态的获取 修改系统属性，变更回调方法 getLastNonConfigurationInstance ");
+        return super.getLastNonConfigurationInstance();
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.mao.jetpack.ui.viewmodelfile.viewmodel;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.mao.jetpack.ui.viewmodelfile.model.User;
@@ -11,6 +12,7 @@ import com.mao.jetpack.ui.viewmodelfile.model.User;
  */
 public class ViewModelJavaActivityViewModel extends ViewModel {
 
+
     public User user = new User();
 
     // 数据是从服务器获取到的
@@ -19,6 +21,17 @@ public class ViewModelJavaActivityViewModel extends ViewModel {
         user.setAge(12);
         user.setName("zhang");
         return user;
+    }
+
+    private MutableLiveData<String> currentName;
+
+    public int i;
+
+    public MutableLiveData<String> getCurrentName() {
+        if (currentName == null) {
+            currentName = new MutableLiveData<>();
+        }
+        return currentName;
     }
 
 }
