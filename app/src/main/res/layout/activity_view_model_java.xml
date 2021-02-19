@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaActivityViewModel" />
+
+        <!--有多少个数据源，对应的 ActivityViewModelJavaBinding 就有多少个 setViewModel-->
+        <!-- <variable
+             name="viewModelString"
+             type="com.mao.jetpack.ui.viewmodelfile.viewmodel.ViewModelJavaActivityViewModel" />-->
+
+        <variable
+            name="presenter"
+            type="com.mao.jetpack.ui.viewmodelfile.ViewModelJavaActivity.Presenter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.user.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--双向绑定  @=  = 的作用是改变EditText的值，通知数据源改变 @={viewModel.user.name}-->
+
+        <EditText
+            android:id="@+id/tvTextEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.user.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvText" />
+
+
+        <Button
+            android:id="@+id/tvButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{(view)->presenter.onClick(viewModel,view)}"
+            android:text="发送"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTextEdit" />
+
+
+        <Button
+            android:id="@+id/tvButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="send"
+            android:text="发送2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvButton" />
+
+        <TextView
+            android:id="@+id/tvTextShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvButton2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/btnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{(view)->presenter.onClick(viewModel,view)}"
+            android:text="点击增加"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTextShow" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

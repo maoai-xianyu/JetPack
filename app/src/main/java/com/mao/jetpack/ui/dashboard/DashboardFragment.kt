@@ -14,8 +14,10 @@ import com.mao.jetpack.R
 import com.mao.jetpack.lifecycle.MyPresenter
 import com.mao.jetpack.ui.livedata.LiveDataActivity
 import com.mao.jetpack.ui.livedata.LiveDataBus
-import com.mao.jetpack.utils.LiveDataBusX
-import com.mao.jetpack.utils.LiveDataNewBus
+import com.mao.jetpack.ui.viewmodelfile.ViewModelActivity
+import com.mao.jetpack.ui.viewmodelfile.ViewModelJavaActivity
+import com.mao.jetpack.ui.viewmodelfile.ViewModelJavaLiveDataActivity
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class DashboardFragment : Fragment() {
 
@@ -47,6 +49,28 @@ class DashboardFragment : Fragment() {
             //LiveDataBusX.getInstance().with<String>("dashboard").setStickyData("LiveDataBusX 发送消消了")
             //LiveDataNewBus.with<String>("dashboard").setStickyData("LiveDataNewBus kotlin 发送消消了")
         }
+
+
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btn_viewmodel_k.setOnClickListener {
+            startActivity(Intent(activity, ViewModelActivity::class.java))
+        }
+
+        btn_viewmodel_java.setOnClickListener {
+            startActivity(Intent(activity, ViewModelJavaActivity::class.java))
+        }
+
+        btn_viewmodel_d.setOnClickListener {
+            startActivity(Intent(activity, ViewModelJavaLiveDataActivity::class.java))
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //lifecycle.addObserver(MyPresenter())
     }
 }
