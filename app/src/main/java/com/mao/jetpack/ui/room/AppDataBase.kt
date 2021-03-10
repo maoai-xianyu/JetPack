@@ -1,10 +1,7 @@
 package com.mao.jetpack.ui.room
 
-import androidx.room.Database
-import androidx.room.DatabaseConfiguration
-import androidx.room.InvalidationTracker
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteOpenHelper
+import androidx.room.*
+import com.mao.jetpack.global.AppGlobals
 
 /**
  *
@@ -16,4 +13,15 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper
 abstract class AppDataBase : RoomDatabase() {
 
     abstract fun userDao(): StudentDao
+
+    companion object {
+        val appDataBase = Single.appDataBase
+    }
+
+    object Single {
+        val appDataBase: AppDataBase =
+            Room.databaseBuilder(AppGlobals.getApplication(), AppDataBase::class.java, "zkDB")
+                .addMigrations()
+                .build()
+    }
 }

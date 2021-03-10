@@ -13,7 +13,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "student")
 data class Student(
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     @ColumnInfo(name = "name")
     val name: String?,
@@ -21,5 +21,4 @@ data class Student(
     val password: String?,
     @ColumnInfo(name = "addressId")
     val addressId: Int
-
 )
