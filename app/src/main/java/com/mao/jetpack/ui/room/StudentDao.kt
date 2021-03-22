@@ -25,9 +25,15 @@ interface StudentDao {
 
 
     @Query("select * from student where name like :name")
-    fun getStudentByName(name: String): Student
+    fun getStudentByName(name: String): MutableList<Student>
 
     @Query("select * from student where id in (:useIds)")
-    //fun getAllIds(vararg useIds:Int):MutableList<Student>
-    fun getAllIds(useIds: IntArray ): MutableList<Student>
+    fun getAllIds(useIds: IntArray): MutableList<Student>
+    //fun getAllIds(useIds: IntArray): MutableList<Student>
+
+    // 只查询两个
+    @Query("select name,pwd from student")
+    fun getStudentTBy(): MutableList<StudentTuple>
+
+
 }
