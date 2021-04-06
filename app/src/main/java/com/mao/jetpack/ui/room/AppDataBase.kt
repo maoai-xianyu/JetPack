@@ -9,7 +9,7 @@ import com.mao.jetpack.global.AppGlobalsKt
  * @time 2021/2/19 9:29 PM
  * @Description
  */
-@Database(entities = [Student::class, Address::class], version = 1)
+@Database(entities = [Student::class, Address::class], version = 2)
 abstract class AppDataBase : RoomDatabase() {
 
     abstract fun userDao(): StudentDao
