@@ -6,5 +6,5 @@ package com.mao.jetpack.git
  * @time 2021/4/6 7:47 PM
  * @Description
  */
-class GitOrderOther {
+class GitOrderTwo {
 }
