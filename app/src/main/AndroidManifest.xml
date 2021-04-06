@@ -27,6 +27,7 @@
         <activity android:name=".ui.viewmodelfile.ViewModelActivity" />
         <activity android:name=".ui.viewmodelfile.ViewModelJavaActivity" />
         <activity android:name=".ui.room.RoomActivity" />
+        <activity android:name=".ui.room.RoomSelectActivity" />
     </application>
 
 </manifest>

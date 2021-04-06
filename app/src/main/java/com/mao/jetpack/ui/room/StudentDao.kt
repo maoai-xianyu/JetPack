@@ -1,5 +1,7 @@
 package com.mao.jetpack.ui.room
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 
 /**
@@ -35,5 +37,12 @@ interface StudentDao {
     @Query("select name,pwd from student")
     fun getStudentTBy(): MutableList<StudentTuple>
 
+    // 关联主外键 另外一张标品
+    /*@Query("select name,pwd,addressName from student where student.addressId == address.addressId ")
+    fun getS()*/
 
+
+    // 使用live data
+    @Query("select * from student order by id")
+    fun getAllLiveDataStudent(): LiveData<List<Student>>
 }

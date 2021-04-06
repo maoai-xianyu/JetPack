@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.mao.jetpack.R
 import com.mao.jetpack.ui.room.RoomActivity
+import com.mao.jetpack.ui.room.RoomSelectActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -37,6 +38,10 @@ class HomeFragment : Fragment() {
 
         btn.setOnClickListener {
             startActivity(Intent(activity, RoomActivity::class.java))
+        }
+
+        btnRoom.setOnClickListener {
+            startActivity(Intent(activity, RoomSelectActivity::class.java))
         }
     }
 }
