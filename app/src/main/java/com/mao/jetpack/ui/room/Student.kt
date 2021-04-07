@@ -27,7 +27,9 @@ data class Student(
     @ColumnInfo(name = "pwd")
     val password: String?,
     @ColumnInfo(name = "addressId")
-    val addressId: Int
+    val addressId: Int,
+    @ColumnInfo(name = "flag")
+    val flag: Boolean = false
 ) {
     // 因为是自增长，所以会被赋值，id 申明为 var
     @PrimaryKey(autoGenerate = true)

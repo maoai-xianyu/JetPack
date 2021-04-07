@@ -1,6 +1,8 @@
 package com.mao.jetpack.ui.room
 
 import androidx.room.*
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.mao.jetpack.global.AppGlobalsKt
 
 /**
@@ -21,10 +23,35 @@ abstract class AppDataBase : RoomDatabase() {
     }
 
     object Single {
+
+        // 数据的升级，当数据库升级的时候 需要修改 version 的版本号 version = 1  ->  version = 2
+        private val migration1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("alter table student add column flag integer not null default 1")
+            }
+        }
+
+
+        // version = 2  -> version = 3
+        private val migration2_3 = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+
+                // 原表的基础上删除一个字段
+                //database.execSQL("create table student_temp (id integer primary key not null,name text,pwd text,addressId)")
+                //database.execSQL("insert into student (id,name,pwd,addressid)" + " select id,name,pwd,addressId from student")
+                //database.execSQL("drop table student")
+                //database.execSQL("alter table student_temp rename to student")
+
+            }
+        }
+
         val appDataBase: AppDataBase =
             Room.databaseBuilder(AppGlobalsKt.get()!!, AppDataBase::class.java, "zkDB")
-                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()
+                //.fallbackToDestructiveMigration()
+                .addMigrations(migration1_2)
                 .build()
+
     }
 
 
