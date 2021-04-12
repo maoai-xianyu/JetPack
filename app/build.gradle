@@ -15,6 +15,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions
+                    {
+                        // 指定数据库 schema 文件的到导出位置
+                        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+                    }
+        }
     }
 
     buildTypes {
