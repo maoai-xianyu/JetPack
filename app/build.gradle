@@ -15,6 +15,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions
+                    {
+                        // 指定数据库 schema 文件的到导出位置
+                        arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+                    }
+        }
     }
 
     buildTypes {
@@ -31,9 +40,14 @@ android {
         jvmTarget = '1.8'
     }
 
-    dataBinding{
+    dataBinding {
         enabled = true
     }
+
+    viewBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -45,6 +59,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.navigation:navigation-fragment:2.3.0'
     implementation 'androidx.navigation:navigation-ui:2.3.0'
+    // viewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
@@ -54,4 +69,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "org.apache.commons:commons-lang3:3.9"
 
+    // room
+    //implementation 'android.arch.persistence.room:runtime:1.1.1'
+    //annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
+
+    implementation 'androidx.room:room-runtime:2.2.6'
+    kapt 'androidx.room:room-compiler:2.2.6'
+    implementation 'androidx.room:room-rxjava2:2.2.6'
+    implementation 'androidx.room:room-guava:2.2.6'
+    testImplementation 'androidx.room:room-testing:2.2.6'
 }
