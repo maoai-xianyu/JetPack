@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:text="fragment nv two"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,10 +22,11 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnNV"
+        android:id="@+id/btnOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转NV"
+        android:text="返回第一个Fragment"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:backgroundTint="#ffffff"
@@ -36,9 +37,32 @@
         app:iconTint="@color/color_theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_notifications"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
         tools:icon="@drawable/icon_cell_like"
         tools:iconTint="@color/color_3d3"
-        tools:text="跳转room"
         tools:textColor="@color/color_3d3" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转第三个Fragment"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/icon_cell_like"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconTint="@color/color_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOne"
+        tools:icon="@drawable/icon_cell_like"
+        tools:iconTint="@color/color_3d3"
+        tools:textColor="@color/color_3d3" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

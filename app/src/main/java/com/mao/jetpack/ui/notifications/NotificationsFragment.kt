@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
+import kotlinx.android.synthetic.main.fragment_notifications.view.*
 
 class NotificationsFragment : Fragment() {
 
@@ -27,5 +28,14 @@ class NotificationsFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.btnNV.setOnClickListener {
+            //startActivity(Int)
+        }
     }
 }

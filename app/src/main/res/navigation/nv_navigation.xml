@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nv_navigation"
+    app:startDestination="@+id/navigation_one">
+
+    <fragment
+        android:id="@+id/navigation_one"
+        android:name="com.mao.jetpack.ui.navigation.FragmentNVOne"
+        android:label="@string/title_one"
+        tools:layout="@layout/fragment_home">
+
+        <!--
+
+        使用 action 跳转对应的页面, 可以添加动画
+        -->
+
+        <action
+            android:id="@+id/ac_2"
+            app:destination="@+id/navigation_two" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_two"
+        android:name="com.mao.jetpack.ui.navigation.FragmentNVTwo"
+        android:label="@string/title_two"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/ac_back_1"
+            app:destination="@+id/navigation_one" />
+
+        <action
+            android:id="@+id/ac_3"
+            app:destination="@+id/navigation_three" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_three"
+        android:name="com.mao.jetpack.ui.navigation.FragmentNVThree"
+        android:label="@string/title_three"
+        tools:layout="@layout/fragment_notifications">
+
+
+        <action
+            android:id="@+id/ac_back_2"
+            app:destination="@+id/navigation_two" />
+
+
+    </fragment>
+</navigation>
