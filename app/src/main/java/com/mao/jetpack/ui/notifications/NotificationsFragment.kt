@@ -1,5 +1,6 @@
 package com.mao.jetpack.ui.notifications
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
+import com.mao.jetpack.ui.navigation.NavigationActivity
 import kotlinx.android.synthetic.main.fragment_notifications.view.*
 
 class NotificationsFragment : Fragment() {
@@ -35,7 +37,7 @@ class NotificationsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.btnNV.setOnClickListener {
-            //startActivity(Int)
+            startActivity(Intent(context,NavigationActivity::class.java))
         }
     }
 }

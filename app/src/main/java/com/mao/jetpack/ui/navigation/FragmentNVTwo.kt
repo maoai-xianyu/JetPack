@@ -31,7 +31,7 @@ class FragmentNVTwo : Fragment() {
         /*binding = FragmentNvOneBinding.inflate(inflater, container, false)
         return binding?.root*/
         // 创建布局
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_nv_two, container, false)
 
     }
 
