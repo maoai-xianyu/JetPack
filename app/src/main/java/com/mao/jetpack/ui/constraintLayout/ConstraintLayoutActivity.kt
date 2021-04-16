@@ -26,5 +26,14 @@ class ConstraintLayoutActivity : AppCompatActivity() {
 
         }
 
+        rootBinding.btnLayer.setOnClickListener {
+
+            //rootBinding.layer.visibility = View.GONE
+            rootBinding.layer.rotation = 45f
+            rootBinding.layer.translationY = 100f
+            rootBinding.layer.translationX = 100f
+
+        }
+
     }
 }
