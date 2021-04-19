@@ -10,59 +10,304 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--
+
+            flow 虚拟布局控件,网格布局
+
+
+             android:orientation="vertical"  垂直排列
+             flow_verticalGap  垂直方向的间距
+
+             android:orientation="horizontal"   水平方向排列
+             flow_horizontalGap 水平方向的间距
+
+             app:flow_wrapMode="chain" // 模式
+
+
+             用引用的方式 消除布局嵌套
+
+
+            -->
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                app:flow_wrapMode="chain"
+                app:flow_verticalGap="16dp"
+                app:flow_horizontalGap="16dp"
+                app:constraint_referenced_ids="viewf1,viewf2,viewf3,viewf4,viewf5,viewf6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewf1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <!--
+            Linear  完成一组控件的设置
+            -->
+
+            <View
+                android:id="@+id/viewL1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/viewL2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimaryDark"
+                tools:ignore="MissingConstraints" />
+
+
+            <View
+                android:id="@+id/viewL3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints" />
+
+
+            <View
+                android:id="@+id/viewL4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                tools:ignore="MissingConstraints" />
+
+            <com.mao.jetpack.widget.Linear
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewL1,viewL2,viewL3,viewL4"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cslView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="200dp">
+
+            <!--
+
+           代码设置 twitter 的位置
+
+            -->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/twitter"
+                android:tint="#00ACED"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="300dp">
+
+            <!--
+
+            占位符： Placeholder
+
+            onClick 事件， 点击后可以替换位置
+
+
+            -->
+
+            <androidx.constraintlayout.widget.Placeholder
+                android:id="@+id/placeholder"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/favorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_favorite_black_24dp"
+                android:tint="#E64A19"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_mail_black_24dp"
+                android:tint="#512DA8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/save"
+                app:layout_constraintStart_toEndOf="@id/favorite"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/save"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_save_black_24dp"
+                android:tint="#D32F2F"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/play"
+                app:layout_constraintStart_toEndOf="@id/mail"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/play"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_play_circle_filled_black_24dp"
+                android:tint="#FFA000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/save"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="600dp">
 
 
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <ImageView
                 android:id="@+id/image"
-                android:src="@mipmap/ic_launcher_round" />
-
-
-            <ImageView android:layout_width="80dp" android:layout_height="80dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
                 android:id="@+id/image2"
-                android:src="@drawable/sun" app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintVertical_bias="0.299"/>
-
-
-            <ImageView android:layout_width="80dp" android:layout_height="80dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/sun"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.299" />
+
+
+            <ImageView
                 android:id="@+id/image3"
-                android:src="@drawable/wechat" app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintVertical_bias="0.299"/>
-
-
-            <ImageView android:layout_width="80dp" android:layout_height="80dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/wechat"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/image4"
-                android:src="@drawable/ic_favorite_black_24dp" app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintVertical_bias="0.3"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.299" />
 
-            <com.mao.jetpack.utils.CircularRevealHelper
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_favorite_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <com.mao.jetpack.widget.CircularRevealHelper
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:constraint_referenced_ids="image,image2,image3,image4"
                 tools:ignore="MissingConstraints" />
-
-
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
