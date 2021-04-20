@@ -2,6 +2,10 @@ package com.mao.jetpack.ui.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityNvBinding
 
 /**
@@ -19,5 +23,14 @@ class NavigationActivity : AppCompatActivity() {
 
         binding = ActivityNvBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        /*val findNavController = findNavController(R.id.nav_host_fragment)
+        binding.navView.setupWithNavController(findNavController)*/
+
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
+        val findNavController = navHostFragment!!.findNavController()
+        binding.navView.setupWithNavController(findNavController)
     }
 }
