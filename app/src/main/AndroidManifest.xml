@@ -28,6 +28,23 @@
         <activity android:name=".ui.viewmodelfile.ViewModelJavaActivity" />
         <activity android:name=".ui.room.RoomActivity" />
         <activity android:name=".ui.room.RoomSelectActivity" />
+
+        <activity android:name=".ui.deeplink.WebActivity" />
+
+        <activity android:name=".ui.deeplink.DeepLinkActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="deeplink"
+                    android:scheme="jetpack" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

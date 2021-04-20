@@ -1,5 +1,6 @@
 package com.mao.jetpack.ui.notifications
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
+import com.mao.jetpack.databinding.FragmentNotificationsBinding
+import com.mao.jetpack.ui.deeplink.WebActivity
 
 class NotificationsFragment : Fragment() {
 
@@ -27,5 +30,15 @@ class NotificationsFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val bind = FragmentNotificationsBinding.bind(view)
+
+        bind.textNotifications.setOnClickListener {
+            startActivity(Intent(context, WebActivity::class.java));
+        }
     }
 }
