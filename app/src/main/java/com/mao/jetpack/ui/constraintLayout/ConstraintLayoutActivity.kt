@@ -5,8 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.transition.TransitionManager
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityConstraintlayoutBinding
+import com.mao.jetpack.utils.Logger
 
 /**
  *
@@ -18,6 +20,8 @@ class ConstraintLayoutActivity : AppCompatActivity() {
 
 
     private lateinit var rootBinding: ActivityConstraintlayoutBinding
+
+    private var flag = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +41,6 @@ class ConstraintLayoutActivity : AppCompatActivity() {
 
         }
 
-        onClickConstraintSet(rootBinding.cslView)
     }
 
     // 代码设置约束
@@ -59,5 +62,40 @@ class ConstraintLayoutActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         rootBinding.placeholder.setContentId(view.id)
+    }
+
+
+    // 替换布局
+    fun onClickConstraintSetLayout(view: View) {
+        Logger.debug("-----跟换布局 ")
+        if (!flag) {
+            val constraintLayout = view as ConstraintLayout
+
+            val constraintSet = ConstraintSet().apply {
+                isForceId = false
+                 clone(this@ConstraintLayoutActivity, R.layout.activity_constraint_end)
+            }
+            TransitionManager.beginDelayedTransition(constraintLayout)
+            constraintSet.applyTo(constraintLayout)
+            flag = true
+        }
+    }
+
+
+    fun itemClick(view: View) {
+        Logger.debug("-----触发点击事件 ")
+
+        if (flag) {
+            val constraintLayout = view.parent as ConstraintLayout
+
+            val constraintSet = ConstraintSet().apply {
+                // 没有id的方式
+                isForceId = false
+                clone(this@ConstraintLayoutActivity, R.layout.activity_constraint_start)
+            }
+            TransitionManager.beginDelayedTransition(constraintLayout)
+            constraintSet.applyTo(constraintLayout)
+            flag = false
+        }
     }
 }

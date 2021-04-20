@@ -10,11 +10,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--
+           用约束替换布局
+           -->
 
+        <include
+            android:id="@+id/cls"
+            layout="@layout/activity_constraint_start"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <!--
 
@@ -46,7 +53,7 @@
                 app:flow_wrapMode="chain"
                 app:flow_verticalGap="16dp"
                 app:flow_horizontalGap="16dp"
-                app:constraint_referenced_ids="viewf1,viewf2,viewf3,viewf4,viewf5,viewf6"
+                app:constraint_referenced_ids="viewf1,viewf2,viewf3,viewf4,viewf5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,11 +88,11 @@
                 android:layout_height="80dp"
                 android:background="@color/colorPrimaryDark" />
 
-            <View
+           <!-- <View
                 android:id="@+id/viewf6"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@color/colorPrimaryDark" />-->
 
 
 
@@ -150,6 +157,7 @@
             android:id="@+id/cslView"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
+            android:onClick="onClickConstraintSet"
             android:layout_height="200dp">
 
             <!--
@@ -252,6 +260,10 @@
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_height="600dp">
+
+            <!--
+            一组动画的展示
+            -->
 
 
             <ImageView
