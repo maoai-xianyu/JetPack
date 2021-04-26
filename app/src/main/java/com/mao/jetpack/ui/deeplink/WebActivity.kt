@@ -32,6 +32,8 @@ class WebActivity : AppCompatActivity() {
             } catch (e: Exception) {
 
                 Logger.error("跳转淘宝 奔溃 ${e.message}")
+            } finally {
+                Logger.error("finally 跳转猫眼")
             }
         }
 
@@ -40,10 +42,13 @@ class WebActivity : AppCompatActivity() {
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
                 intent.data = Uri.parse("taobao://item.taobao.com/item.html?id=41700658839")
-                startActivity(intent)
+                it.context.startActivity(intent)
             } catch (e: Exception) {
 
                 Logger.error("跳转淘宝 奔溃 ${e.message}")
+            } finally {
+
+                Logger.error("finally 跳转淘宝 ")
             }
 
         }
