@@ -1,0 +1,1251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--
+           用约束替换布局
+           -->
+
+        <include
+            android:id="@+id/cls"
+            layout="@layout/activity_constraint_start"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!--
+
+            flow 虚拟布局控件,网格布局
+
+
+             android:orientation="vertical"  垂直排列
+             flow_verticalGap  垂直方向的间距
+
+             android:orientation="horizontal"   水平方向排列
+             flow_horizontalGap 水平方向的间距
+
+             app:flow_wrapMode="chain" // 模式
+
+
+             用引用的方式 消除布局嵌套
+
+
+            -->
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                app:flow_wrapMode="chain"
+                app:flow_verticalGap="16dp"
+                app:flow_horizontalGap="16dp"
+                app:constraint_referenced_ids="viewf1,viewf2,viewf3,viewf4,viewf5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewf1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <View
+                android:id="@+id/viewf5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />
+
+           <!-- <View
+                android:id="@+id/viewf6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/colorPrimaryDark" />-->
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <!--
+            Linear  完成一组控件的设置
+            -->
+
+            <View
+                android:id="@+id/viewL1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:id="@+id/viewL2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimaryDark"
+                tools:ignore="MissingConstraints" />
+
+
+            <View
+                android:id="@+id/viewL3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorPrimary"
+                tools:ignore="MissingConstraints" />
+
+
+            <View
+                android:id="@+id/viewL4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorAccent"
+                tools:ignore="MissingConstraints" />
+
+            <com.mao.jetpack.widget.Linear
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="viewL1,viewL2,viewL3,viewL4"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cslView"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickConstraintSet"
+            android:layout_height="200dp">
+
+            <!--
+
+           代码设置 twitter 的位置
+
+            -->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/twitter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/twitter"
+                android:tint="#00ACED"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="300dp">
+
+            <!--
+
+            占位符： Placeholder
+
+            onClick 事件， 点击后可以替换位置
+
+
+            -->
+
+            <androidx.constraintlayout.widget.Placeholder
+                android:id="@+id/placeholder"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/favorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_favorite_black_24dp"
+                android:tint="#E64A19"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/mail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_mail_black_24dp"
+                android:tint="#512DA8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/save"
+                app:layout_constraintStart_toEndOf="@id/favorite"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/save"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_save_black_24dp"
+                android:tint="#D32F2F"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/play"
+                app:layout_constraintStart_toEndOf="@id/mail"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/play"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_play_circle_filled_black_24dp"
+                android:tint="#FFA000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/save"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="600dp">
+
+            <!--
+            一组动画的展示
+            -->
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/sun"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.299" />
+
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/wechat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.299" />
+
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_favorite_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <com.mao.jetpack.widget.CircularRevealHelper
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="image,image2,image3,image4"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <!--
+
+            barrier
+
+
+            -->
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="t1,t2" />
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文本文字本文字字"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:text="文本文字"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/i1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/barrier"
+                app:layout_constraintTop_toTopOf="@+id/t1" />
+
+
+            <ImageView
+                android:id="@+id/i2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/barrier"
+                app:layout_constraintTop_toTopOf="@+id/t2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--
+
+            layer
+
+
+            -->
+
+            <Button
+                android:id="@+id/btnLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="layer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.helper.widget.Layer
+                android:id="@+id/layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="vieww,viewL,view77,view88"
+                tools:ignore="MissingConstraints" />
+
+
+            <ImageView
+                android:id="@+id/viewL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/vieww"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/viewL"
+                app:layout_constraintTop_toTopOf="@+id/viewL" />
+
+            <ImageView
+                android:id="@+id/view77"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="72dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/viewL"
+                app:layout_constraintTop_toTopOf="@+id/viewL" />
+
+            <ImageView
+                android:id="@+id/view88"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="72dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/viewL"
+                app:layout_constraintTop_toTopOf="@+id/viewL" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!--
+            布局的统一隐藏
+            group ： constraint_referenced_ids  要统一隐藏的id
+
+            -->
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="group"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="view,view1,view7,view8" />
+
+
+            <ImageView
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <ImageView
+                android:id="@+id/view7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="72dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <ImageView
+                android:id="@+id/view8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="72dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/view1"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="10dp">
+
+            <!--
+
+
+            Guideline 辅助线
+
+            1. 方向   android:orientation="vertical"
+
+            2. 位置：
+            水平方向的 20% 支持负值  app:layout_constraintGuide_percent="0.2"
+
+            和 layout_constraintGuide_percent 冲突，只能用一种
+            app:layout_constraintGuide_begin="120dp"
+            app:layout_constraintGuide_end="60dp"
+
+            -->
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <!--<androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="120dp"
+                app:layout_constraintGuide_end="60dp" />-->
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:text="用户名"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                android:text="密码"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_username"
+                app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_password"
+                app:layout_constraintStart_toEndOf="@+id/tv_password" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp">
+
+            <!--
+
+            用的比较少
+            百分比：layout_constraintWidth_percent = "0.6"
+
+            是整个父容器的的 0.6  也就是 60%
+
+            需要在对应方向的宽或者高 设置为 0dp
+
+            -->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOne"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.3" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTwo"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.6" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp">
+
+            <!--
+
+            宽高比  layout_width 和  layout_height 至少有一个设置为 0dp
+            app:layout_constraintDimensionRatio="2:1"
+
+            如果： layout_width 和  layout_height 都是 0dp 需要指定
+             w(宽度是计算出来的，高度是充满约束) 高宽比
+             或 h(高度是计算出来的，宽度是充满约束) 宽高比
+
+            默认是 宽比高 app:layout_constraintDimensionRatio="h,2:1"
+
+            高宽比 app:layout_constraintDimensionRatio="w,2:1"
+
+            -->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintDimensionRatio="h,2:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginStart="30dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_marginTop="10dp">
+
+            <!--
+
+             图片和文本居中  设置约束链的风格  需要放在第一个需要控制的控件
+
+             垂直
+             layout_constraintVertical_chainStyle= "packed"
+
+             packed  紧挨居中  最多
+             spread  默认
+             spread_inside  内部扩散 比较少用
+
+
+             可以搭配 bias  垂直方向的 百分比
+              app:layout_constraintVertical_bias="0.2"
+
+            -->
+
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@mipmap/ic_launcher_round"
+                app:layout_constraintBottom_toTopOf="@+id/textview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary"
+                android:text="长文本长文本长文本长文本长文本文本长文本长文本"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/avatar"
+                app:layout_constraintStart_toStartOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+
+            <ImageView
+                android:id="@+id/viewOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view2"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/view2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/view3"
+                app:layout_constraintStart_toEndOf="@+id/viewOne"
+                tools:layout_editor_absoluteX="119dp" />
+
+            <ImageView
+                android:id="@+id/view3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!--
+            文本的隐藏
+
+             app:layout_goneMarginStart="30dp"
+            -->
+
+            <TextView
+                android:id="@+id/tvContent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:text="文本文本本文本文"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/tvContent2"
+                app:layout_constraintTop_toTopOf="@+id/tvContent2"
+                app:layout_goneMarginStart="30dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!--
+
+             图片跟随 文本动
+
+            -->
+
+            <TextView
+                android:id="@+id/tvContent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="60dp"
+                android:background="@color/colorAccent"
+                android:text="图片跟随文本动跟"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toEndOf="@+id/tvContent1"
+                app:layout_constraintTop_toTopOf="@+id/tvContent1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--
+
+                wechat-1.webp
+                bias  0.0 ~1.0
+                使用需要对控件： 有左右的约束才可以
+
+                0.0 是最左边  1.0 是最右边
+                app:layout_constraintHorizontal_bias="0.8"
+
+
+           -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--
+            app:layout_constrainedWidth="true" 在 avatar1 不超出约束的宽度
+
+            但是文字少了。又居中了，需要使用 layout_constraintHorizontal_bias
+
+            0.0 最左
+            -->
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/colorAccent"
+                android:text="文本文本文本文本文文文本文文"
+                android:textColor="@android:color/white"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/avatar1"
+                app:layout_constraintTop_toTopOf="@+id/avatar1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!--
+                layout_constraintDimensionRatio（宽高比）
+                如果想实现一个固定宽高比的顶部标题栏的话，可以将宽和高设置为 0dp，
+                然后为其设置 app:layout_constraintDimensionRatio 属性，设定宽高比为16：7-->
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorAccent"
+                android:text="文本"
+                android:textColor="@android:color/white"
+                app:layout_constraintDimensionRatio="h,16:8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--底部  高宽比  app:layout_constraintDimensionRatio="w,1:3"-->
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="stringapp_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="w,1:3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <!--剩余布局居中-->
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:background="#ff0000"
+                android:gravity="center"
+                android:text="@string/app_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv2"
+                app:layout_constraintDimensionRatio="w,15:25"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--
+
+              约束宽度  layout_constrainedWidth = true  不让显示的文本超出约束的宽度
+            -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatarm"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_margin="40dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@color/colorAccent"
+                android:text="文本本文本文本文本本文本文本文本本文本文本"
+                android:textColor="@android:color/white"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="@+id/avatarm"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/avatarm"
+                app:layout_constraintTop_toBottomOf="@+id/avatarm" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <!--
+              layout_constraintCircle  圆心
+              layout_constraintCircleRadius  半径
+              layout_constraintCircleAngle 角度
+              按照时钟，正上方顺时针
+
+            -->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sun"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/sun"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/earth"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/earth"
+                app:layout_constraintCircle="@id/sun"
+                app:layout_constraintCircleAngle="45"
+                app:layout_constraintCircleRadius="150dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/moon"
+                app:layout_constraintCircle="@id/earth"
+                app:layout_constraintCircleAngle="270"
+                app:layout_constraintCircleRadius="40dp"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 文本 baseline 居中-->
+
+            <TextView
+                android:id="@+id/tvNum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:text="99"
+                android:textSize="80sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvNum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textSize="16sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvNum1"
+                app:layout_constraintStart_toEndOf="@+id/tvNum1" />
+
+
+            <TextView
+                android:id="@+id/tvNum3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:text="99"
+                android:textSize="80sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNum1" />
+
+
+            <TextView
+                android:id="@+id/tvNum4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNum3"
+                app:layout_constraintStart_toEndOf="@+id/tvNum3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <!-- 相互约束
+           全部充满  android:layout_width="0dp"
+           权重 类似线性布局  水平   app:layout_constraintHorizontal_weight="1"  需要配合  android:layout_width="0dp"
+           权重 类似线性布局  垂直   app:layout_constraintVertical_weight="1" 需要配合  android:layout_height="0dp"
+        -->
+
+
+            <TextView
+                android:id="@+id/tvName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="新闻 相互约束"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/v2"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName2" />
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/v3"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/v1"
+                app:layout_constraintTop_toBottomOf="@+id/tvName2" />
+
+
+            <View
+                android:id="@+id/v3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="@color/color_theme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toEndOf="@+id/v2"
+                app:layout_constraintTop_toBottomOf="@+id/tvName2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/iv1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="32dp"
+                android:src="@drawable/ic_collected"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="中国电信"
+                app:layout_constraintStart_toEndOf="@+id/iv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvDesc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="中国电信,福利来临，快来领取哦！"
+                app:layout_constraintStart_toStartOf="@+id/tvName1"
+                app:layout_constraintTop_toBottomOf="@+id/tvName1" />
+
+            <TextView
+                android:id="@+id/tvDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="周日 10:20"
+                app:layout_constraintBottom_toBottomOf="@+id/tvName1"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- 控件居中，和相对于其他控件的居中 -->
+
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="32dp"
+                android:src="@drawable/ic_collected"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 设置 按钮的
+
+            1. 在图片的中间
+                 app:layout_constraintBottom_toBottomOf="@+id/iv2"
+                 app:layout_constraintTop_toTopOf="@+id/iv2"
+            2. 设置按钮的高度和图片的高度一致，添加约束后，改高度为0dp
+                 android:layout_height="0dp"
+
+            -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWatch"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="关注"
+                app:backgroundTint="@color/color_theme"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/ic_add_file"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@color/color_theme"
+                app:layout_constraintBottom_toBottomOf="@+id/iv2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <!--按钮相对于 图片的底部线居中，底部线居中穿过按钮
+
+                app:layout_constraintBottom_toBottomOf="@+id/iv3"
+                app:layout_constraintTop_toBottomOf="@+id/iv3"
+
+            -->
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hot_rank_head_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/iv4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_collected"
+                app:layout_constraintBottom_toBottomOf="@+id/iv3"
+                app:layout_constraintEnd_toEndOf="@+id/iv3"
+                app:layout_constraintStart_toStartOf="@+id/iv3"
+                app:layout_constraintTop_toBottomOf="@+id/iv3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
