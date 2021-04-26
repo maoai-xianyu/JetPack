@@ -28,6 +28,7 @@
         <activity android:name=".ui.viewmodelfile.ViewModelJavaActivity" />
         <activity android:name=".ui.room.RoomActivity" />
         <activity android:name=".ui.room.RoomSelectActivity" />
+        <activity android:name=".ui.constraintLayout.ConstraintLayoutActivity" />
     </application>
 
 </manifest>
