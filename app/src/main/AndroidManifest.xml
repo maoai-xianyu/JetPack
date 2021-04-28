@@ -29,6 +29,7 @@
         <activity android:name=".ui.room.RoomActivity" />
         <activity android:name=".ui.room.RoomSelectActivity" />
         <activity android:name=".ui.constraintLayout.ConstraintLayoutActivity" />
+        <activity android:name=".ui.motionlayout.MotionLayoutActivity" />
 
         <activity android:name=".ui.deeplink.WebActivity" />
 

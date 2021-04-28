@@ -94,6 +94,7 @@ class ConstraintLayoutActivity : AppCompatActivity() {
                 clone(this@ConstraintLayoutActivity, R.layout.activity_constraint_start)
             }
             TransitionManager.beginDelayedTransition(constraintLayout)
+            // 修改布局之前
             constraintSet.applyTo(constraintLayout)
             flag = false
         }
