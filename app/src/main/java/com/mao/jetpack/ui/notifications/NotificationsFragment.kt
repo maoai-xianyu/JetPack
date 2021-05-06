@@ -39,8 +39,8 @@ class NotificationsFragment : Fragment() {
         val bind = FragmentNotificationsBinding.bind(view)
 
         bind.textNotifications.setOnClickListener {
-            //startActivity(Intent(context, WebActivity::class.java))
-            startActivity(Intent(context, WebJavaActivity::class.java));
+            startActivity(Intent(context, WebActivity::class.java))
+            //startActivity(Intent(context, WebActivity::class.java));
         }
     }
 }
