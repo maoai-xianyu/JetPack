@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.FragmentNotificationsBinding
 import com.mao.jetpack.ui.deeplink.WebActivity
@@ -41,7 +40,8 @@ class NotificationsFragment : Fragment() {
         val bind = FragmentNotificationsBinding.bind(view)
 
         bind.textNotifications.setOnClickListener {
-            startActivity(Intent(context, WebActivity::class.java));
+            startActivity(Intent(context, WebActivity::class.java))
+            //startActivity(Intent(context, WebActivity::class.java));
         }
 
 
