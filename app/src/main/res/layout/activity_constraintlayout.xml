@@ -14,9 +14,55 @@
            用约束替换布局
            -->
 
+
         <include
             android:id="@+id/cls"
             layout="@layout/activity_constraint_start"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_center"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/color_theme"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="2dp"
+                android:text="最高"
+                android:textColor="#FED9AB"
+                app:layout_constraintBottom_toBottomOf="@+id/marginSpacer"
+                app:layout_constraintStart_toStartOf="@+id/marginSpacer"
+                app:layout_constraintTop_toTopOf="@+id/marginSpacer" />
+
+            <!-- 相对底部 end 负10dp、 bottom 负 15dp -->
+
+            <Space
+                android:id="@+id/marginSpacer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_center"
+                app:layout_constraintEnd_toEndOf="@+id/tv_center"
+                app:layout_constraintTop_toTopOf="@+id/tv_center" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
