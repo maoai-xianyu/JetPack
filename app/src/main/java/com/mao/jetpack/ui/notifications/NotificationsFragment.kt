@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.TransitionManager
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.FragmentNotificationsBinding
 import com.mao.jetpack.ui.deeplink.WebActivity
@@ -47,5 +50,23 @@ class NotificationsFragment : Fragment() {
         bind.btnJumpC.setOnClickListener {
             startActivity(Intent(context, ConstraintLayoutActivity::class.java))
         }
+
+
+        bind.guideline.postDelayed({
+            movieGuideLine(bind)
+        }, 3000)
+
+
+    }
+
+    fun movieGuideLine(bind: FragmentNotificationsBinding) {
+        val constraintLayout = bind.root
+
+        val constraintSet = ConstraintSet().apply {
+            clone(constraintLayout)
+            setGuidelinePercent(R.id.guideline, 0.2f)
+        }
+        TransitionManager.beginDelayedTransition(bind.root)
+        constraintSet.applyTo(constraintLayout)
     }
 }
