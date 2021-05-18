@@ -33,7 +33,7 @@ class WebActivity : AppCompatActivity() {
                 intent.action = Intent.ACTION_VIEW
                 //intent.data = Uri.parse("maoyan://maoyan.com/movielist")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
-                intent.data = Uri.parse("maoyan://maoyan.com/movie_trailer?id=1334342&videoid=454570")
+                intent.data = Uri.parse("maoyan://maoyan.com/videolist?id=1334342&videoid=454570")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
                 startActivity(intent)
             } catch (e: Exception) {
