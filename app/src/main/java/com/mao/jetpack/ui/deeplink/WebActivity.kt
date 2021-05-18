@@ -1,5 +1,6 @@
 package com.mao.jetpack.ui.deeplink
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -16,6 +17,7 @@ import com.mao.jetpack.utils.Logger
  */
 class WebActivity : AppCompatActivity() {
 
+    @SuppressLint("QueryPermissionsNeeded")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,14 +31,16 @@ class WebActivity : AppCompatActivity() {
             try {
                 val intent = Intent()
                 intent.action = Intent.ACTION_VIEW
-                intent.data = Uri.parse("maoyan://maoyan.com/movielist")
+                //intent.data = Uri.parse("maoyan://maoyan.com/movielist")
+                //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
+                intent.data = Uri.parse("maoyan://maoyan.com/movie_trailer?id=1334342&videoid=454570")
+                //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
                 startActivity(intent)
             } catch (e: Exception) {
                 success = "失败"
                 Logger.error("Exception 跳转猫眼 奔溃 ${e.message}")
             } finally {
                 Logger.error("finally 跳转猫眼 $success")
-
             }
         }
 
@@ -66,6 +70,25 @@ class WebActivity : AppCompatActivity() {
                 Logger.error("finally 跳转 ")
             }
 
+        }
+
+        binding.btnRoomJ.setOnClickListener {
+            try {
+                val intent = Intent()
+                intent.action = Intent.ACTION_VIEW
+
+                intent.data =
+                    Uri.parse("maoyan://maoyan.com/movie_trailer?id=1334342&videoid=454570")
+                val resolveActivity = intent.resolveActivity(packageManager)
+                if (resolveActivity != null) {
+                    startActivity(intent)
+                    Logger.error("跳转第三方 成功跳转, 拉不去起来，是因为没有对应的链接")
+                } else {
+                    Logger.error("跳转第三方 失败跳转")
+                }
+            } catch (e: Exception) {
+                Logger.error("Exception 没有类 奔溃 ${e.message}")
+            }
         }
     }
 
