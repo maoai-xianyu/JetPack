@@ -5,4 +5,9 @@
         <attr name="rate" format="float" />
         <attr name="gap" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="PartNewView">
+        <attr name="rate_new" format="float" />
+        <attr name="gap_new" format="dimension" />
+    </declare-styleable>
 </resources>

@@ -14,10 +14,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Keep;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.mao.jetpack.R;
 
@@ -29,7 +29,7 @@ import com.mao.jetpack.R;
  * 自定义观点布局
  */
 @Keep
-public class PartView extends RelativeLayout implements View.OnClickListener {
+public class PartNewView extends ConstraintLayout implements View.OnClickListener {
     private Paint mPaint;
     private Path mLeftPath;
     private Path mRightPath;
@@ -55,6 +55,7 @@ public class PartView extends RelativeLayout implements View.OnClickListener {
      * 左侧颜色
      */
     private int mLeftColor = 0xFFFF4141;
+
     /**
      * 右侧颜色
      */
@@ -101,25 +102,25 @@ public class PartView extends RelativeLayout implements View.OnClickListener {
     private int shadow;
 
 
-    public PartView(Context context) {
+    public PartNewView(Context context) {
         this(context, null);
     }
 
-    public PartView(Context context, @Nullable AttributeSet attrs) {
+    public PartNewView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public PartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public PartNewView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, 0);
     }
 
 
-    public PartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public PartNewView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PartView);
-        mRate = typedArray.getFloat(R.styleable.PartView_rate, 0.5f);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PartNewView);
+        mRate = typedArray.getFloat(R.styleable.PartNewView_rate_new, 0.5f);
         //左边梯形和右边梯形的间隔
-        mGapPx = typedArray.getDimension(R.styleable.PartView_gap, 0);
+        mGapPx = typedArray.getDimension(R.styleable.PartNewView_gap_new, 0);
         typedArray.recycle();
         //继承ViewGroup时，不设置背景，不会执行draw方法
         setBackgroundColor(Color.TRANSPARENT);
@@ -158,7 +159,6 @@ public class PartView extends RelativeLayout implements View.OnClickListener {
         //绘制左边
         if (Float.compare(mRate, 0f) != 0) {
             initPath(true);
-            //mPaint.setColor(mLeftColor);
             @SuppressLint("DrawAllocation")
             LinearGradient mLeftColorLg = new LinearGradient(0, 0, getWidth(), 0,
                     new int[]{0xFFE65060, 0xFFF03535}, null, Shader.TileMode.CLAMP);
@@ -170,10 +170,9 @@ public class PartView extends RelativeLayout implements View.OnClickListener {
         //绘制右边
         if (Float.compare(mRate, 1.0f) != 0) {
             initPath(false);
-            //mPaint.setColor(mRightColor);
             @SuppressLint("DrawAllocation")
             LinearGradient mRightColorLg = new LinearGradient(0, 0, getWidth(), 0,
-                    new int[]{0xFF3F9BCC, 0xFF2E9AE6}, null, Shader.TileMode.REPEAT);
+                    new int[]{0xFF3F9BCC, 0xFF2E9AE6}, null, Shader.TileMode.CLAMP);
             mPaint.setShader(mRightColorLg);
             //绘制阴影
             //mPaint.setShadowLayer(mShadowRadius, 0, mElevation, getDarkerColor(mRightColor));

@@ -64,7 +64,9 @@ class NotificationsFragment : Fragment() {
 
         val constraintSet = ConstraintSet().apply {
             clone(constraintLayout)
-            setGuidelinePercent(R.id.guideline, 0.2f)
+            //setGuidelinePercent(R.id.guideline, 0.2f)
+            setGuidelinePercent(R.id.gLeft, 0.21f)
+            setGuidelinePercent(R.id.gRight, 0.19f)
         }
         TransitionManager.beginDelayedTransition(bind.root)
         constraintSet.applyTo(constraintLayout)
