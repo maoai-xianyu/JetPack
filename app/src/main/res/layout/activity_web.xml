@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.deeplink.WebActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转 猫眼app"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/icon_cell_like"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconTint="@color/color_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:icon="@drawable/icon_cell_like"
+        tools:iconTint="@color/color_3d3"
+        tools:text="跳转room"
+        tools:textColor="@color/color_3d3" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转淘宝app"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/icon_cell_like"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        android:layout_marginStart="10dp"
+        app:iconTint="@color/color_theme"
+        app:layout_constraintStart_toEndOf="@+id/btn"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:icon="@drawable/icon_cell_like"
+        tools:iconTint="@color/color_3d3"
+        tools:text="跳转room"
+        tools:textColor="@color/color_3d3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRoomJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转app"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/icon_cell_like"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        android:layout_marginStart="10dp"
+        app:iconTint="@color/color_theme"
+        app:layout_constraintStart_toEndOf="@+id/btnRoom"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:icon="@drawable/icon_cell_like"
+        tools:iconTint="@color/color_3d3"
+        tools:textColor="@color/color_3d3" />
+
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

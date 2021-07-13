@@ -6,12 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+import androidx.transition.TransitionManager
 import com.mao.jetpack.R
 import com.mao.jetpack.ui.navigation.NavigationActivity
+import com.mao.jetpack.databinding.FragmentNotificationsBinding
+import com.mao.jetpack.ui.deeplink.WebActivity
+import com.mao.jetpack.ui.constraintLayout.ConstraintLayoutActivity
 import kotlinx.android.synthetic.main.fragment_notifications.view.*
 
 class NotificationsFragment : Fragment() {
@@ -32,12 +37,44 @@ class NotificationsFragment : Fragment() {
         return root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.btnNV.setOnClickListener {
-            startActivity(Intent(context,NavigationActivity::class.java))
+        val bind = FragmentNotificationsBinding.bind(view)
+
+        bind.textNotifications.setOnClickListener {
+            startActivity(Intent(context, WebActivity::class.java))
+            //startActivity(Intent(context, WebActivity::class.java));
         }
+
+
+        bind.btnJumpC.setOnClickListener {
+            startActivity(Intent(context, ConstraintLayoutActivity::class.java))
+        }
+
+
+        bind.guideline.postDelayed({
+            movieGuideLine(bind)
+        }, 3000)
+
+
+        bind.btnNV.setOnClickListener {
+            startActivity(Intent(context, NavigationActivity::class.java))
+        }
+
+
+    }
+
+    fun movieGuideLine(bind: FragmentNotificationsBinding) {
+        val constraintLayout = bind.root
+
+        val constraintSet = ConstraintSet().apply {
+            clone(constraintLayout)
+            //setGuidelinePercent(R.id.guideline, 0.2f)
+            setGuidelinePercent(R.id.gLeft, 0.21f)
+            setGuidelinePercent(R.id.gRight, 0.19f)
+        }
+        TransitionManager.beginDelayedTransition(bind.root)
+        constraintSet.applyTo(constraintLayout)
     }
 }
