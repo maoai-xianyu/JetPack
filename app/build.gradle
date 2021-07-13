@@ -78,4 +78,6 @@ dependencies {
     implementation 'androidx.room:room-rxjava2:2.2.6'
     implementation 'androidx.room:room-guava:2.2.6'
     testImplementation 'androidx.room:room-testing:2.2.6'
+
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
 }
