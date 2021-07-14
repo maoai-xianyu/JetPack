@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
 
             adapter.notifyDataSetChanged()
 
-            rv.postDelayed({
+            /*rv.postDelayed({
                 adapter.playAn = false
-            },500)
+            },500)*/
 
         }, 5000)
 

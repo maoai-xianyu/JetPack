@@ -37,6 +37,11 @@ class MotionLayoutActivity : AppCompatActivity() {
             startActivity(Intent(this@MotionLayoutActivity,
                 MLObjectAnimator2Activity::class.java))
         }
+
+        binding.tvM1.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                GoActivity::class.java))
+        }
     }
 
 }
