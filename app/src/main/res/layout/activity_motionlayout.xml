@@ -30,13 +30,13 @@
     <TextView
         android:id="@+id/tvM1"
         style="@style/text_style"
-        android:text="motionlayout1" />
+        android:text="Transition S" />
 
 
     <TextView
         android:id="@+id/tvM2"
         style="@style/text_style"
-        android:text="motionlayout2" />
+        android:text="Transition C" />
 
     <TextView
         android:id="@+id/tvM3"

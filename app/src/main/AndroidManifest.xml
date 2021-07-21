@@ -33,6 +33,7 @@
         <activity android:name=".ui.motionlayout.MLObjectAnimator1Activity" />
         <activity android:name=".ui.motionlayout.MLObjectAnimator2Activity" />
         <activity android:name=".ui.motionlayout.GoActivity" />
+        <activity android:name=".ui.motionlayout.ConstraintSetExample" />
 
         <activity android:name=".ui.deeplink.WebActivity" />
         <activity android:name=".ui.deeplink.WebJavaActivity" />

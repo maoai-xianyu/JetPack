@@ -42,6 +42,11 @@ class MotionLayoutActivity : AppCompatActivity() {
             startActivity(Intent(this@MotionLayoutActivity,
                 GoActivity::class.java))
         }
+
+        binding.tvM2.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                ConstraintSetExample::class.java))
+        }
     }
 
 }

@@ -55,7 +55,7 @@ class MLObjectAnimator2Activity : AppCompatActivity() {
 
     // 过度动画
     /**
-     * 1. 有两个场景   开始场景   ----->    结束场景
+     * 有两个场景   开始场景   ----->    结束场景
      *
      */
 }
