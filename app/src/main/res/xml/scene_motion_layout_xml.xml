@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--完成 MotionScene 引入布局的xml 切换的动画-->
+    <Transition
+        app:constraintSetEnd="@layout/activity_constraint_end_m"
+        app:constraintSetStart="@layout/activity_constraint_start_m">
+
+        <!--
+        添加控件的点击事件，
+        targetId：点击事件控件的id，
+        clickAction：点击事件点击后触发的效果-->
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/image_film_cover" />
+
+    </Transition>
+
+</MotionScene>

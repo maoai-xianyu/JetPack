@@ -2,14 +2,8 @@ package com.mao.jetpack.ui.motionlayout
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Gravity
-import android.view.View
-import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.transition.TransitionManager
-import com.mao.jetpack.databinding.ActivityMotionlayoutBinding
-import com.mao.jetpack.utils.Logger
+import com.mao.jetpack.databinding.ActivityMotionLayoutBinding
 
 /**
  *
@@ -20,11 +14,11 @@ import com.mao.jetpack.utils.Logger
 class MotionLayoutActivity : AppCompatActivity() {
 
 
-    lateinit var binding: ActivityMotionlayoutBinding
+    lateinit var binding: ActivityMotionLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMotionlayoutBinding.inflate(layoutInflater)
+        binding = ActivityMotionLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -46,6 +40,11 @@ class MotionLayoutActivity : AppCompatActivity() {
         binding.tvM2.setOnClickListener {
             startActivity(Intent(this@MotionLayoutActivity,
                 ConstraintSetExample::class.java))
+        }
+
+        binding.tvM3.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                MotionActivity::class.java))
         }
     }
 

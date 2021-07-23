@@ -3,13 +3,10 @@ package com.mao.jetpack.ui.motionlayout
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.transition.TransitionManager
 import com.mao.jetpack.databinding.ActivityMObjectAn1Binding
-import com.mao.jetpack.databinding.ActivityMotionlayoutBinding
-import com.mao.jetpack.utils.Logger
 
 /**
  *
