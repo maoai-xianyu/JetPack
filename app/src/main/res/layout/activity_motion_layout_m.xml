@@ -5,8 +5,11 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/scene_motion_layout_xml"
+    app:layoutDescription="@xml/scene_motion_layout_constaint"
     tools:context=".ui.motionlayout.MotionActivity">
+    <!--
+     app:layoutDescription="@xml/scene_motion_layout_xml"
+    -->
 
     <View
         android:id="@+id/background"

@@ -16,5 +16,4 @@
             app:targetId="@+id/image_film_cover" />
 
     </Transition>
-
 </MotionScene>
