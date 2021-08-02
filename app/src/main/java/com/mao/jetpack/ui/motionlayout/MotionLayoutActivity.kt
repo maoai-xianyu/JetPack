@@ -46,6 +46,11 @@ class MotionLayoutActivity : AppCompatActivity() {
             startActivity(Intent(this@MotionLayoutActivity,
                 MotionActivity::class.java))
         }
+
+        binding.tvM4.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                MotionSampleActivity::class.java))
+        }
     }
 
 }

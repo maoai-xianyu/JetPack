@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:constraint_referenced_ids="tvObjectAn1,tvObjectAn2,tvM1,tvM2,tvM3"
+        app:constraint_referenced_ids="tvObjectAn1,tvObjectAn2,tvM1,tvM2,tvM3,tvM4"
         app:flow_horizontalGap="16dp"
         app:flow_verticalGap="16dp"
         app:flow_wrapMode="chain"
@@ -42,6 +42,11 @@
         android:id="@+id/tvM3"
         style="@style/text_style"
         android:text="motionlayout3" />
+
+    <TextView
+        android:id="@+id/tvM4"
+        style="@style/text_style"
+        android:text="motionlayout4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

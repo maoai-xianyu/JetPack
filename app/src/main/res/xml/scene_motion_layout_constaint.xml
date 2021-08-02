@@ -16,7 +16,7 @@
             app:targetId="@+id/fab_favourite" />
 
         <!--
-         touchAnchorId 那一块区域响应我的点击事件，需要修改响应事件 OnClick
+         touchRegionId 那一块区域响应我的点击事件，需要修改响应事件 OnClick
          touchAnchorSide 再滑动过程中相应事件
          dragDirection 响应事件的方向
          onTouchUp  决定抬手时候的操作
@@ -25,7 +25,7 @@
         -->
 
         <OnSwipe
-            app:touchAnchorId="@+id/image_film_cover"
+            app:touchRegionId="@+id/image_film_cover"
             app:dragDirection="dragDown"
             app:onTouchUp="stop"
             />
