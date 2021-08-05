@@ -12,22 +12,30 @@
         app:motionInterpolator="bounce"
         app:duration="3000">
 
-        <OnSwipe
+        <OnClick app:targetId="@+id/view"
+            app:clickAction="toggle"/>
+
+        <!--<OnSwipe
             app:dragDirection="dragDown"
-            app:touchAnchorId="@id/view" />
+            app:touchAnchorSide="bottom"
+            app:touchAnchorId="@id/view" />-->
 
     </Transition>
 
+
+    <!--的位移动画-->
     <ConstraintSet android:id="@+id/start">
         <Constraint android:id="@+id/view">
             <!--弧线直线运动
             startVertical 垂直方向的弧线运动
             startHorizontal 水平方向的弧线运动
-            transitionEasing  使用模型
+            transitionEasing  使用模型，运动过程中的动效
+            app:transitionEasing="decelerate"
             -->
             <Motion
                 app:pathMotionArc="startVertical"
-                app:transitionEasing="decelerate" />
+                app:transitionEasing="decelerate"
+                 />
 
             <Layout
                 android:layout_width="80dp"
@@ -46,6 +54,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Transform
+                android:rotation="360"
+                android:scaleX="1.33"
+                android:scaleY="1.33"/>
         </Constraint>
     </ConstraintSet>
 </MotionScene>
