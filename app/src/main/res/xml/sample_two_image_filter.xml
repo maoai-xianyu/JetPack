@@ -45,8 +45,8 @@
 
 
             <CustomAttribute
-                app:attributeName="backgroundColor"
-                app:customColorValue="@color/color_theme" />
+                app:attributeName="Saturation"
+                app:customFloatValue="1" />
 
         </Constraint>
     </ConstraintSet>
@@ -66,10 +66,14 @@
                 android:scaleX="1.33"
                 android:scaleY="1.33" />
 
-            <!--动画还有别的属性要改，还可以通过自定义属性进行-->
+            <!--动画还有别的属性要改，还可以通过自定义属性进行
+
+                backgroundColor  修改背景颜色
+                Saturation 调节色温
+            -->
             <CustomAttribute
-                app:attributeName="backgroundColor"
-                app:customColorValue="@color/colorPrimary" />
+                app:attributeName="Saturation"
+                app:customFloatValue="0" />
 
         </Constraint>
     </ConstraintSet>
