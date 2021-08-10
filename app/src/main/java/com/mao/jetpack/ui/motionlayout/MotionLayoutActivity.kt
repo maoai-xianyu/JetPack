@@ -51,6 +51,17 @@ class MotionLayoutActivity : AppCompatActivity() {
             startActivity(Intent(this@MotionLayoutActivity,
                 MotionSampleActivity::class.java))
         }
+
+        binding.tvM5.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                HenCoderActivity::class.java))
+        }
+
+
+        binding.tvM6.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity,
+                YoutubeLikeActivity::class.java))
+        }
     }
 
 }

@@ -7,10 +7,15 @@
         app:constraintSetStart="@id/start"
         app:duration="3000">
 
-        <OnSwipe app:touchAnchorId="@id/view"
-            app:dragDirection="dragDown"
-            />
+        <!--其他-->
+        <!--<OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/view" />-->
 
+
+        <!--KeyTimeCycle 时间循环帧使用 -->
+        <OnSwipe app:touchAnchorId="@id/view"
+            app:dragDirection="dragDown"/>
 
         <KeyFrameSet>
 
@@ -21,11 +26,17 @@
                 app:wavePeriod="0"
                 app:waveShape="sin" />
 
+            <!--
+
+            wavePeriod 循环几次
+            waveShape  循环的数据模型  类似插值器
+            -->
+
             <KeyTimeCycle
                 android:rotation="45"
                 app:framePosition="50"
                 app:motionTarget="@id/view"
-                app:wavePeriod="1"
+                app:wavePeriod="3"
                 app:waveShape="sin" />
 
             <KeyTimeCycle
@@ -38,10 +49,6 @@
 
         </KeyFrameSet>
 
-        <!--        <OnSwipe-->
-        <!--            app:dragDirection="dragDown"-->
-        <!--            app:touchAnchorSide="bottom"-->
-        <!--            app:touchAnchorId="@id/view" />-->
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

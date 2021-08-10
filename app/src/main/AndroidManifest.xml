@@ -36,6 +36,8 @@
         <activity android:name=".ui.motionlayout.ConstraintSetExample" />
         <activity android:name=".ui.motionlayout.MotionActivity" />
         <activity android:name=".ui.motionlayout.MotionSampleActivity" />
+        <activity android:name=".ui.motionlayout.YoutubeLikeActivity" />
+        <activity android:name=".ui.motionlayout.HenCoderActivity" />
 
         <activity android:name=".ui.deeplink.WebActivity" />
         <activity android:name=".ui.deeplink.WebJavaActivity" />
