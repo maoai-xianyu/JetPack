@@ -11,6 +11,12 @@
     </style>
 
 
+    <style name="AppTheme.Launcher" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/windows_bg</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
     <!--使用 MaterialComponents 会给 MaterialButton 有一个内置的属性，需要我们修改默认的属性，自定义style-->
     <style name="materialButton" parent="Widget.MaterialComponents.Button">
         <item name="android:paddingLeft">8dp</item>
