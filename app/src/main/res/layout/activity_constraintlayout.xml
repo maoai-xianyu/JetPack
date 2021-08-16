@@ -10,6 +10,101 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <View
+                android:id="@+id/vvv1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvContt1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="测试测试是试是测试是试是测试是试是测试是试中"
+                android:textColor="@color/color_000"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@+id/vvv1"
+                app:layout_constraintEnd_toEndOf="@+id/vvv2"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/vvv1"
+                app:layout_constraintTop_toTopOf="@+id/vvv1"
+                app:layout_constraintWidth_default="wrap" />
+
+            <View
+                android:id="@+id/vvv2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/tvContt1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vv1"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/vv2"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvCont1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="测试系那是测试系那是测系那是测试系那系那是测试系那是测"
+                android:textColor="@color/color_000"
+                app:layout_constraintEnd_toStartOf="@+id/vv2"
+                app:layout_constraintStart_toEndOf="@+id/vv1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvCont2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="中国中中中国中中中国中中中国中中中国中中中那是测试系那是测"
+                android:textColor="@color/color_000"
+                app:layout_constraintEnd_toStartOf="@+id/vv2"
+                app:layout_constraintStart_toEndOf="@+id/vv1"
+                app:layout_constraintTop_toBottomOf="@id/tvCont1"
+                app:layout_constraintWidth_default="wrap" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
         <!--
            用约束替换布局
            -->
