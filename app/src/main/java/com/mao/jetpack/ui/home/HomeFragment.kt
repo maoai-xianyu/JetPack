@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
 
         rv.postDelayed({
 
-            adapter.playAn = true
+            /*adapter.playAn = true*/
             list[0].progress = 20
             list[1].progress = 30
             list[2].progress = 40
@@ -72,9 +72,9 @@ class HomeFragment : Fragment() {
 
             adapter.notifyDataSetChanged()
 
-            rv.postDelayed({
+            /*rv.postDelayed({
                 adapter.playAn = false
-            },500)
+            },500)*/
 
         }, 5000)
 

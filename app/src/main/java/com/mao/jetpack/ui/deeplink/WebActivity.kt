@@ -34,7 +34,15 @@ class WebActivity : AppCompatActivity() {
                 //intent.data = Uri.parse("maoyan://maoyan.com/movielist")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
                 //intent.data = Uri.parse("maoyan://maoyan.com/videolist?id=1334342&videoid=454570")
+                // 用以判断当前是否有对应的scheme的应用，有就打开
                 intent.data = Uri.parse("maoyan://maoyan.com/movie/hotTopicLists?movieid=1288304&topicid=135556655")
+                // 直接打开网页 下面的会作为一个网页打开
+                //intent.data = Uri.parse("https://m.maoyan.com/asgard/movie/1334342/preview?videoId=456111")
+                //intent.data = Uri.parse("https://m.maoyan.com")
+                // 打开网页
+                //intent.data = Uri.parse("https://mao.com")
+                // 可以打开当前目录
+                //intent.data = Uri.parse("jetpack://deeplink")
                 //intent.data = Uri.parse("meituanmovie://www.meituan.com/movie/hotTopicLists?movieid=1288304&topicid=135556655")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie/movie?id=1288304")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
