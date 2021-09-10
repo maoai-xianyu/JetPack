@@ -5,18 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.mao.common.ext.webViewService
 import com.mao.jetpack.R
 import com.mao.jetpack.adapter.ProgressShowAdapter
 import com.mao.jetpack.model.ProgressBarModel
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
+import com.mao.webview.WebViewActivity
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -45,6 +46,13 @@ class HomeFragment : Fragment() {
 
         btnRoom.setOnClickListener {
             startActivity(Intent(activity, RoomSelectActivity::class.java))
+        }
+
+        btnWebView.setOnClickListener {
+            webViewService.startWebViewActivity(
+                activity, "https://www.baidu.com",
+                "百度", false
+            )
         }
 
         val p1 = ProgressBarModel(0)
@@ -77,9 +85,6 @@ class HomeFragment : Fragment() {
             },500)*/
 
         }, 5000)
-
-
-
 
 
     }
