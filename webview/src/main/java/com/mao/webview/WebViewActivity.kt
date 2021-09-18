@@ -36,7 +36,15 @@ class WebViewActivity : AppCompatActivity() {
         }
 
         // mBinding = DataBindingUtil.setContentView(this,R.layout.activity_webview)
-        mBinding.webview.settings.javaScriptEnabled = true
-        mBinding.webview.loadUrl(intent.getStringExtra(URL) ?: "")
+
+        supportFragmentManager.beginTransaction().replace(
+            mBinding.webViewFragment.id,
+            WebViewFragment.getInstance(intent.getStringExtra(URL) ?: "", true)
+        ).commitAllowingStateLoss()
+
+    }
+
+    fun updateTiTle(title: String?) {
+        mBinding.title.text = title
     }
 }

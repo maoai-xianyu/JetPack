@@ -1,6 +1,7 @@
 package com.mao.common.autoservice
 
 import android.content.Context
+import androidx.fragment.app.Fragment
 
 /**
  *
@@ -15,4 +16,10 @@ interface IWebViewInterface {
         title: String,
         isShowActionBar: Boolean
     )
+
+
+    fun getWebViewFragment(
+        url: String,
+        canNativeRefresh: Boolean
+    ): Fragment
 }

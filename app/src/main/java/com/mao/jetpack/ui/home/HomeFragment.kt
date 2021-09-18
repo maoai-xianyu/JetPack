@@ -15,6 +15,7 @@ import com.mao.jetpack.adapter.ProgressShowAdapter
 import com.mao.jetpack.model.ProgressBarModel
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
+import com.mao.jetpack.ui.task.OneTaskActivity
 import com.mao.webview.WebViewActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.util.*
@@ -51,8 +52,12 @@ class HomeFragment : Fragment() {
         btnWebView.setOnClickListener {
             webViewService.startWebViewActivity(
                 activity, "https://www.baidu.com",
-                "百度", false
+                "百度", true
             )
+        }
+
+        btnTask.setOnClickListener {
+            startActivity(Intent(activity, OneTaskActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)

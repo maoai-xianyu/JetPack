@@ -2,6 +2,7 @@ package com.mao.webview
 
 import android.content.Context
 import android.content.Intent
+import androidx.fragment.app.Fragment
 import com.mao.common.autoservice.IWebViewInterface
 import com.google.auto.service.AutoService
 import com.mao.webview.utils.TITLE
@@ -34,4 +35,10 @@ class WebViewServiceImpl : IWebViewInterface {
         }
     }
 
+    override fun getWebViewFragment(
+        url: String,
+        canNativeRefresh: Boolean
+    ): Fragment {
+        return WebViewFragment.getInstance(url, canNativeRefresh)
+    }
 }
