@@ -11,11 +11,14 @@ import android.app.Application
 open class BaseApplication : Application() {
 
     companion object {
-        var sApplication: Application? = null
+        @JvmStatic
+        @get:JvmName("currentApplication")
+        lateinit var currentApplication: Application
+            private set
     }
 
     override fun onCreate() {
         super.onCreate()
-        sApplication = this
+        currentApplication = this
     }
 }
