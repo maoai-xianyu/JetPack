@@ -81,5 +81,10 @@ dependencies {
 
     implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
 
+    // 轮子哥 shapeView
+    /*implementation 'com.github.getActivity:ShapeView:6.0'*/
+
+    implementation 'com.github.lihangleo2:ShadowLayout:3.2.3'
+
     implementation project(':webview')
 }

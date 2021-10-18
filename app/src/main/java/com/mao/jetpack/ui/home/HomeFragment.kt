@@ -13,12 +13,11 @@ import com.mao.common.ext.webViewService
 import com.mao.jetpack.R
 import com.mao.jetpack.adapter.ProgressShowAdapter
 import com.mao.jetpack.model.ProgressBarModel
+import com.mao.jetpack.ui.button.ButtonShapeActivity
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
 import com.mao.jetpack.ui.task.OneTaskActivity
-import com.mao.webview.WebViewActivity
 import kotlinx.android.synthetic.main.fragment_home.*
-import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -58,6 +57,10 @@ class HomeFragment : Fragment() {
 
         btnTask.setOnClickListener {
             startActivity(Intent(activity, OneTaskActivity::class.java))
+        }
+
+        btnButton.setOnClickListener {
+            startActivity(Intent(activity, ButtonShapeActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)

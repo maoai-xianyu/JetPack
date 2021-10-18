@@ -18,4 +18,12 @@
     <color name="color_divider">#f2f2f2</color>
     <color name="black">#000000</color>
     <color name="transparent">@android:color/transparent</color>
+
+    <array name="movie_progress_gradient">
+        <item>@color/mine_vip_progress_start</item>
+        <item>@color/mine_vip_progress_end</item>
+    </array>
+
+    <color name="mine_vip_progress_start">#FFFFFF</color>
+    <color name="mine_vip_progress_end">#f4827f</color>
 </resources>
