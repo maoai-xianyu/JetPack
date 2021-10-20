@@ -11,13 +11,15 @@
         <entry key="app/src/main/res/drawable/action_movie_list_btn.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/action_movie_list_btn_gr.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/action_movie_list_btn_sell.xml" value="0.38333333333333336" />
+        <entry key="app/src/main/res/drawable/ic_mail_black_24dp.xml" value="0.3712962962962963" />
+        <entry key="app/src/main/res/drawable/ic_play_circle_filled_black_24dp.xml" value="0.3712962962962963" />
         <entry key="app/src/main/res/drawable/maoyan_mc_vote_progress_bar.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/shape_button_color.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/shape_button_sell.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/drawable/shape_button_sell_1.xml" value="0.375" />
         <entry key="app/src/main/res/drawable/shape_button_sell_2.xml" value="0.375" />
         <entry key="app/src/main/res/drawable/windows_bg.xml" value="0.38333333333333336" />
-        <entry key="app/src/main/res/layout/activity_button_shape.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_button_shape.xml" value="0.2593283582089552" />
         <entry key="app/src/main/res/layout/activity_constraintlayout.xml" value="0.2617753623188406" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19047619047619047" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19047619047619047" />
