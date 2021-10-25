@@ -199,10 +199,10 @@
                 android:layout_height="26dp"
                 android:background="#3c9fe6"
                 android:gravity="center"
-                android:drawableLeft="@drawable/action_movie_list_btn_vodplay_icon"
+                android:drawableLeft="@drawable/play_vod"
                 android:paddingLeft="3dp"
-                android:paddingRight="10dp"
-                android:text="预售"
+                android:paddingRight="3dp"
+                android:text=" 预售"
                 android:textColor="#fff"
                 android:textSize="13sp" />
         </com.mao.jetpack.widget.shadow.ShadowLayout>
