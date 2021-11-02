@@ -184,8 +184,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:background="#f3f3f3"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:background="#f3f3f3">
 
             <com.mao.jetpack.widget.shadow.ShadowLayout
                 android:layout_width="wrap_content"
@@ -196,8 +196,8 @@
                 app:hl_shadowColor="#2EFFFFFF"
                 app:hl_shadowHiddenTop="true"
                 app:hl_shadowLimit="1dp"
-                app:hl_shadowSymmetry="true"
-                app:hl_shadowOffsetY="1dp">
+                app:hl_shadowOffsetY="1dp"
+                app:hl_shadowSymmetry="true">
 
                 <!-- android:background="@drawable/shape_button_sell_2"-->
                 <TextView
@@ -212,8 +212,6 @@
 
 
         </FrameLayout>
-
-
 
 
         <com.mao.jetpack.widget.shadow.ShadowLayout
@@ -250,10 +248,10 @@
             android:layout_marginTop="10dp"
             app:hl_cornerRadius="100dp"
             app:hl_shadowColor="#12000000"
-            app:hl_strokeColor="#12000000"
             app:hl_shadowLimit="1dp"
-            app:hl_strokeWith="1px"
-            app:hl_shadowOffsetY="1dp">
+            app:hl_shadowOffsetY="1dp"
+            app:hl_strokeColor="#12000000"
+            app:hl_strokeWith="1px">
 
             <TextView
                 android:id="@+id/tv4"
@@ -308,8 +306,8 @@
                 android:layout_width="52dp"
                 android:layout_height="26dp"
                 android:background="#3c9fe6"
-                android:gravity="center"
                 android:drawableLeft="@drawable/play_vod"
+                android:gravity="center"
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp"
                 android:text=" 预售"
@@ -355,37 +353,6 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-
-        </com.mao.jetpack.widget.shadow.ShadowLayout>
-
-
-
-        <com.mao.jetpack.widget.shadow.ShadowLayout
-            android:id="@+id/ShadowLayout_Test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            app:hl_cornerRadius="100dp"
-            app:hl_layoutBackground="#fff"
-            app:hl_layoutBackground_true="#71E335"
-            app:hl_shadowColor="#4D0E5BE8"
-            app:hl_shadowLimit="30dp"
-            app:hl_shapeMode="pressed"
-            app:hl_strokeColor="#4D0E5BE8"
-            app:hl_strokeColor_true="#ff0000"
-            app:hl_textColor_true="#fff">
-
-            <TextView
-                android:id="@+id/txt_collect"
-                android:layout_width="wrap_content"
-                android:layout_height="36dp"
-                android:gravity="center"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:text="填充 + 阴影 + 边框，请点击"
-                android:textColor="#000" />
 
         </com.mao.jetpack.widget.shadow.ShadowLayout>
 
