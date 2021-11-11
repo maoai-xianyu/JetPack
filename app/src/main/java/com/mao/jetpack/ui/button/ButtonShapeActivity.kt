@@ -26,27 +26,23 @@ class ButtonShapeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.tv.setOnClickListener {
+        /*binding.tv.setOnClickListener {
             if (wish) {
                 wish = false
                 binding.tv.text = "想看"
                 binding.tv.setTextColor(Color.parseColor("#FFFFFF"))
                 binding.tv.setBackgroundColor(Color.parseColor("#FAAF00"))
-                binding.shadowLayout.setShadowColor(Color.parseColor("#2EFAAF00"))
-                binding.shadowLayout.setStrokeWidth(0)
+                binding.shadowLayout.setmShadowColor(Color.parseColor("#2EFAAF00"))
 
             } else {
                 wish = true
                 binding.tv.text = "已想看"
                 binding.tv.setTextColor(Color.parseColor("#666666"))
                 binding.tv.setBackgroundColor(Color.parseColor("#FFFFFF"))
-                binding.shadowLayout.setShadowColor(Color.parseColor("#0d000000"))
-                //binding.shadowLayout.setStrokeColor(Color.parseColor("#0d000000"))
-                binding.shadowLayout.setStrokeColor(Color.parseColor("#2E000000"))
-                binding.shadowLayout.setStrokeWidth(10)
+                binding.shadowLayout.setmShadowColor(Color.parseColor("#0d000000"))
             }
         }
-
+*/
 
     }
 
