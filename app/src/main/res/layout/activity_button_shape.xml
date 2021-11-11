@@ -102,13 +102,14 @@
             android:textStyle="bold" />
         
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:id="@+id/mShadowLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="2dp"
             app:hl_cornerRadius="100dp"
+            app:hl_shadowBackColor="#f03d37"
             app:hl_shadowColor="#2Ef03d37"
             app:hl_shadowLimit="2dp"
             app:hl_dy="1dp"
@@ -118,23 +119,23 @@
             <TextView
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#f03d37"
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="购票"
                 android:textColor="#fff"
                 android:textSize="13sp" />
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="2dp"
             app:hl_cornerRadius="100dp"
             app:hl_shadowColor="#2E3c9fe6"
+            app:hl_shadowBackColor="#3c9fe6"
             app:hl_shadowLimit="1dp"
             app:hl_dy="1dp"
             app:hl_isSym="true">
@@ -142,17 +143,16 @@
             <TextView
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#3c9fe6"
                 android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="预售"
                 android:textColor="#fff"
                 android:textSize="13sp" />
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:id="@+id/shadowLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,6 +160,7 @@
             android:layout_marginEnd="2dp"
             app:hl_cornerRadius="100dp"
             app:hl_shadowColor="#2Efaaf00"
+            app:hl_shadowBackColor="#faaf00"
             app:hl_shadowLimit="1dp"
             app:hl_dy="1dp"
             app:hl_isSym="true">
@@ -168,22 +169,22 @@
                 android:id="@+id/tv"
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#faaf00"
                 android:gravity="center"
                 android:text="想看"
                 android:textColor="#fff"
                 android:textSize="13sp" />
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#f3f3f3">
 
-            <com.lihang.ShadowLayout
+            <com.mao.jetpack.widget.shadow.ShadowLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                app:hl_shadowBackColor="#FFFFFF"
                 android:layout_marginEnd="2dp"
                 app:hl_cornerRadius="100dp"
                 app:hl_shadowColor="#2EFFFFFF"
@@ -195,24 +196,24 @@
                 <TextView
                     android:layout_width="52dp"
                     android:layout_height="26dp"
-                    android:background="#FFFFFF"
                     android:gravity="center"
                     android:text="已想看"
                     android:textColor="#666666"
                     android:textSize="13sp" />
-            </com.lihang.ShadowLayout>
+            </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
         </FrameLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:id="@+id/shadowLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="2dp"
             app:hl_cornerRadius="100dp"
+            app:hl_shadowBackColor="#FFFFFF"
             app:hl_shadowColor="#0d000000"
             app:hl_shadowLimit="2dp"
             app:hl_dy="1dp"
@@ -223,20 +224,20 @@
                 android:id="@+id/tv1"
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#FFFFFF"
                 android:gravity="center"
                 android:text="已想看"
                 android:textColor="#666666"
                 android:textSize="13sp" />
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             app:hl_cornerRadius="100dp"
+            app:hl_shadowBackColor="#FFFFFF"
             app:hl_shadowColor="#12000000"
             app:hl_shadowLimit="2dp"
             app:hl_isSym="true"
@@ -246,21 +247,21 @@
                 android:id="@+id/tv4"
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#FFFFFF"
                 android:gravity="center"
                 android:text="已想看"
                 android:textColor="#666666"
                 android:textSize="13sp" />
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:id="@+id/ShadowLayout_Test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             app:hl_cornerRadius="100dp"
+            app:hl_shadowBackColor="#FFFFFF"
             app:hl_shadowColor="#2a000000"
             app:hl_shadowLimit="2dp"
             app:hl_dy="1dp">
@@ -269,19 +270,19 @@
                 android:id="@+id/txt_collect"
                 android:layout_width="52dp"
                 android:layout_height="26dp"
-                android:background="#FFFFFF"
                 android:gravity="center"
                 android:text="已填充"
                 android:textColor="#666666" />
 
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
 
 
-        <com.lihang.ShadowLayout
+        <com.mao.jetpack.widget.shadow.ShadowLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="2dp"
+            app:hl_shadowBackColor="#3c9fe6"
             app:hl_cornerRadius="100dp"
             app:hl_shadowColor="#2E3c9fe6"
             app:hl_shadowLimit="2dp"
@@ -292,7 +293,6 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="52dp"
                 android:layout_height="wrap_content"
-                android:background="#3c9fe6"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -314,7 +314,12 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-        </com.lihang.ShadowLayout>
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+
+
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -349,6 +354,245 @@
             android:layout_marginEnd="8dp"
             android:background="@drawable/action_movie_list_btn_sell"
             android:text="购票" />
+
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cardview"
+            android:textColor="@color/black"
+            android:background="@color/color_f4f"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            app:cardBackgroundColor="#faaf00"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvW"
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="想看"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="#f03d37"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="购票"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="#3c9fe6"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="预售"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="#fff"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="100dp">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="已想看"
+
+                android:textColor="#666666"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="#faaf00"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvChange"
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="想看"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="#3c9fe6"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="点映"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="cardview 背景色是没有"
+            android:textColor="@color/black"
+            android:background="@color/color_f4f"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="预售"
+                android:background="#3c9fe6"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="预售"
+                android:background="#faaf00"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="预售"
+                android:background="#f03d37"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="已想看"
+                android:background="#ffffff"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            app:cardCornerRadius="100dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:text="点映"
+                android:background="#3C9FE6"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

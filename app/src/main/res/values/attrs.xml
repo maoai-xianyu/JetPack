@@ -230,43 +230,43 @@
     </declare-styleable>
 
 
-    <!--<declare-styleable name="ShadowLayout">
-        &lt;!&ndash;阴影的圆角大小&ndash;&gt;
+    <declare-styleable name="ShadowLayout">
+        <!--阴影的圆角大小-->
 
         <attr format="dimension" name="hl_cornerRadius"/>
         <attr format="dimension" name="hl_cornerRadius_leftTop"/>
         <attr format="dimension" name="hl_cornerRadius_rigthTop"/>
         <attr format="dimension" name="hl_cornerRadius_leftBottom"/>
         <attr format="dimension" name="hl_cornerRadius_rightBottom"/>
-        &lt;!&ndash;阴影的扩散范围(也可以理解为扩散程度)&ndash;&gt;
+        <!--阴影的扩散范围(也可以理解为扩散程度)-->
         <attr format="dimension" name="hl_shadowLimit"/>
         <attr format="color" name="hl_shadowColor"/>
         <attr format="color" name="hl_shadowBackColor"/>
         <attr format="color" name="hl_shadowBackColorClicked"/>
-        &lt;!&ndash;x轴的偏移量&ndash;&gt;
+        <!--x轴的偏移量-->
         <attr format="dimension" name="hl_dx"/>
-        &lt;!&ndash;y轴的偏移量&ndash;&gt;
+        <!--y轴的偏移量-->
         <attr format="dimension" name="hl_dy"/>
-        &lt;!&ndash;左边是否显示阴影&ndash;&gt;
+        <!--左边是否显示阴影-->
         <attr format="boolean" name="hl_leftShow"/>
-        &lt;!&ndash;右边是否显示阴影&ndash;&gt;
+        <!--右边是否显示阴影-->
         <attr format="boolean" name="hl_rightShow"/>
-        &lt;!&ndash;上边是否显示阴影&ndash;&gt;
+        <!--上边是否显示阴影-->
         <attr format="boolean" name="hl_topShow"/>
-        &lt;!&ndash;下面是否显示阴影&ndash;&gt;
+        <!--下面是否显示阴影-->
         <attr format="boolean" name="hl_bottomShow"/>
 
-        &lt;!&ndash; 新增selector样式，是pressed叫是sectored还是2者都需要 &ndash;&gt;
+        <!-- 新增selector样式，是pressed叫是sectored还是2者都需要 -->
         <attr name="hl_selectorMode">
             <flag name="pressed" value="1"/>
             <flag name="selected" value="2"/>
         </attr>
 
-        &lt;!&ndash;        是否要显示应用，可能有只想用shape这块，不想要阴影&ndash;&gt;
+        <!--        是否要显示应用，可能有只想用shape这块，不想要阴影-->
         <attr format="boolean" name="hl_isShowShadow"/>
 
-        &lt;!&ndash;控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走&ndash;&gt;
+        <!--控件区域是否对称，默认是对称。不对称的话，那么控件区域随着阴影区域走-->
         <attr format="boolean" name="hl_isSym"/>
 
-    </declare-styleable>-->
+    </declare-styleable>
 </resources>
