@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.deeplink.WebActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llleft"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/llright"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="阴影效果glide"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:id="@+id/mShadowLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="2dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#2Ef03d37"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_shadowSymmetry="true"
+            app:hl_strokeColor="#2Ef03d37">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#f03d37"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="购票"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="2dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#2E3c9fe6"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_shadowSymmetry="true"
+            app:hl_strokeColor="#2E3c9fe6">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#3c9fe6"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="预售"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="glide 点击想看"
+                android:textColor="#ff0000"
+                android:textStyle="bold" />
+
+
+            <com.mao.jetpack.widget.shadow.ShadowLayout
+                android:id="@+id/shadowLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="2dp"
+                app:hl_cornerRadius="100dp"
+                app:hl_shadowColor="#2Efaaf00"
+                app:hl_shadowLimit="2dp"
+                app:hl_shadowOffsetY="1dp"
+                app:hl_shadowSymmetry="true"
+                app:hl_strokeColor="#2Efaaf00">
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="52dp"
+                    android:layout_height="26dp"
+                    android:background="#faaf00"
+                    android:gravity="center"
+                    android:text="想看"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+            </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+        </RelativeLayout>
+
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f3f3f3">
+
+            <com.mao.jetpack.widget.shadow.ShadowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="2dp"
+                app:hl_cornerRadius="100dp"
+                app:hl_shadowColor="#12000000"
+                app:hl_shadowLimit="2dp"
+                app:hl_shadowOffsetY="1dp"
+                app:hl_shadowSymmetry="true"
+                app:hl_strokeColor="#12000000">
+
+                <!-- android:background="@drawable/shape_button_sell_2"-->
+                <TextView
+                    android:layout_width="52dp"
+                    android:layout_height="26dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="已想看"
+                    android:textColor="#666666"
+                    android:textSize="13sp" />
+            </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+        </FrameLayout>
+
+
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#12000000"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_strokeColor="#12000000">
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="已想看"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#2Efaaf00"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_shadowSymmetry="true"
+            app:hl_strokeColor="#2Efaaf00">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#faaf00"
+                android:gravity="center"
+                android:text="想看"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:id="@+id/ShadowLayout_Test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#12000000"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_strokeColor="#12000000">
+
+            <TextView
+                android:id="@+id/txt_collect"
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="已填充"
+                android:textColor="#666666" />
+
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="2dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#2E3c9fe6"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_shadowSymmetry="true"
+            app:hl_strokeColor="#2E3c9fe6">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#3c9fe6"
+                android:drawableLeft="@drawable/play_vod"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text=" 预售"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+        <com.mao.jetpack.widget.shadow.ShadowLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="2dp"
+            app:hl_cornerRadius="100dp"
+            app:hl_shadowColor="#2E3c9fe6"
+            app:hl_shadowLimit="2dp"
+            app:hl_shadowOffsetY="1dp"
+            app:hl_shadowSymmetry="true"
+            app:hl_strokeColor="#2E3c9fe6">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:background="#3c9fe6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/action_movie_list_btn_vodplay_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:text="预售"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </com.mao.jetpack.widget.shadow.ShadowLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llright"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/llleft"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="阴影效果Picasso"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="2dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#2Ef03d37"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#2Ef03d37">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#f03d37"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="购票"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="2dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#2E3c9fe6"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#2E3c9fe6">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#3c9fe6"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="预售"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="picasso 点击想看"
+                android:textColor="#ff0000"
+                android:textStyle="bold" />
+
+            <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+                android:id="@+id/shadowLayoutMY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:my_cornerRadius="100dp"
+                app:my_shadowColor="#2Efaaf00"
+                app:my_shadowLimit="2dp"
+                app:my_shadowOffsetY="1dp"
+                app:my_shadowSymmetry="true"
+                app:my_strokeColor="#2Efaaf00">
+
+                <TextView
+                    android:id="@+id/tvMY"
+                    android:layout_width="52dp"
+                    android:layout_height="26dp"
+                    android:background="#faaf00"
+                    android:gravity="center"
+                    android:text="想看"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+            </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#f3f3f3">
+
+            <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="2dp"
+                app:my_cornerRadius="100dp"
+                app:my_shadowColor="#12000000"
+                app:my_shadowLimit="2dp"
+                app:my_shadowOffsetY="1dp"
+                app:my_shadowSymmetry="true"
+                app:my_strokeColor="#12000000">
+
+                <TextView
+                    android:layout_width="52dp"
+                    android:layout_height="26dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="已想看"
+                    android:textColor="#666666"
+                    android:textSize="13sp" />
+            </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        </FrameLayout>
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#12000000"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#12000000">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="已想看"
+                android:textColor="#666666"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#2Efaaf00"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#2Efaaf00">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#faaf00"
+                android:gravity="center"
+                android:text="想看"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#12000000"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#12000000">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:text="已填充"
+                android:textColor="#666666" />
+
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="2dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#2E3c9fe6"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#2E3c9fe6">
+
+            <TextView
+                android:layout_width="52dp"
+                android:layout_height="26dp"
+                android:background="#3c9fe6"
+                android:drawableLeft="@drawable/play_vod"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text=" 预售"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+
+
+        <com.mao.jetpack.widget.shadowother.ShadowLayoutMY
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="2dp"
+            app:my_cornerRadius="100dp"
+            app:my_shadowColor="#2E3c9fe6"
+            app:my_shadowLimit="2dp"
+            app:my_shadowOffsetY="1dp"
+            app:my_shadowSymmetry="true"
+            app:my_strokeColor="#2E3c9fe6">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="52dp"
+                android:layout_height="wrap_content"
+                android:background="#3c9fe6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/action_movie_list_btn_vodplay_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:text="预售"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </com.mao.jetpack.widget.shadowother.ShadowLayoutMY>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

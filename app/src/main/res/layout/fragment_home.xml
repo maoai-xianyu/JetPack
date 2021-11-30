@@ -22,12 +22,11 @@
         android:layout_height="35dp"
         android:background="@null"
         android:max="100"
+        android:layout_marginTop="20dp"
         android:progressDrawable="@drawable/maoyan_mc_vote_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv"
-        app:layout_constraintTop_toTopOf="parent"
         tools:progress="40" />
 
     <TextView
@@ -39,10 +38,9 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -172,7 +170,28 @@
         app:iconTint="@color/color_theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTask"
+        app:layout_constraintTop_toBottomOf="@+id/btnButton"
+        tools:icon="@drawable/icon_cell_like"
+        tools:iconTint="@color/color_3d3"
+        tools:textColor="@color/color_3d3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnButtonP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="跳转 shadow P"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:cornerRadius="0dp"
+        app:icon="@drawable/icon_cell_like"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:iconTint="@color/color_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnButtonBanner"
         tools:icon="@drawable/icon_cell_like"
         tools:iconTint="@color/color_3d3"
         tools:textColor="@color/color_3d3" />
