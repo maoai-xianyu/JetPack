@@ -172,7 +172,7 @@
         app:iconTint="@color/color_theme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTask"
+        app:layout_constraintTop_toBottomOf="@+id/btnButton"
         tools:icon="@drawable/icon_cell_like"
         tools:iconTint="@color/color_3d3"
         tools:textColor="@color/color_3d3" />
