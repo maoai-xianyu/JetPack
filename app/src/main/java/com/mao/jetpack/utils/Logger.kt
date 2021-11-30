@@ -22,7 +22,10 @@ object Logger {
                 Unit
             }
         } else {
-            ::println
+            { msg: Any? ->
+                println("Coroutine  ${msg.toString()}" )
+                Unit
+            }
         }
     }
 
@@ -33,7 +36,10 @@ object Logger {
                 Unit
             }
         } else {
-            System.err::println
+            { msg: Any? ->
+                System.err.println("Coroutine  ${msg.toString()}" )
+                Unit
+            }
         }
     }
 

@@ -37,9 +37,9 @@ android {
 dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.androidXVersion"
     implementation "com.google.android.material:material:$rootProject.androidXMaterial"
-    annotationProcessor rootProject.googleAutoServiceDependency
-    implementation rootProject.googleAutoServiceDependency
-    kapt rootProject.googleAutoServiceDependency
+    annotationProcessor 'com.google.auto.service:auto-service:1.0.1'
+    implementation 'com.google.auto.service:auto-service:1.0.1'
+    kapt 'com.google.auto.service:auto-service:1.0.1'
     //kapt "com.google.auto.service:auto-service:1.0"
     //implementation "com.google.auto.service:auto-service:1.0"
     api project(":common")
