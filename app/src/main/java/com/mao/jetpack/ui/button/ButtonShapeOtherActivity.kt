@@ -1,5 +1,7 @@
 package com.mao.jetpack.ui.button
 
+import android.R
+import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
@@ -67,6 +69,20 @@ class ButtonShapeOtherActivity : AppCompatActivity() {
                 binding.shadowLayoutMY.setStrokeColor(Color.parseColor("#12000000"))
             }
         }
+
+
+        binding.tvMMM.setTextColor(
+            ColorStateList(
+                arrayOf(
+                    intArrayOf(
+                        R.attr.state_selected
+                    ), IntArray(0)
+                ), intArrayOf(Color.parseColor("#d54544"), Color.parseColor("#696969"))
+            )
+        )
+
+
+        kotlin.runCatching {  }
 
     }
 
