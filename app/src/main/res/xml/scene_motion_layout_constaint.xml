@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--完成 MotionScene 引入布局的 ConstraintSet 的 id-->
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
+
+        <!--
+        添加控件的点击事件，
+        targetId：点击事件控件的id，
+        clickAction：点击事件点击后触发的效果-->
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/fab_favourite" />
+
+        <!--
+         touchRegionId 那一块区域响应我的点击事件，需要修改响应事件 OnClick
+         touchAnchorSide 再滑动过程中相应事件
+         dragDirection 响应事件的方向
+         onTouchUp  决定抬手时候的操作
+                    autoComplete  到了动画的最终状态
+                    stop 滑到哪里停到哪里
+        -->
+
+        <OnSwipe
+            app:touchRegionId="@+id/image_film_cover"
+            app:dragDirection="dragDown"
+            app:onTouchUp="stop"
+            />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <!-- 将对应结束的布局的节点 更换为 Constraint-->
+
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/image_film_cover"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/film_cover"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/fab_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_bookmark_24dp"
+            android:tint="@color/colorBookMark"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </ConstraintSet>
+
+</MotionScene>

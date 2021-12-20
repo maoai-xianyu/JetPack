@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+     motionInterpolator 整个动画的插值器
+    -->
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000"
+        app:motionInterpolator="bounce">
+
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/view" />
+
+        <!--<OnSwipe
+            app:dragDirection="dragDown"
+            app:touchAnchorSide="bottom"
+            app:touchAnchorId="@id/view" />-->
+
+    </Transition>
+
+
+    <!--的位移动画  开始场景-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/view">
+            <!--弧线直线运动
+            startVertical 垂直方向的弧线运动
+            startHorizontal 水平方向的弧线运动
+            transitionEasing  使用模型，运动过程中的动效
+            app:transitionEasing="decelerate"
+            -->
+            <Motion
+                app:pathMotionArc="startVertical"
+                app:transitionEasing="decelerate" />
+
+            <Layout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/color_theme" />
+
+        </Constraint>
+    </ConstraintSet>
+
+    <!--结束场景-->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/view">
+            <Layout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- 设置 结束的动画 -->
+            <Transform
+                android:rotation="360"
+                android:scaleX="1.33"
+                android:scaleY="1.33" />
+
+            <!--动画还有别的属性要改，还可以通过自定义属性进行-->
+            <CustomAttribute
+                app:attributeName="backgroundColor"
+                app:customColorValue="@color/colorPrimary" />
+
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

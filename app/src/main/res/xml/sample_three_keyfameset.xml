@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--
+     motionInterpolator 整个动画的插值器
+    -->
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="3000"
+        app:motionInterpolator="bounce">
+
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/view" />
+
+        <!--<OnSwipe
+           app:dragDirection="dragDown"
+           app:touchAnchorSide="bottom"
+           app:touchAnchorId="@id/view" />-->
+
+        <KeyFrameSet>
+
+            <!--关键帧
+
+                  app:framePosition="50"  动画进行的百分之多少
+            -->
+            <KeyAttribute
+                android:rotation="360"
+                android:scaleX="2"
+                android:scaleY="2"
+                app:framePosition="50"
+                app:motionTarget="@id/view" />
+
+
+            <!--位置关键帧  指定移动的一个位置，修改动画过程中的路劲效果
+
+                percentX  Z轴的0.75方向
+                percentY  Y轴的0.25 方向
+                keyPositionType 这三个配合使用，相对于motionLayout
+            -->
+
+            <KeyPosition
+                app:framePosition="50"
+                app:pathMotionArc="flip"
+                app:motionTarget="@id/view"
+                app:keyPositionType="deltaRelative"
+                app:percentX="0.75"
+                app:percentY="0.25"
+                />
+        </KeyFrameSet>
+
+
+    </Transition>
+
+
+    <!--的位移动画  开始场景-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/view">
+            <!--弧线直线运动
+            startVertical 垂直方向的弧线运动
+            startHorizontal 水平方向的弧线运动
+            transitionEasing  使用模型，运动过程中的动效
+            app:transitionEasing="decelerate"
+            -->
+            <Motion
+                app:pathMotionArc="startVertical"
+                app:transitionEasing="decelerate" />
+
+            <Layout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </Constraint>
+    </ConstraintSet>
+
+    <!--结束场景-->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/view">
+            <Layout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

@@ -16,6 +16,7 @@ import com.mao.jetpack.R
 import com.mao.jetpack.databinding.FragmentNotificationsBinding
 import com.mao.jetpack.ui.deeplink.WebActivity
 import com.mao.jetpack.ui.constraintLayout.ConstraintLayoutActivity
+import com.mao.jetpack.ui.motionlayout.MotionLayoutActivity
 import kotlinx.android.synthetic.main.fragment_notifications.view.*
 
 class NotificationsFragment : Fragment() {
@@ -49,6 +50,10 @@ class NotificationsFragment : Fragment() {
 
         bind.btnJumpC.setOnClickListener {
             startActivity(Intent(context, ConstraintLayoutActivity::class.java))
+        }
+
+        bind.btnJumpC2.setOnClickListener {
+            startActivity(Intent(context, MotionLayoutActivity::class.java))
         }
 
 

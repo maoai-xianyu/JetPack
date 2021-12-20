@@ -30,6 +30,15 @@
         <activity android:name=".ui.room.RoomActivity" />
         <activity android:name=".ui.room.RoomSelectActivity" />
         <activity android:name=".ui.constraintLayout.ConstraintLayoutActivity" />
+        <activity android:name=".ui.motionlayout.MotionLayoutActivity" />
+        <activity android:name=".ui.motionlayout.MLObjectAnimator1Activity" />
+        <activity android:name=".ui.motionlayout.MLObjectAnimator2Activity" />
+        <activity android:name=".ui.motionlayout.GoActivity" />
+        <activity android:name=".ui.motionlayout.ConstraintSetExample" />
+        <activity android:name=".ui.motionlayout.MotionActivity" />
+        <activity android:name=".ui.motionlayout.MotionSampleActivity" />
+        <activity android:name=".ui.motionlayout.YoutubeLikeActivity" />
+        <activity android:name=".ui.motionlayout.HenCoderActivity" />
 
         <activity android:name=".ui.deeplink.WebActivity" />
         <activity android:name=".ui.deeplink.WebJavaActivity" />
