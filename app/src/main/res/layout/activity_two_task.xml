@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/btnJumpSelfOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="two task"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:backgroundTint="#ffffff"
+            app:cornerRadius="0dp"
+            app:icon="@drawable/icon_cell_like"
+            app:iconGravity="textStart"
+            app:iconPadding="4dp"
+            app:iconTint="@color/color_theme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:icon="@drawable/icon_cell_like"
+            tools:iconTint="@color/color_3d3"
+            tools:textColor="@color/color_3d3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

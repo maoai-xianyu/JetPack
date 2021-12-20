@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+
+    使用layer-list可以将多个drawable按照顺序层叠在一起显示，默认情况下，所有的item中的drawable都会自动根据它附上view的大小而进行缩放，
+
+    layer-list中的item是按照顺序从下往上叠加的，即先定义的item在下面，后面的依次往上面叠放
+    -->
+
+    <item>
+        <shape>
+            <solid android:color="#f4827f" />
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+    <item android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#f03d37" />
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+</layer-list>

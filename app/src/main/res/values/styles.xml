@@ -33,6 +33,17 @@
         <item name="android:elevation">0dp</item>
     </style>
 
+    <style name="movie_action_movie_list_button_style">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
 
     <style name="text_style">
         <item name="android:layout_width">wrap_content</item>

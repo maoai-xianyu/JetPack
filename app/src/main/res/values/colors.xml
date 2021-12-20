@@ -20,4 +20,24 @@
     <color name="transparent">@android:color/transparent</color>
     <color name="colorBookMark">#FFD600</color>
     <color name="textColor">#CCCCCC</color>
+    <array name="movie_progress_gradient">
+        <item>@color/mine_vip_progress_start</item>
+        <item>@color/mine_vip_progress_end</item>
+    </array>
+
+    <color name="mine_vip_progress_start">#FFFFFF</color>
+    <color name="mine_vip_progress_end">#f4827f</color>
+
+    <color name="maoyan_common_default_shadow_color">#2a000000</color>
+    <color name="maoyan_common_default_shadowback_color">#fff</color>
+    <color name="maoyan_common_default_textColor">#000</color>
+    <color name="shadow">#F2000000</color>
+    <color name="maoyan_adx_indicator_default_bg_color">#88eceef3</color>
+    <color name="maoyan_adx_indicator_default_selected_color">#ffffff</color>
+
+    <color name="banner_bottom_bar_bg_day">#65000000</color>
+    <color name="banner_bottom_bar_bg_night">#6508090a</color>
+    <color name="dot_bg">#00ff0000</color>
+    <color name="dot_select_color">#ffffffff</color>
+    <color name="dot_unselect_color">#50ffffff</color>
 </resources>

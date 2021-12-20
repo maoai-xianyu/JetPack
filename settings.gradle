@@ -1,2 +1,5 @@
 include ':app'
 rootProject.name = "JetPack"
+include ':webview'
+include ':common'
+include ':base'
