@@ -14,7 +14,7 @@ import android.widget.ImageView;
 /**
  * zhangkun
  */
-public class DotIndicatorView extends ImageView {
+public class DotIndicatorView extends androidx.appcompat.widget.AppCompatImageView {
 
     private Drawable drawable;
 
