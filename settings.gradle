@@ -3,3 +3,6 @@ rootProject.name = "JetPack"
 include ':webview'
 include ':common'
 include ':base'
+
+
+println "初始化阶段开始执行..."

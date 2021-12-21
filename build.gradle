@@ -40,3 +40,37 @@ ext {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+/**
+ * 配置阶段开始前的监听回调
+ */
+this.beforeEvaluate {
+    println "beforeEvaluate 配置阶段执行前..."
+}
+
+/**
+ * 配置阶段完成以后回调
+ */
+this.afterEvaluate {
+    println "afterEvaluate 配置阶段执行完毕..."
+}
+
+/**
+ * gradle执行完毕后的回调监听
+ */
+this.gradle.buildFinished {
+    println "gradle.buildFinished 执行阶段执行完毕..."
+}
+
+// 等同于 beforeEvaluate
+this.gradle.beforeProject {
+    println "gradle.beforeProject 配置执行前..."
+}
+
+// 等同于 afterEvaluate
+this.gradle.afterProject {
+    println "gradle.afterProject 配置执行结束..."
+}
+
+// 添加监听
+// this.gradle.addListener()
