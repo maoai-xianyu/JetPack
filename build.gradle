@@ -74,3 +74,50 @@ this.gradle.afterProject {
 
 // 添加监听
 // this.gradle.addListener()
+
+
+/**
+ * project相关api讲解
+ */
+//this.getProject()
+//this.getSubProject()
+
+def getProject() {
+    println '------------'
+    println 'Root project'
+    println '------------'
+    this.getAllprojects().eachWithIndex { Project project, int index ->
+
+        if (index == 0) {
+            println "Root project :${project.name}"
+        }else {
+            println "+--- project :${project.name}"
+        }
+    }
+}
+
+// 获取子project
+def getSubProject() {
+    println '------------'
+    println 'Sub project'
+    println '------------'
+    this.getSubprojects().eachWithIndex { Project project, int index ->
+        println "+--- project :${project.name}"
+    }
+}
+
+//this.getParentProject()
+
+// 获取父 project
+def getParentProject() {
+    def parent = this.getParent().name
+    println "Parent project ${parent}"
+}
+
+//this.getRootPro()
+// 获取 root name
+def getRootPro(){
+    def name = this.getRootProject().name
+    println "the root project is : ${name}"
+}
+
