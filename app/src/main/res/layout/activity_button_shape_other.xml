@@ -122,7 +122,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#f3f3f3">
+            android:background="#222222">
 
             <com.mao.jetpack.widget.shadow.ShadowLayout
                 android:layout_width="wrap_content"
@@ -130,20 +130,21 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="2dp"
                 app:hl_cornerRadius="100dp"
-                app:hl_shadowColor="#12000000"
+                app:hl_layoutBackground="@color/transparent"
+                app:hl_shadowColor="#33ffffff"
                 app:hl_shadowLimit="2dp"
                 app:hl_shadowOffsetY="1dp"
                 app:hl_shadowSymmetry="true"
-                app:hl_strokeColor="#12000000">
+                app:hl_strokeColor="#33ffffff">
 
                 <!-- android:background="@drawable/shape_button_sell_2"-->
                 <TextView
                     android:layout_width="52dp"
                     android:layout_height="26dp"
-                    android:background="#FFFFFF"
                     android:gravity="center"
+                    android:background="#33ffffff"
                     android:text="已想看"
-                    android:textColor="#666666"
+                    android:textColor="#99ffffff"
                     android:textSize="13sp" />
             </com.mao.jetpack.widget.shadow.ShadowLayout>
 
