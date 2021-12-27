@@ -15,6 +15,7 @@ import com.mao.jetpack.adapter.ProgressShowAdapter
 import com.mao.jetpack.model.ProgressBarModel
 import com.mao.jetpack.ui.banner.BannerActivity
 import com.mao.jetpack.ui.button.ButtonShapeActivity
+import com.mao.jetpack.ui.button.ButtonShapeOtherActivity
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
 import com.mao.jetpack.ui.task.OneTaskActivity
@@ -66,6 +67,10 @@ class HomeFragment : Fragment() {
 
         btnButtonBanner.setOnClickListener {
             startActivity(Intent(activity, BannerActivity::class.java))
+        }
+
+        btnButtonP.setOnClickListener {
+            startActivity(Intent(activity, ButtonShapeOtherActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)

@@ -40,4 +40,6 @@
     <color name="dot_bg">#00ff0000</color>
     <color name="dot_select_color">#ffffffff</color>
     <color name="dot_unselect_color">#50ffffff</color>
+    <color name="hex_696969">#696969</color>
+    <color name="hex_d54544">#d54544</color>
 </resources>

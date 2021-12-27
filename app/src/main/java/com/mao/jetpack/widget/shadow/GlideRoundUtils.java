@@ -6,10 +6,10 @@ import android.view.View;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.mao.jetpack.R;
+import com.squareup.picasso.PicassoDrawable;
 
 
 /**
@@ -31,10 +31,10 @@ class GlideRoundUtils {
                         .load(resourceId)
                         .transform(new CenterCrop(view.getContext()))
                         .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                        .into(new SimpleTarget<GlideDrawable>() {
+                        .into(new SimpleTarget<PicassoDrawable>() {
                             @Override
-                            public void onResourceReady(GlideDrawable resource,
-                                GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            public void onResourceReady(PicassoDrawable resource,
+                                GlideAnimation<? super PicassoDrawable> glideAnimation) {
                                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
                                     view.setBackgroundDrawable(resource);
                                 } else {
@@ -50,10 +50,10 @@ class GlideRoundUtils {
                     .load(resourceId)
                     .transform(new CenterCrop(view.getContext()))
                     .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                    .into(new SimpleTarget<GlideDrawable>() {
+                    .into(new SimpleTarget<PicassoDrawable>() {
                         @Override
-                        public void onResourceReady(GlideDrawable resource,
-                            GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        public void onResourceReady(PicassoDrawable resource,
+                            GlideAnimation<? super PicassoDrawable> glideAnimation) {
                             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
                                 view.setBackgroundDrawable(resource);
                             } else {
@@ -74,10 +74,10 @@ class GlideRoundUtils {
                         .load(resourceId)
                         .transform(new CenterCrop(view.getContext()), new RoundedCorners(view.getContext(), (int) cornerDipValue))
                         .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                        .into(new SimpleTarget<GlideDrawable>() {
+                        .into(new SimpleTarget<PicassoDrawable>() {
                             @Override
-                            public void onResourceReady(GlideDrawable resource,
-                                GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            public void onResourceReady(PicassoDrawable resource,
+                                GlideAnimation<? super PicassoDrawable> glideAnimation) {
                                 String lastTag = (String) view.getTag(R.id.action_container);
                                 if (lastTag.equals(currentTag)) {
                                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
@@ -96,10 +96,10 @@ class GlideRoundUtils {
                     .load(resourceId)
                     .transform(new CenterCrop(view.getContext()), new RoundedCorners(view.getContext(), (int) cornerDipValue))
                     .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                    .into(new SimpleTarget<GlideDrawable>() {
+                    .into(new SimpleTarget<PicassoDrawable>() {
                         @Override
-                        public void onResourceReady(GlideDrawable resource,
-                            GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        public void onResourceReady(PicassoDrawable resource,
+                            GlideAnimation<? super PicassoDrawable> glideAnimation) {
                             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
                                 view.setBackgroundDrawable(resource);
                             } else {
@@ -126,10 +126,10 @@ class GlideRoundUtils {
                     Glide.with(view.getContext())
                         .load(resourceId)
                         .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                        .into(new SimpleTarget<GlideDrawable>() {
+                        .into(new SimpleTarget<PicassoDrawable>() {
                             @Override
-                            public void onResourceReady(GlideDrawable resource,
-                                GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            public void onResourceReady(PicassoDrawable resource,
+                                GlideAnimation<? super PicassoDrawable> glideAnimation) {
                                 String lastTag = (String) view.getTag(R.id.action_container);
                                 if (lastTag.equals(currentTag)) {
                                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
@@ -147,10 +147,10 @@ class GlideRoundUtils {
                 Glide.with(view.getContext())
                     .load(resourceId)
                     .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                    .into(new SimpleTarget<GlideDrawable>() {
+                    .into(new SimpleTarget<PicassoDrawable>() {
                         @Override
-                        public void onResourceReady(GlideDrawable resource,
-                            GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        public void onResourceReady(PicassoDrawable resource,
+                            GlideAnimation<? super PicassoDrawable> glideAnimation) {
                             if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
                                 view.setBackgroundDrawable(resource);
                             } else {
@@ -179,10 +179,10 @@ class GlideRoundUtils {
                         .load(resourceId)
                         .bitmapTransform(transform)
                         .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                        .into(new SimpleTarget<GlideDrawable>() {
+                        .into(new SimpleTarget<PicassoDrawable>() {
                             @Override
-                            public void onResourceReady(GlideDrawable resource,
-                                GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            public void onResourceReady(PicassoDrawable resource,
+                                GlideAnimation<? super PicassoDrawable> glideAnimation) {
                                 String lastTag = (String) view.getTag(R.id.action_container);
                                 if (lastTag.equals(currentTag)) {
                                     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {
@@ -201,10 +201,10 @@ class GlideRoundUtils {
                     .load(resourceId)
                     .bitmapTransform(transform)
                     .override(view.getMeasuredWidth(), view.getMeasuredHeight())
-                    .into(new SimpleTarget<GlideDrawable>() {
+                    .into(new SimpleTarget<PicassoDrawable>() {
                         @Override
-                        public void onResourceReady(GlideDrawable resource,
-                            GlideAnimation<? super GlideDrawable> glideAnimation) {
+                        public void onResourceReady(PicassoDrawable resource,
+                            GlideAnimation<? super PicassoDrawable> glideAnimation) {
                             String lastTag = (String) view.getTag(R.id.action_container);
                             if (lastTag.equals(currentTag)) {
                                 if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN) {

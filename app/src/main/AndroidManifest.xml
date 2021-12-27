@@ -48,6 +48,7 @@
         <activity android:name=".ui.deeplink.WebJavaActivity" />
         <activity android:name=".ui.button.ButtonShapeActivity" />
         <activity android:name=".ui.banner.BannerActivity" />
+        <activity android:name=".ui.button.ButtonShapeOtherActivity" />
 
         <activity android:name=".ui.deeplink.DeepLinkActivity">
 
