@@ -123,3 +123,30 @@ def getRootPro(){
     println "the root project is : ${name}"
 }
 
+// 给子类添加 属性, 这样添加，可以之后可以删除 app 下的 build.gradle 中的配置
+// 一般不这样做
+project('app') { Project project ->
+    apply plugin: 'com.android.application'
+}
+
+project('base') { Project project ->
+    apply plugin: 'com.android.library'
+}
+
+// 配置当前结点工程和其subproject的所有的project
+allprojects {
+    group 'com.imooc'
+    version '1.0.0-release'
+}
+
+
+println "common - group ${ project('common').group }"
+
+
+// 不包括当前结点工程，只包含它的subproject
+subprojects { Project project ->
+    if (project.plugins.hasPlugin('com.android.library')) {
+        // 所有的库工程 引入maven的上传功能
+        apply  from : '../publishToMaven.gradle'
+    }
+}
