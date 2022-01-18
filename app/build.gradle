@@ -100,7 +100,7 @@ dependencies {
 
 McImageConfig {
     isCheckSize true //Whether to detect image size，default true
-    optimizeType "Compress"
+    optimizeType "ConvertWebp"
     //Optimize Type，"ConvertWebp" or "Compress"，default "Compress", "CompressWebp" is a better compression ratio but it don't support api < 18
     maxSize 1 * 1024 * 1024 //big image size threshold，default 1MB
     enableWhenDebug true //switch in debug build，default true
