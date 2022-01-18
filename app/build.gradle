@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'McImage'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -94,4 +95,26 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:10000.0.0.137'
+}
+
+
+McImageConfig {
+    isCheckSize true //Whether to detect image size，default true
+    optimizeType "Compress"
+    //Optimize Type，"ConvertWebp" or "Compress"，default "Compress", "CompressWebp" is a better compression ratio but it don't support api < 18
+    maxSize 1 * 1024 * 1024 //big image size threshold，default 1MB
+    enableWhenDebug true //switch in debug build，default true
+    isCheckPixels true // Whether to detect image pixels of width and height，default true
+    maxWidth 1000 //default 1000
+    maxHeight 1000 //default 1000
+    whiteList = [ //do not do any optimization for the images who in the list
+                  "icon_launcher.png"
+    ]
+    mctoolsDir "$rootDir"
+    isSupportAlphaWebp false
+    //Whether support convert the Image with Alpha chanel to Webp，default false, the images with alpha chanels will be compressed.if config true, its need api level >=18 or do some compatible measures
+    multiThread true  //Whether open multi-thread processing，default true
+    bigImageWhiteList = [
+            "hot_rank_head_bg.png"
+    ] //do not detect big size or large pixels for the images who in the list
 }
