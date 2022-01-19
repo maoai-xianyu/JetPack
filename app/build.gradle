@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply from: file('../common.gradle')
 
 android {
-    compileSdkVersion rootProject.compileSdkVersion
+    compileSdkVersion mCompileSdkVersion.toInteger()
     buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
