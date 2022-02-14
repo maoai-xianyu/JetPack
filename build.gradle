@@ -39,6 +39,9 @@ ext {
 }
 
 
+apply from: 'common.gradle'
+//apply from: this.file('common.gradle')
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
@@ -92,7 +95,7 @@ def getProject() {
 
         if (index == 0) {
             println "Root project :${project.name}"
-        }else {
+        } else {
             println "+--- project :${project.name}"
         }
     }
@@ -118,7 +121,7 @@ def getParentProject() {
 
 //this.getRootPro()
 // 获取 root name
-def getRootPro(){
+def getRootPro() {
     def name = this.getRootProject().name
     println "the root project is : ${name}"
 }
@@ -140,13 +143,34 @@ allprojects {
 }
 
 
-println "common - group ${ project('common').group }"
+println "common - group ${project('common').group}"
 
 
 // 不包括当前结点工程，只包含它的subproject
 subprojects { Project project ->
     if (project.plugins.hasPlugin('com.android.library')) {
         // 所有的库工程 引入maven的上传功能
-        apply  from : '../publishToMaven.gradle'
+        apply from: '../publishToMaven.gradle'
     }
+}
+
+
+println "the root file path is " + getRootDir().absolutePath
+println "the build file path is " + getBuildDir().absolutePath
+println "the project path is " + getProjectDir().absolutePath
+
+
+println "--- 文件内容 ${getContent('common.gradle')}"
+
+def getContent(String path) {
+    try {
+
+        def file = file(path)
+        // 相当于当前的project工成开始查找
+        return file.text
+
+    } catch (GradleException e) {
+        println "file not found.."
+    }
+    return null
 }

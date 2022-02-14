@@ -54,7 +54,7 @@
     <ConstraintSet android:id="@+id/start">
         <Constraint android:id="@+id/view">
 
-            <Motion app:pathMotionArc="startVertical" />
+            <Motion app:pathMotionArc="startVertical"/>
             <Layout
                 android:layout_width="80dp"
                 android:layout_height="80dp"

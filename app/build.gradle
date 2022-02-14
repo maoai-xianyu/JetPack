@@ -2,7 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply from: file('../common.gradle')
+
+//apply from: "$rootProject.projectDir/buildScript/common.gradle"
 
 android {
     compileSdkVersion mCompileSdkVersion.toInteger()
@@ -56,7 +57,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlin_version"
     implementation "androidx.appcompat:appcompat:$rootProject.androidXVersion"
     implementation "com.google.android.material:material:$rootProject.androidXMaterial"
-    implementation('androidx.core:core-ktx:1.6.0'){
+    implementation('androidx.core:core-ktx:1.6.0') {
         force = true
     }
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
@@ -95,4 +96,43 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:10000.0.0.137'
+
+    //滑动关闭Activity库
+    implementation rootProject.ext.dependence.libAndfix
 }
+
+// 文件拷贝
+/*copy {
+    from file('youdo.jks')
+    into getRootProject().getBuildDir()
+}*/
+
+//文件夹的拷贝
+copy {
+    from file('build/outputs/apk')
+    into getRootProject().getBuildDir().path + '/apk'
+    // 排除不想要的文件
+    exclude {
+
+    }
+    // 重命名
+    rename {
+
+    }
+}
+
+
+// 对文件树进行遍历
+fileTree('build/outputs/apk/') { FileTree fileTree ->
+
+    fileTree.visit { FileTreeElement element ->
+        //element 是文件树中的每一个节点
+        println ' the file name is : ' + element.file.name
+        copy {
+            from element.file
+            into getRootProject().getBuildDir().path + '/test'
+        }
+    }
+
+}
+
