@@ -3,3 +3,4 @@ rootProject.name = "JetPack"
 include ':webview'
 include ':common'
 include ':base'
+include ':jp-livedata'
