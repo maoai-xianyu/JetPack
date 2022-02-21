@@ -2,17 +2,16 @@ package com.mao.jetpack.ui.livedata
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
-import com.mao.jetpack.databinding.ActivityLivedataNewBinding
+import com.mao.jetpack.databinding.ActivityLivedataJavaBinding
 import com.mao.jetpack.utils.Logger
-import com.mao.jp_livedata.LiveDataBus
+import com.mao.jp_livedata_java.LiveDataBus
 
-class LiveDataNewActivity : AppCompatActivity() {
+class JavaLiveDataActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityLivedataNewBinding
+    lateinit var binding: ActivityLivedataJavaBinding
 
 
     val observer: Observer<PersonModel> = Observer<PersonModel>{
@@ -23,7 +22,7 @@ class LiveDataNewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityLivedataNewBinding.inflate(layoutInflater)
+        binding = ActivityLivedataJavaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -41,7 +40,7 @@ class LiveDataNewActivity : AppCompatActivity() {
             .observeForever(observer)*/
 
         binding.btnJump.setOnClickListener {
-            startActivity(Intent(this, LiveDataNewActivity::class.java))
+            startActivity(Intent(this, JavaLiveDataActivity::class.java))
         }
 
 

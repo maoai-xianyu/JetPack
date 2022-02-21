@@ -60,17 +60,6 @@ class BusLiveData<T>(private val mKey:String) : MutableLiveData<T>() {
         Logger.d(TAG, "removeObserver() called with: observer = [$observer]")
     }
 
-    @MainThread
-    override fun removeObservers(owner: LifecycleOwner) {
-        mObserverMap.iterator().forEach {
-            if (it.value.isAttachedTo(owner)) {
-                mObserverMap.remove(it.key)
-            }
-        }
-        super.removeObservers(owner)
-        Logger.d(TAG, "removeObservers() called with: owner = [$owner]")
-    }
-
     override fun postValue(value: T) {
        mMainHandler.post {
            setValue(value)

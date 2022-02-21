@@ -25,8 +25,5 @@ internal open class BaseBusObserverWrapper<T>(private val mObserver: Observer<in
             Logger.e(TAG,"error on Observer onChanged() = " + e.message)
         }
     }
-
-    open fun isAttachedTo(owner: LifecycleOwner) = false
-
 }
 

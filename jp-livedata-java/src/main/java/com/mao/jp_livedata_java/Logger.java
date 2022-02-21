@@ -1,13 +1,15 @@
-package com.mao.jp_livedata;
+package com.mao.jp_livedata_java;
 
 import android.util.Log;
 
+
 /**
- * 日志工具类
- * @author linyaotian
+ * @author zhangkun
+ * @time 2022/2/16 17:23
+ * @Description  日志工具类
  */
 public class Logger {
-    private final static boolean DEBUG = false;
+    private final static boolean DEBUG = true;
 
     private final static String TAG = "LiveDataBus";
 
