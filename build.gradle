@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
+buildscript { ScriptHandler scriptHandler ->
+    // 扩展属性
     ext.kotlin_version = "1.4.32"
+    // 配置工程的仓库地址
     repositories {
         google()
         mavenCentral()
@@ -8,6 +10,7 @@ buildscript {
         jcenter()
         maven { url 'https://jitpack.io' }
     }
+    // 配置工程的"插件"依赖地址
     dependencies {
         classpath "com.android.tools.build:gradle:3.6.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -26,6 +29,15 @@ allprojects {
     }
 }
 
+/*subprojects {
+    // 为子工程配置属性，但是会在每个子工程都创建一遍，所以改下面方式
+    ext {
+        compileSdkVersion = 30
+        buildToolsVersion = '29.0.3'
+    }
+}*/
+
+//扩展属性
 ext {
     compileSdkVersion = 30
     buildToolsVersion = '29.0.3'
