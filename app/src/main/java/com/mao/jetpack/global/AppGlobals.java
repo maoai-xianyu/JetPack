@@ -1,5 +1,6 @@
 package com.mao.jetpack.global;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,13 +15,18 @@ import java.lang.reflect.Method;
  */
 public class AppGlobals {
 
+    private AppGlobals() {
+
+    }
+
     private static Application sApplication;
 
+    @SuppressLint("PrivateApi")
     public static Application getApplication() {
         if (sApplication == null) {
             try {
 
-                Method method = Class.forName("android.app.ActivityThread").getMethod("currentApplication");
+               Method method = Class.forName("android.app.ActivityThread").getMethod("currentApplication");
                 sApplication = (Application) method.invoke(null, (Object[]) null);
                /* sApplication = (Application) Class.forName("android.app.ActivityThread")
                         .getMethod("currentApplication")

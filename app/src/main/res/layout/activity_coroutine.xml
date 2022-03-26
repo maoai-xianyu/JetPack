@@ -14,6 +14,11 @@
         <variable
             name="imageModel"
             type="com.mao.jetpack.model.ImageModel" />
+        
+        <variable
+            name="localUrl"
+            type="int" />
+
     </data>
 
 
@@ -51,10 +56,50 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:defaultImageRes="@{localUrl}"
+            app:layout_constraintEnd_toStartOf="@+id/ivn"
             app:layout_constraintStart_toEndOf="@+id/iv_9x9"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_pyramid" />
+
+
+        <include
+            android:id="@+id/ivn"
+            layout="@layout/activity_coroutine_include_item"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:imageModel="@{imageModel}"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/tvBind"
+            android:layout_width="wrap_content"
+            android:text="双向绑定"
+            android:textSize="14sp"
+            android:textColor="@color/color_3d3"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_4x4"
+            android:layout_height="wrap_content"/>
+
+        <!--双向板顶-->
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="10dp"
+            app:layout_constrainedWidth="true"
+            android:text="@={viewModel.name}"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/iv_4x4"
+            app:layout_constraintStart_toEndOf="@+id/tvBind"/>
 
 
         <TextView
@@ -65,7 +110,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_4x4"
+            app:layout_constraintTop_toBottomOf="@+id/tvBind"
             tools:text="笑话本身就是一个笑话" />
 
 

@@ -21,23 +21,14 @@
         <entry key="app/src/main/res/drawable/windows_bg.xml" value="0.38333333333333336" />
         <entry key="app/src/main/res/layout/activity_button_shape.xml" value="0.5847589424572317" />
         <entry key="app/src/main/res/layout/activity_button_shape_other.xml" value="0.3614583333333333" />
-        <entry key="app/src/main/res/layout/activity_constraint_end_m.xml" value="0.3770833333333333" />
-        <entry key="app/src/main/res/layout/activity_constraint_start_m.xml" value="0.3770833333333333" />
         <entry key="app/src/main/res/layout/activity_constraintlayout.xml" value="0.2617753623188406" />
-        <entry key="app/src/main/res/layout/activity_coroutine.xml" value="0.3111413043478261" />
+        <entry key="app/src/main/res/layout/activity_coroutine.xml" value="0.33242753623188404" />
         <entry key="app/src/main/res/layout/activity_deeplink.xml" value="0.19047619047619047" />
-        <entry key="app/src/main/res/layout/activity_hen_coder.xml" value="0.21875" />
+        <entry key="app/src/main/res/layout/activity_include_item_coroutine.xml" value="0.33242753623188404" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19047619047619047" />
-        <entry key="app/src/main/res/layout/activity_motion_layout.xml" value="0.17647058823529413" />
-        <entry key="app/src/main/res/layout/activity_motion_sample_layout.xml" value="0.2164855072463768" />
-        <entry key="app/src/main/res/layout/activity_one_task.xml" value="0.1833839918946302" />
-        <entry key="app/src/main/res/layout/activity_two_task.xml" value="0.1833839918946302" />
-        <entry key="app/src/main/res/layout/activity_view_model.xml" value="0.24003623188405798" />
+        <entry key="app/src/main/res/layout/activity_motion_layout.xml" value="0.20625" />
         <entry key="app/src/main/res/layout/activtiy_banner.xml" value="0.32518115942028986" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19047619047619047" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1833839918946302" />
-        <entry key="app/src/main/res/layout/go_end.xml" value="0.3770833333333333" />
-        <entry key="app/src/main/res/layout/go_start.xml" value="0.3770833333333333" />
         <entry key="app/src/main/res/layout/layout_banner_view.xml" value="0.3776041666666667" />
         <entry key="app/src/main/res/layout/ui_banner_layout.xml" value="0.3374094202898551" />
         <entry key="webview/src/main/res/layout/activity_webview.xml" value="0.19047619047619047" />

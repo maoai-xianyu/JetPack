@@ -6,9 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mao.base.net.RetrofitFactory
 import com.mao.jetpack.model.DataModel
+import com.mao.jetpack.model.ImageModel
 import com.mao.jetpack.model.ResultModel
 import com.mao.jetpack.nethttp.HttpKey
 import com.mao.jetpack.ui.coroutine.repo.JokeRepository
+import com.mao.jetpack.utils.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -24,10 +26,24 @@ class CoroutineViewModel : ViewModel() {
 
     val jokeList: MutableLiveData<List<DataModel>> = MutableLiveData()
 
-    val imageUrl: ObservableField<String>
-        get() {
-            TODO()
-        }
+    val stringField: ObservableField<ImageModel> = ObservableField<ImageModel>()
+
+    init {
+        stringField.set(
+            ImageModel(
+                "http://img5.mtime.cn/pi/2022/01/24/144146.59288160_1000X1000.jpg",
+                "测试初始图片"
+            )
+        )
+    }
+
+    fun getName(): String = stringField.get()?.name ?: ""
+
+    fun setName(str: String) {
+        Logger.debug("双向绑定 $str")
+        stringField.get()?.name = str
+    }
+
 
     fun getSingleJoke() {
         viewModelScope.launch(Dispatchers.IO) {

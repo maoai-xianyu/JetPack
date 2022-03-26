@@ -1,5 +1,6 @@
 package com.mao.jetpack.global
 
+import android.annotation.SuppressLint
 import android.app.Application
 
 /**
@@ -12,6 +13,7 @@ object AppGlobalsKt {
 
     private var sApplication: Application? = null
 
+    @SuppressLint("PrivateApi")
     fun get(): Application? {
 
         if (sApplication == null) {

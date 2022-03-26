@@ -6,4 +6,4 @@ package com.mao.jetpack.model
  * @time 2022/3/25 15:27
  * @Description
  */
-class ImageModel(val url: String, val name: String)
+class ImageModel(val url: String, var name: String)
