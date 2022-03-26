@@ -23,6 +23,7 @@
         <entry key="app/src/main/res/layout/activity_button_shape_other.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/activity_constraintlayout.xml" value="0.2617753623188406" />
         <entry key="app/src/main/res/layout/activity_coroutine.xml" value="0.33242753623188404" />
+        <entry key="app/src/main/res/layout/activity_coroutine_adapter_item.xml" value="0.33242753623188404" />
         <entry key="app/src/main/res/layout/activity_deeplink.xml" value="0.19047619047619047" />
         <entry key="app/src/main/res/layout/activity_include_item_coroutine.xml" value="0.33242753623188404" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19047619047619047" />

@@ -50,8 +50,8 @@ class CoroutineViewModel : ViewModel() {
             // 处理协程的异常
             try {
                 val singleJoke = JokeRepository().queryJoke(HttpKey.JOKE_KEY)
-                if (singleJoke.result.isNullOrEmpty()) {
-                    jokeOne.postValue(singleJoke.result!![0])
+                singleJoke.result?.let {
+                    jokeOne.postValue(singleJoke.result[0])
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -59,12 +59,14 @@ class CoroutineViewModel : ViewModel() {
         }
     }
 
-    fun geiJokeList() {
+    fun getJokeList() {
         viewModelScope.launch {
             try {
                 val list = JokeRepository().queryJokeList(HttpKey.JOKE_KEY, 1, 20)
-                if (list.result != null && list.result.data.isNullOrEmpty()) {
-                    jokeList.postValue(list.result.data)
+                if (list.result != null) {
+                    list.result.data?.let {
+                        jokeList.postValue(list.result.data)
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()

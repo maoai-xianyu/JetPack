@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityCoroutineBinding
 import com.mao.jetpack.model.ImageModel
@@ -23,6 +21,10 @@ class CoroutineActivity : AppCompatActivity() {
     // 创建 viewModel
     private val viewModel by viewModels<CoroutineViewModel>()
 
+    val jokeAdapter: JokeAdapter by lazy {
+        JokeAdapter()
+    }
+
     private lateinit var viewModels: CoroutineViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,13 +40,23 @@ class CoroutineActivity : AppCompatActivity() {
         binding.imageModel = imageModel
         binding.localUrl = R.drawable.ic_pyramid
 
-        viewModel.jokeList.observe(this) {
 
+        // 网络请求单个笑话
+        viewModel.getSingleJoke()
+
+        viewModel.jokeOne.observe(this) {
+            binding.tvJoke.text = it.content
         }
 
 
-        viewModel.jokeOne.observe(this){
+        // 获取笑话列表
+        viewModel.getJokeList()
 
+
+        binding.rvJoke.adapter = jokeAdapter;
+
+        viewModel.jokeList.observe(this) {
+            jokeAdapter.setDataList(it)
         }
 
     }
