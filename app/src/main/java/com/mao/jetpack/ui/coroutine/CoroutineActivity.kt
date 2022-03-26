@@ -1,9 +1,11 @@
 package com.mao.jetpack.ui.coroutine
 
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.mao.jetpack.R
 import com.mao.jetpack.databinding.ActivityCoroutineBinding
 import com.mao.jetpack.model.ImageModel
@@ -36,7 +38,7 @@ class CoroutineActivity : AppCompatActivity() {
         binding.viewModel = viewModel
 
         val imageModel =
-            ImageModel("http://img5.mtime.cn/pi/2022/01/24/144146.59288160_1000X1000.jpg", "美女")
+            ImageModel("https://img5.mtime.cn/pi/2022/01/24/144146.59288160_1000X1000.jpg", "美女")
         binding.imageModel = imageModel
         binding.localUrl = R.drawable.ic_pyramid
 
@@ -57,6 +59,28 @@ class CoroutineActivity : AppCompatActivity() {
 
         viewModel.jokeList.observe(this) {
             jokeAdapter.setDataList(it)
+        }
+
+        // 将图片切割成 1/4
+        viewModel.getImage4x4()
+
+        viewModel.image4x4First.observe(this) {
+
+            Glide.with(this).load(it.Bitmap2Bytes())
+                .override(60, 60)
+                .into(binding.iv4x4)
+            // 两种方式都可以
+            //binding.iv4x4.setImageDrawable(BitmapDrawable(resources, it))
+        }
+
+
+        viewModel.getImage9x9()
+
+        viewModel.image9x9Last.observe(this) {
+           /* Glide.with(this).load(BitmapDrawable(resources, it))
+                .override(60, 60)
+                .into(binding.iv9x9)*/
+            binding.iv9x9.setImageDrawable(BitmapDrawable(resources, it))
         }
 
     }

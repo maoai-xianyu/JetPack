@@ -21,5 +21,5 @@ interface ImageService {
     }
 
     @GET
-    suspend fun downloadPicFromNet(@Url fileUrl:String):Call<ResponseBody>
+    suspend fun downloadPicFromNet(@Url fileUrl: String): ResponseBody
 }
