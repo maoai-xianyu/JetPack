@@ -94,5 +94,6 @@ dependencies {
 
 
     implementation 'com.squareup.picasso:picasso:10000.0.0.137'
-    implementation "com.github.appium:java-client:7.6.0"
+
+    implementation "androidx.activity:activity-ktx:1.2.4"
 }
