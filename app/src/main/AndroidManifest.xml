@@ -94,6 +94,7 @@
         <activity android:name=".ui.reflect.ReflectOneActivity"/>
         <activity android:name=".ui.reflect.ReflectSecondActivity"/>
         <activity android:name=".ui.reflect.ReflectThirdActivity"/>
+        <activity android:name=".ui.image.ImageActivity"/>
     </application>
 
 </manifest>
