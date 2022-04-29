@@ -55,6 +55,7 @@ public class ImageActivity extends AppCompatActivity {
                     }
                 });
 
+        binding.tvDest.setTextEllipsize("《奇迹·笨小孩笨小孩笨小孩笨小孩》专项",2,"》");
     }
 
 
