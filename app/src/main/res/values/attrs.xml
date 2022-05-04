@@ -68,7 +68,7 @@
         <!-- 径向渐变 -->
         <enum name="radial" value="1" />
         <!-- 扫描渐变 -->
-        <enum name="sweep"  value="2" />
+        <enum name="sweep" value="2" />
     </attr>
     <!-- 渐变中心 X 点坐标的相对位置（默认值为 0.5）-->
     <attr name="shape_centerX" format="float|fraction" />
@@ -407,34 +407,34 @@
     <!-- 轮播条 -->
     <declare-styleable name="BannerView">
         <!-- 点的选中的颜色值 -->
-        <attr name="dotIndicatorFocus"  format="color|reference"/>
+        <attr name="dotIndicatorFocus" format="color|reference" />
         <!-- 点的默认的颜色值 -->
-        <attr name="dotIndicatorNormal"  format="color|reference"/>
+        <attr name="dotIndicatorNormal" format="color|reference" />
         <!-- 点的大小 -->
-        <attr name="dotSize" format="dimension"/>
+        <attr name="dotSize" format="dimension" />
         <!-- 点的间距 -->
-        <attr name="dotDistance" format="dimension"/>
+        <attr name="dotDistance" format="dimension" />
         <!-- 点的位置 -->
         <attr name="dotGravity" format="enum">
-            <enum name="center" value="0"/>
-            <enum name="right" value="1"/>
-            <enum name="left" value="-1"/>
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+            <enum name="left" value="-1" />
         </attr>
         <!-- 底部的颜色 -->
-        <attr name="bottomColor" format="color"/>
+        <attr name="bottomColor" format="color" />
 
         <!--使用maoyan指示器, 上面的属性都不需要，因为上面的属性是为了展示圆点指示器-->
         <attr name="use_maoyan_indicator" format="boolean" />
 
         <!-- 定义宽高比 -->
-        <attr name="withProportion" format="float"/>
-        <attr name="heightProportion" format="float"/>
+        <attr name="withProportion" format="float" />
+        <attr name="heightProportion" format="float" />
 
     </declare-styleable>
 
     <declare-styleable name="MaoyanAdxViewPagerIndicator">
-        <attr format="color" name="maoyan_adx_indicator_bg_color"/>
-        <attr format="color" name="maoyan_adx_indicator_selected_color"/>
+        <attr name="maoyan_adx_indicator_bg_color" format="color" />
+        <attr name="maoyan_adx_indicator_selected_color" format="color" />
     </declare-styleable>
 
     <declare-styleable name="SampleCircleImageView">
@@ -473,5 +473,13 @@
             <enum name="bottom" value="2">从图片底部开始绘制，即肯定会展示图片底部</enum>
             <enum name="fitXY" value="3">完全展示，有可能变形</enum>
         </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TextViewEllipsize">
+
+        <attr name="my_maxLine" format="integer">最大行数</attr>
+        <attr name="my_delimiter" format="string">使用什么符号进行切割</attr>
+        <attr name="my_replace_symbol" format="string">使用什么符号代替</attr>
+
     </declare-styleable>
 </resources>
