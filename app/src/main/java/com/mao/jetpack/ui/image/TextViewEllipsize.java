@@ -14,7 +14,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import com.mao.jetpack.R;
 import com.mao.jetpack.utils.Logger;
 
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author zhangkun
@@ -177,8 +176,8 @@ public class TextViewEllipsize extends AppCompatTextView {
      * @param maxLine       不能小于0
      * @param replaceSymbol 不能为空
      */
-    public void setTextEllipsize(@NotNull String context, @NotNull String delimiter, int maxLine,
-                                 @NotNull String replaceSymbol) {
+    public void setTextEllipsize(@NonNull String context, @NonNull String delimiter, int maxLine,
+                                 @NonNull String replaceSymbol) {
         this.myDelimiter = delimiter;
         this.myMaxLine = maxLine;
         this.myReplaceSymbol = replaceSymbol;
