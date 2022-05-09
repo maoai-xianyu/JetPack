@@ -59,7 +59,7 @@ public class ImageActivity extends AppCompatActivity {
 
         binding.tvDestMY.setText("《奇迹笨小孩love-lovelove》专项");
 
-        binding.tvDestMY2.setTextEllipsize("《奇迹·笨小孩笨小孩笨x小孩笨小孩》专项","x",1,"...");
+        binding.tvDestMY2.setTextEllipsize("《奇迹·笨小孩笨小孩笨x小孩笨小孩》专项","》",2,"...");
     }
 
 

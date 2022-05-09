@@ -83,7 +83,7 @@ public class TextViewEllipsize extends AppCompatTextView {
 
         // 获取可绘制的最大宽度
         int maxWidth = getMeasuredWidth() - getPaddingStart() - getPaddingEnd();
-        StaticLayout staticLayout = createStaticLayout(text, maxWidth, true);
+        StaticLayout staticLayout = createStaticLayout(text, maxWidth);
         // 如果小于最大行数,则直接绘制即可
         if (staticLayout.getLineCount() <= myMaxLine) {
             super.setText(staticLayout.getText(), type);
@@ -114,7 +114,7 @@ public class TextViewEllipsize extends AppCompatTextView {
             tail = myReplaceSymbol + context.substring(lastIndexOf);
         }
 
-        StaticLayout lastLayout = createStaticLayout(tail, maxWidth, false);
+        StaticLayout lastLayout = createStaticLayout(tail, maxWidth);
 
         Logger.error("lastLayout.getLineCount()   --- " + lastLayout.getLineCount() + " tail " + tail);
         if (lastLayout.getLineCount() > myMaxLine) {
@@ -122,8 +122,12 @@ public class TextViewEllipsize extends AppCompatTextView {
             throw new IllegalArgumentException("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
         }
 
+        Logger.error("cropIndex " + cropIndex + " tail.length() " + tail.length());
+
         while (true) {
-            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex) + tail, maxWidth, false);
+            Logger.error("cropIndex " + cropIndex);
+            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex - tail.length() + 1) + tail,
+                    maxWidth);
             if (tempLayout.getLineCount() <= myMaxLine) {
                 super.setText(tempLayout.getText(), type);
                 break;
@@ -140,21 +144,16 @@ public class TextViewEllipsize extends AppCompatTextView {
      *
      * @param text
      * @param maxWidth
-     * @param needInsert
      * @return
      */
-    private StaticLayout createStaticLayout(CharSequence text, int maxWidth, boolean needInsert) {
+    private StaticLayout createStaticLayout(CharSequence text, int maxWidth) {
         StringBuilder stringBuilder = new StringBuilder();
-        if (needInsert) {
-            for (int i = 0; i < text.length(); i++) {
-                if (i != text.length()) {
-                    // 无宽度字符，可以切割所有字符，可以把英文切割
-                    String ZERO_WIDTH_SPACE = "\u200B";
-                    stringBuilder.append(text.charAt(i)).append(ZERO_WIDTH_SPACE);
-                }
+        for (int i = 0; i < text.length(); i++) {
+            if (i != text.length()) {
+                // 无宽度字符，可以切割所有字符，可以把英文切割
+                String ZERO_WIDTH_SPACE = "\u200B";
+                stringBuilder.append(text.charAt(i)).append(ZERO_WIDTH_SPACE);
             }
-        } else {
-            stringBuilder.append(text);
         }
         // 返回可以测量的 StaticLayout
         return new StaticLayout(
