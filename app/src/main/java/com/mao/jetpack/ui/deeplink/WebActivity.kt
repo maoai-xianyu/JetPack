@@ -35,7 +35,8 @@ class WebActivity : AppCompatActivity() {
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
                 //intent.data = Uri.parse("maoyan://maoyan.com/videolist?id=1334342&videoid=454570")
                 // 用以判断当前是否有对应的scheme的应用，有就打开
-                intent.data = Uri.parse("maoyan://maoyan.com/movie/hotTopicLists?movieid=1288304&topicid=135556655")
+                //intent.data = Uri.parse("maoyan://maoyan.com/movie/hotTopicLists?movieid=1288304&topicid=135556655")
+                intent.data = Uri.parse("maoyan://maoyan.com/mine/orderlist/seatorder?orderId=23032604633")
                 // 直接打开网页 下面的会作为一个网页打开
                 //intent.data = Uri.parse("https://m.maoyan.com/asgard/movie/1334342/preview?videoId=456111")
                 //intent.data = Uri.parse("https://m.maoyan.com")
@@ -46,6 +47,32 @@ class WebActivity : AppCompatActivity() {
                 //intent.data = Uri.parse("meituanmovie://www.meituan.com/movie/hotTopicLists?movieid=1288304&topicid=135556655")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie/movie?id=1288304")
                 //intent.data = Uri.parse("maoyan://maoyan.com/movie?id=1250952")
+                startActivity(intent)
+            } catch (e: Exception) {
+                success = "失败"
+                Logger.error("Exception 跳转猫眼 奔溃 ${e.message}")
+            } finally {
+                Logger.error("finally 跳转猫眼 $success")
+            }
+        }
+
+        binding.btnMeituan.setOnClickListener {
+            var success = "成功"
+            try {
+                //val intent = Intent()
+                //intent.action = Intent.ACTION_VIEW
+                //intent.data = Uri.parse("imeituan://www.meituan.com/movie_orderdetail?orderId=23032604633&userId=50108998")
+                //startActivity(intent)
+
+                val intent =  Intent()
+                intent.action = "android.intent.action.VIEW";
+                intent.data = Uri.parse("imeituan://www.meituan.com/movie_orderdetail?orderId=23032604633&userId=50108998")
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK  // 如应用是第一次,
+
+                //intent.flags = Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT  // 可以一直打开
+                //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP  // 可以一直打开
+                //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK // 可以一直打开
+                //intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP  // 可以一直打开
                 startActivity(intent)
             } catch (e: Exception) {
                 success = "失败"
