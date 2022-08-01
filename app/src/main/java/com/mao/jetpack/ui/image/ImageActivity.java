@@ -12,6 +12,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,11 +56,12 @@ public class ImageActivity extends AppCompatActivity {
                     }
                 });
 
-        binding.tvDest.setTextEllipsize("《奇迹·笨小孩笨小孩笨小孩笨小孩》专项",2,"》");
+        //binding.tvDest.setTextEllipsize("《奇迹·笨小孩笨小孩笨小孩笨小孩》专项",2,"》");
+        //binding.tvDestMY.setText("《奇迹笨小孩love-lovelove》专项");
+        binding.tvDestMY.setVisibility(View.INVISIBLE);
 
-        binding.tvDestMY.setText("《奇迹笨小孩love-lovelove》专项");
-
-        binding.tvDestMY2.setTextEllipsize("《奇迹·笨小孩笨小孩笨x小孩笨小孩》专项","》",2,"...");
+        //binding.tvDestMY2.setTextEllipsize("《奇迹·笨小孩笨小孩孩笨小孩孩》专项", "》", 1, "...");
+        binding.tvDestMY3.setTextEllipsize("《独行月球》"+"测试热", "》", 1, "...");
     }
 
 

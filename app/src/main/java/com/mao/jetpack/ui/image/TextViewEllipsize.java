@@ -54,7 +54,7 @@ public class TextViewEllipsize extends AppCompatTextView {
      */
     @Override
     public void setText(CharSequence text, BufferType type) {
-        post(new Runnable() {
+        /*post(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -62,6 +62,13 @@ public class TextViewEllipsize extends AppCompatTextView {
                 } catch (Exception e) {
                     Logger.error(e.getMessage());
                 }
+            }
+        });*/
+
+        post(new Runnable() {
+            @Override
+            public void run() {
+                calculateText(text, type);
             }
         });
     }
@@ -74,15 +81,27 @@ public class TextViewEllipsize extends AppCompatTextView {
         }
 
         if (TextUtils.isEmpty(myDelimiter)) {
-            throw new IllegalArgumentException("分隔符不能为空~");
+            Logger.error("分隔符不能为空~");
+            return;
         }
 
         if (myMaxLine <= 0) {
-            throw new IllegalArgumentException("maxLine = " + myMaxLine + " 最大行数不能小于等于0~");
+            Logger.error("maxLine = " + myMaxLine + " 最大行数不能小于等于0~");
+            return;
         }
 
         // 获取可绘制的最大宽度
         int maxWidth = getMeasuredWidth() - getPaddingStart() - getPaddingEnd();
+        //maxWidth = -17;
+
+        Logger.error("maxWidth " + maxWidth);
+
+
+        if (maxWidth < 0) {
+            super.setText(text, type);
+            Logger.error("maxWidth = " + maxWidth);
+            return;
+        }
         StaticLayout staticLayout = createStaticLayout(text, maxWidth);
         // 如果小于最大行数,则直接绘制即可
         if (staticLayout.getLineCount() <= myMaxLine) {
@@ -104,7 +123,8 @@ public class TextViewEllipsize extends AppCompatTextView {
 
         if (cropIndex <= 0) {
             // 说明是从头开始进行的分隔，用户使用错误
-            throw new IllegalArgumentException("使用 " + myDelimiter + "从头进行分隔，用户使用错误~");
+            Logger.error("使用 " + myDelimiter + "从头进行分隔，用户使用错误~");
+            return;
         }
 
         String tail;
@@ -119,7 +139,8 @@ public class TextViewEllipsize extends AppCompatTextView {
         Logger.error("lastLayout.getLineCount()   --- " + lastLayout.getLineCount() + " tail " + tail);
         if (lastLayout.getLineCount() > myMaxLine) {
             // 说明加上 myReplaceSymbol 已经 大于 最大行数
-            throw new IllegalArgumentException("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
+            Logger.error("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
+            return;
         }
 
         Logger.error("cropIndex " + cropIndex + " tail.length() " + tail.length());

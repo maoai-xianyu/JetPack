@@ -67,13 +67,14 @@ class WebActivity : AppCompatActivity() {
                 val intent =  Intent()
                 intent.action = "android.intent.action.VIEW";
                 intent.data = Uri.parse("imeituan://www.meituan.com/movie_orderdetail?orderId=23032604633&userId=50108998")
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK  // 如应用是第一次,
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                baseContext.startActivity(intent)
 
                 //intent.flags = Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT  // 可以一直打开
                 //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP  // 可以一直打开
                 //intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK // 可以一直打开
                 //intent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP  // 可以一直打开
-                startActivity(intent)
+
             } catch (e: Exception) {
                 success = "失败"
                 Logger.error("Exception 跳转猫眼 奔溃 ${e.message}")
