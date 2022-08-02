@@ -68,6 +68,10 @@ public class TextViewEllipsize extends AppCompatTextView {
         post(new Runnable() {
             @Override
             public void run() {
+
+                String mmmm = "...";
+                Logger.error("mmmm  length"+ mmmm.length());
+
                 calculateText(text, type);
             }
         });
@@ -112,6 +116,8 @@ public class TextViewEllipsize extends AppCompatTextView {
         String context = text.toString();
         int lastIndexOf = context.lastIndexOf(myDelimiter);
 
+        Logger.error(" lastIndexOf  == "+ lastIndexOf);
+
         int cropIndex;
         if (lastIndexOf < 0) {
             cropIndex = context.length();
@@ -119,13 +125,15 @@ public class TextViewEllipsize extends AppCompatTextView {
             cropIndex = lastIndexOf;
         }
 
-        Logger.error(" cropIndex  -- " + cropIndex + " c length" + context.length());
+        Logger.error(" cropIndex  == " + cropIndex + " c length  == " + context.length());
 
         if (cropIndex <= 0) {
+            super.setText(text, type);
             // 说明是从头开始进行的分隔，用户使用错误
             Logger.error("使用 " + myDelimiter + "从头进行分隔，用户使用错误~");
             return;
         }
+
 
         String tail;
         if (lastIndexOf < 0) {
@@ -134,21 +142,27 @@ public class TextViewEllipsize extends AppCompatTextView {
             tail = myReplaceSymbol + context.substring(lastIndexOf);
         }
 
+        Logger.debug(" tail  -- " + tail + "tail length == " + tail.length());
+
         StaticLayout lastLayout = createStaticLayout(tail, maxWidth);
 
-        Logger.error("lastLayout.getLineCount()   --- " + lastLayout.getLineCount() + " tail " + tail);
+        Logger.error("lastLayout.getLineCount()   == " + lastLayout.getLineCount() + " tail " + tail + "cropIndex " + cropIndex + " tail.length() " + tail.length());
         if (lastLayout.getLineCount() > myMaxLine) {
+            super.setText(text, type);
             // 说明加上 myReplaceSymbol 已经 大于 最大行数
             Logger.error("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
             return;
         }
 
-        Logger.error("cropIndex " + cropIndex + " tail.length() " + tail.length());
-
         while (true) {
             Logger.error("cropIndex " + cropIndex);
-            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex - tail.length() + 1) + tail,
+            if (cropIndex < 0) {
+                super.setText(text, type);
+                break;
+            }
+            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex) + tail,
                     maxWidth);
+            Logger.debug("tempLayout " + tempLayout.getLineCount() + " text " + tempLayout.getText());
             if (tempLayout.getLineCount() <= myMaxLine) {
                 super.setText(tempLayout.getText(), type);
                 break;

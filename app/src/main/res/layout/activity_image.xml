@@ -39,7 +39,7 @@
 
     <com.mao.jetpack.ui.image.EllipsizeViewPlus
         android:id="@+id/tvDest"
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
         android:textSize="19sp"
@@ -105,6 +105,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorAccent"
         android:textSize="19sp"
+        android:maxLines="2"
+        android:ellipsize="end"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll"
