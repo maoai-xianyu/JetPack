@@ -46,129 +46,113 @@ public class TextViewEllipsize extends AppCompatTextView {
         typedArray.recycle();
     }
 
-    /**
-     * 布局文件中设置了对应属性
-     *
-     * @param text
-     * @param type
-     */
-    @Override
-    public void setText(CharSequence text, BufferType type) {
-        /*post(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    calculateText(text, type);
-                } catch (Exception e) {
-                    Logger.error(e.getMessage());
+
+    private void calculateText(CharSequence text) {
+        Logger.error(" getMeasuredWidth() " + getMeasuredWidth());
+        try {
+            if (TextUtils.isEmpty(text)) {
+                super.setText(text);
+                return;
+            }
+
+            if (TextUtils.isEmpty(myDelimiter)) {
+                Logger.error("分隔符不能为空~");
+                super.setText(text);
+                return;
+            }
+
+            if (myMaxLine <= 0) {
+                Logger.error("maxLine = " + myMaxLine + " 最大行数不能小于等于0~");
+                super.setText(text);
+                return;
+            }
+
+            if (myReplaceSymbol == null) {
+                Logger.error("myReplaceSymbol = " + myReplaceSymbol  + " 为空 不执行");
+                super.setText(text);
+                return;
+            }
+
+            // 获取可绘制的最大宽度
+            int maxWidth = getMeasuredWidth() - getPaddingStart() - getPaddingEnd();
+            //maxWidth = -17;
+
+            Logger.error("maxWidth " + maxWidth);
+
+
+            if (maxWidth < 0) {
+                super.setText(text);
+                Logger.error("maxWidth = " + maxWidth);
+                return;
+            }
+            StaticLayout staticLayout = createStaticLayout(text, maxWidth);
+            // 如果小于最大行数,则直接绘制即可
+            if (staticLayout.getLineCount() <= myMaxLine) {
+                super.setText(staticLayout.getText());
+                return;
+            }
+
+            String context = text.toString();
+            int lastIndexOf = context.lastIndexOf(myDelimiter);
+
+            Logger.error(" lastIndexOf  == "+ lastIndexOf);
+
+            int cropIndex;
+            if (lastIndexOf < 0) {
+                cropIndex = context.length();
+            } else {
+                cropIndex = lastIndexOf;
+            }
+
+            Logger.error(" cropIndex  == " + cropIndex + " c length  == " + context.length());
+
+            if (cropIndex <= 0) {
+                super.setText(text);
+                // 说明是从头开始进行的分隔，用户使用错误
+                Logger.error("使用 " + myDelimiter + "从头进行分隔，用户使用错误~");
+                return;
+            }
+
+
+            String tail;
+            if (lastIndexOf < 0) {
+                tail = myReplaceSymbol;
+            } else {
+                tail = myReplaceSymbol + context.substring(lastIndexOf);
+            }
+
+            Logger.debug(" tail  -- " + tail + "tail length == " + tail.length());
+
+            StaticLayout lastLayout = createStaticLayout(tail, maxWidth);
+
+            Logger.error("lastLayout.getLineCount()   == " + lastLayout.getLineCount() + " tail " + tail + "cropIndex " + cropIndex + " tail.length() " + tail.length());
+            if (lastLayout.getLineCount() > myMaxLine) {
+                super.setText(text);
+                // 说明加上 myReplaceSymbol 已经 大于 最大行数
+                Logger.error("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
+                return;
+            }
+
+            while (true) {
+                Logger.error("cropIndex " + cropIndex);
+                if (cropIndex < 0) {
+                    super.setText(text);
+                    break;
+                }
+                StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex) + tail,
+                        maxWidth);
+                Logger.debug("tempLayout " + tempLayout.getLineCount() + " text " + tempLayout.getText());
+                if (tempLayout.getLineCount() <= myMaxLine) {
+                    super.setText(tempLayout.getText());
+                    break;
+                } else {
+                    cropIndex -= 1;
                 }
             }
-        });*/
-
-        post(new Runnable() {
-            @Override
-            public void run() {
-
-                String mmmm = "...";
-                Logger.error("mmmm  length"+ mmmm.length());
-
-                calculateText(text, type);
-            }
-        });
-    }
-
-    private void calculateText(CharSequence text, BufferType type) {
-        Logger.error(" getMeasuredWidth() " + getMeasuredWidth());
-        if (TextUtils.isEmpty(text)) {
-            super.setText(text, type);
-            return;
-        }
-
-        if (TextUtils.isEmpty(myDelimiter)) {
-            Logger.error("分隔符不能为空~");
-            return;
-        }
-
-        if (myMaxLine <= 0) {
-            Logger.error("maxLine = " + myMaxLine + " 最大行数不能小于等于0~");
-            return;
-        }
-
-        // 获取可绘制的最大宽度
-        int maxWidth = getMeasuredWidth() - getPaddingStart() - getPaddingEnd();
-        //maxWidth = -17;
-
-        Logger.error("maxWidth " + maxWidth);
-
-
-        if (maxWidth < 0) {
-            super.setText(text, type);
-            Logger.error("maxWidth = " + maxWidth);
-            return;
-        }
-        StaticLayout staticLayout = createStaticLayout(text, maxWidth);
-        // 如果小于最大行数,则直接绘制即可
-        if (staticLayout.getLineCount() <= myMaxLine) {
-            super.setText(staticLayout.getText(), type);
-            return;
-        }
-
-        String context = text.toString();
-        int lastIndexOf = context.lastIndexOf(myDelimiter);
-
-        Logger.error(" lastIndexOf  == "+ lastIndexOf);
-
-        int cropIndex;
-        if (lastIndexOf < 0) {
-            cropIndex = context.length();
-        } else {
-            cropIndex = lastIndexOf;
-        }
-
-        Logger.error(" cropIndex  == " + cropIndex + " c length  == " + context.length());
-
-        if (cropIndex <= 0) {
-            super.setText(text, type);
-            // 说明是从头开始进行的分隔，用户使用错误
-            Logger.error("使用 " + myDelimiter + "从头进行分隔，用户使用错误~");
-            return;
-        }
-
-
-        String tail;
-        if (lastIndexOf < 0) {
-            tail = myReplaceSymbol;
-        } else {
-            tail = myReplaceSymbol + context.substring(lastIndexOf);
-        }
-
-        Logger.debug(" tail  -- " + tail + "tail length == " + tail.length());
-
-        StaticLayout lastLayout = createStaticLayout(tail, maxWidth);
-
-        Logger.error("lastLayout.getLineCount()   == " + lastLayout.getLineCount() + " tail " + tail + "cropIndex " + cropIndex + " tail.length() " + tail.length());
-        if (lastLayout.getLineCount() > myMaxLine) {
-            super.setText(text, type);
-            // 说明加上 myReplaceSymbol 已经 大于 最大行数
-            Logger.error("使用 " + myDelimiter + " 分隔后，后面部分已经大于设置行数，用户使用错误~");
-            return;
-        }
-
-        while (true) {
-            Logger.error("cropIndex " + cropIndex);
-            if (cropIndex < 0) {
-                super.setText(text, type);
-                break;
-            }
-            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex) + tail,
-                    maxWidth);
-            Logger.debug("tempLayout " + tempLayout.getLineCount() + " text " + tempLayout.getText());
-            if (tempLayout.getLineCount() <= myMaxLine) {
-                super.setText(tempLayout.getText(), type);
-                break;
-            } else {
-                cropIndex -= 1;
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 需要在控件的布局添加 textview 自有属性的 maxlines 和 ellipsize
+            super.setText(text);
         }
     }
 
@@ -216,6 +200,12 @@ public class TextViewEllipsize extends AppCompatTextView {
         this.myMaxLine = maxLine;
         this.myReplaceSymbol = replaceSymbol;
         super.setText(context);
+        post(new Runnable() {
+            @Override
+            public void run() {
+                calculateText(context);
+            }
+        });
     }
 
 }

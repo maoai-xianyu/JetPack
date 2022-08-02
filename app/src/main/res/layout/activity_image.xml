@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<!--
 
     <com.mao.jetpack.widget.SampleCircleImageView
 
@@ -47,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imagePic"
         tools:text="《奇迹笨小孩》专项" />
 
-    <com.mao.jetpack.ui.image.TextViewEllipsize
+  &lt;!&ndash;  <com.mao.jetpack.ui.image.TextViewEllipsize
         android:id="@+id/tvDestMY"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -55,10 +56,7 @@
         android:textColor="@color/color_theme"
         android:textSize="19sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDest"
-        app:my_delimiter="》"
-        app:my_maxLine="2"
-        app:my_replace_symbol="..." />
+        app:layout_constraintTop_toBottomOf="@+id/tvDest" />&ndash;&gt;
 
 
     <com.mao.jetpack.ui.image.TextViewEllipsize
@@ -74,8 +72,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageClip"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDestMY" />
 
@@ -90,13 +88,14 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageClip2"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+-->
 
 
     <com.mao.jetpack.ui.image.TextViewEllipsize
@@ -111,6 +110,161 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll"
         tools:text="《奇迹笨小孩love-lovelove》专项" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDestMY3"
+        android:layout_height="80dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_cover"
+            android:layout_width="84dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/maoyan_medium_limit_time_ticket"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clt_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/maoyan_common_hex_ffffff"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/iv_cover"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:paddingEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toTopOf="@+id/tv_ticket_desc"
+                app:layout_constraintEnd_toStartOf="@+id/tv_limit_use"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <TextView
+                    android:id="@+id/tv_ticket_cash"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="#F03D37"
+                    android:textSize="16sp"
+                    android:text="88.88元" />
+
+                <TextView
+                    android:id="@+id/tv_ticket_title"
+                    android:textStyle="bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="2dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    android:text="观影优惠券已入账券已入账券已入账" />
+
+            </LinearLayout>
+
+
+            <com.maoyan.android.common.view.ellipsize.TextViewEllipsize
+                android:id="@+id/tv_ticket_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                android:paddingEnd="8dp"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#333333"
+                android:textSize="13sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_limit_use"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_title"
+                tools:text="《这个杀手不太冷》专享" />
+
+
+            <!--<com.mao.jetpack.ui.image.TextViewEllipsize
+                android:id="@+id/tv_ticket_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                android:paddingEnd="8dp"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#333333"
+                android:textSize="13sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_limit_use"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_title"
+                tools:text="《这个杀手不太冷》专享" />-->
+
+
+            <TextView
+                android:id="@+id/tv_limit_time"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="#F03D37"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_limit_use"
+                app:layout_constraintEnd_toEndOf="@+id/tv_limit_use"
+                app:layout_constraintStart_toStartOf="@+id/tv_limit_use"
+                tools:text="今日可用" />
+
+            <TextView
+                android:id="@+id/tv_limit_use"
+                android:textStyle="bold"
+                android:layout_width="56dp"
+                android:layout_height="28dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/maoyan_medium_shape_time_limited_use"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="去使用"
+                android:textColor="#fff"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
