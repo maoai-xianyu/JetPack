@@ -136,3 +136,14 @@ fileTree('build/outputs/apk/') { FileTree fileTree ->
 
 }
 
+// 新建task
+
+task(helloTask, {
+    println "i am hello task"
+})
+
+task helleTask {
+    println "i am helle task"
+}
+
+

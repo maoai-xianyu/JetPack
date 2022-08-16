@@ -172,7 +172,7 @@ println "the build file path is " + getBuildDir().absolutePath
 println "the project path is " + getProjectDir().absolutePath
 
 
-println "--- 文件内容 ${getContent('common.gradle')}"
+//println "--- 文件内容 ${getContent('common.gradle')}"
 
 def getContent(String path) {
     try {
