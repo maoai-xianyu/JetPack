@@ -15,7 +15,6 @@ import com.mao.jetpack.adapter.ProgressShowAdapter
 import com.mao.jetpack.model.ProgressBarModel
 import com.mao.jetpack.ui.banner.BannerActivity
 import com.mao.jetpack.ui.button.ButtonShapeActivity
-import com.mao.jetpack.ui.button.ButtonShapeOtherActivity
 import com.mao.jetpack.ui.coroutine.CoroutineActivity
 import com.mao.jetpack.ui.image.ImageActivity
 import com.mao.jetpack.ui.reflect.ReflectOneActivity

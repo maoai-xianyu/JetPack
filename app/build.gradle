@@ -1,7 +1,12 @@
+
+//project.extensions.extraProperties.set('SpotBugsTask', com.github.spotbugs.SpotBugsTask)
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+//apply plugin: 'com.github.spotbugs'
+//apply from: '../app/spotbugs.gradle'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -91,9 +96,6 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.8.0'
 
     implementation project(':webview')
-
-
-    implementation 'com.squareup.picasso:picasso:10000.0.0.137'
 
     implementation "androidx.activity:activity-ktx:1.2.4"
     //implementation 'com.github.ai2101039:YLCircleImageView:v1.0.8'

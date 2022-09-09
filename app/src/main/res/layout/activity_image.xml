@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+<!--
     <com.mao.jetpack.widget.SampleCircleImageView
 
         android:id="@+id/image"
@@ -96,10 +96,10 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
-    <com.mao.jetpack.ui.image.TextViewEllipsize
+   <!-- <com.mao.jetpack.ui.image.TextViewEllipsize
         android:id="@+id/tvDestMY3"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -109,6 +109,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll"
         tools:text="《奇迹笨小孩love-lovelove》专项" />
-
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

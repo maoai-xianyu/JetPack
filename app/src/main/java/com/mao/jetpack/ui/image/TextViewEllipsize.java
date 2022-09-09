@@ -64,7 +64,7 @@ public class TextViewEllipsize extends AppCompatTextView {
                 }
             }
         });*/
-
+        //super.setText(text, type);
         post(new Runnable() {
             @Override
             public void run() {
@@ -147,7 +147,7 @@ public class TextViewEllipsize extends AppCompatTextView {
 
         while (true) {
             Logger.error("cropIndex " + cropIndex);
-            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex - tail.length() + 1) + tail,
+            StaticLayout tempLayout = createStaticLayout(context.substring(0, cropIndex) + tail,
                     maxWidth);
             if (tempLayout.getLineCount() <= myMaxLine) {
                 super.setText(tempLayout.getText(), type);

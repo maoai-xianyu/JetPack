@@ -10,17 +10,16 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.ImageViewTarget;
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityImageBinding;
+import com.mao.jetpack.utils.Logger;
 
 /**
  * @author zhangkun
@@ -37,9 +36,12 @@ public class ImageActivity extends AppCompatActivity {
         ActivityImageBinding binding = ActivityImageBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
 
+
+        Logger.error(" 系统版本  "+ Build.VERSION.SDK_INT);
+
         Resources res = getResources();
         Bitmap bmp = BitmapFactory.decodeResource(res, R.drawable.image_girl);
-
+/*
         binding.imageClip.setImageBitmap(getRoundedCornerBitmap(bmp, 40, 40));
         binding.imageClip2.setImageBitmap(getRoundedCornerBitmap(bmp, 40, 40));
 
@@ -58,10 +60,10 @@ public class ImageActivity extends AppCompatActivity {
 
         //binding.tvDest.setTextEllipsize("《奇迹·笨小孩笨小孩笨小孩笨小孩》专项",2,"》");
         //binding.tvDestMY.setText("《奇迹笨小孩love-lovelove》专项");
-        binding.tvDestMY.setVisibility(View.INVISIBLE);
+        binding.tvDestMY.setVisibility(View.INVISIBLE);*/
 
         //binding.tvDestMY2.setTextEllipsize("《奇迹·笨小孩笨小孩孩笨小孩孩》专项", "》", 1, "...");
-        binding.tvDestMY3.setTextEllipsize("《独行月球》"+"测试热", "》", 1, "...");
+        //binding.tvDestMY3.setTextEllipsize("《独行月球》"+"测试热", "》", 2, "...");
     }
 
 

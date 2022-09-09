@@ -1,0 +1,42 @@
+dependencies {
+    spotbugs configurations.spotbugsPlugins.dependencies
+    spotbugsPlugins 'com.h3xstream.findsecbugs:findsecbugs-plugin:1.12.0'
+}
+
+def qualityConfigDir = "$project.rootDir/config/quality"
+def reportsDir = "$project.buildDir/reports"
+
+spotbugs {
+    //toolVersion = '4.7.1'
+    toolVersion = '$spotbugs_version'
+    ignoreFailures = false
+
+    effort = "min"
+    // This selects what level of bugs to report: low means low priority issues will be reported
+    // (in addition to medium+high), which corresponds to warning about everything.
+    // TODO: boost this to low once low priority issues are fixed.
+    reportLevel = "medium"
+
+    excludeFilter = new File("$qualityConfigDir/config/quality/spotbugs/android-exclude-filter.xml")
+}
+
+tasks.register("spotbugs", SpotBugsTask) {
+    dependsOn 'assemble'
+    group = "verification"
+    classes = files("$projectDir.absolutePath/build/intermediates/app_classes/debug")
+
+    source = fileTree('src/main/java')
+
+
+    // Only one report format is supported. Html is easier to read, so let's use that
+    // (xml is the one that's enabled by default).
+    reports {
+        xml.enabled = true
+        xml {
+            destination file("$reportsDir/spotbugs/spotbugs.xml")
+        }
+        html.enabled = true
+    }
+
+    classpath = files()
+}
