@@ -55,6 +55,7 @@ apply from: 'common.gradle'
 //apply from: this.file('common.gradle')
 
 task clean(type: Delete) {
+    println "clean  --- 执行"
     delete rootProject.buildDir
 }
 
