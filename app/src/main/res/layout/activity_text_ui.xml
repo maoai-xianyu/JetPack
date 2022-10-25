@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.deeplink.WebActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_4x4"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_rocket" />
+
+
+    <TextView
+        android:id="@+id/tvBind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="双向绑定双向向中国\n香港绑定双向绑定绑定"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/color_3d3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/iv_4x4"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
