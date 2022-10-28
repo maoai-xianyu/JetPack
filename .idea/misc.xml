@@ -19,7 +19,8 @@
         <entry key="app/src/main/res/drawable/shape_button_sell_1.xml" value="0.375" />
         <entry key="app/src/main/res/drawable/shape_button_sell_2.xml" value="0.375" />
         <entry key="app/src/main/res/drawable/windows_bg.xml" value="0.38333333333333336" />
-        <entry key="app/src/main/res/layout/activity_animator_ui.xml" value="0.37552083333333336" />
+        <entry key="app/src/main/res/layout/activity_animator_ui.xml" value="1.0735783894856772" />
+        <entry key="app/src/main/res/layout/activity_animator_ui_two.xml" value="0.33605072463768115" />
         <entry key="app/src/main/res/layout/activity_button_shape.xml" value="0.5847589424572317" />
         <entry key="app/src/main/res/layout/activity_button_shape_other.xml" value="0.3614583333333333" />
         <entry key="app/src/main/res/layout/activity_constraintlayout.xml" value="0.2617753623188406" />
