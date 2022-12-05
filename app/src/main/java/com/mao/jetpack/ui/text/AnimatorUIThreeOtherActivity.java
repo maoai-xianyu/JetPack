@@ -239,9 +239,15 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                     binding.image2.setLayoutParams(params1);
                     binding.image3.setLayoutParams(params2);
 
-                    binding.image1.setTranslationZ(-1);
+
                     binding.image2.setTranslationZ(1);
+                    binding.image2.setAlpha(1f);
                     binding.image3.setTranslationZ(0);
+                    binding.image3.setAlpha(0.88f);
+                    binding.image1.setTranslationZ(-1);
+                    binding.image1.setAlpha(0.3f);
+
+
 
                     imageChange1 = binding.image2;
                     imageChange2 = binding.image3;
@@ -253,9 +259,12 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                     binding.image2.setLayoutParams(params3);
                     binding.image3.setLayoutParams(params1);
 
-                    binding.image1.setTranslationZ(0);
-                    binding.image2.setTranslationZ(-1);
                     binding.image3.setTranslationZ(1);
+                    binding.image3.setAlpha(1f);
+                    binding.image1.setTranslationZ(0);
+                    binding.image1.setAlpha(0.88f);
+                    binding.image2.setTranslationZ(-1);
+                    binding.image2.setAlpha(0.3f);
 
 
                     imageChange1 = binding.image3;
@@ -269,8 +278,11 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
 
                     binding.image1.setTranslationZ(1);
+                    binding.image1.setAlpha(1f);
                     binding.image2.setTranslationZ(0);
+                    binding.image2.setAlpha(0.88f);
                     binding.image3.setTranslationZ(-1);
+                    binding.image3.setAlpha(0.3f);
 
                     imageChange1 = binding.image1;
                     imageChange2 = binding.image2;
