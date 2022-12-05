@@ -97,7 +97,10 @@
         <activity android:name=".ui.reflect.ReflectThirdActivity"/>
         <activity android:name=".ui.image.ImageActivity"/>
         <activity android:name=".ui.text.AnimatorUiActivity"/>
-        <activity android:name=".ui.text.AnimatorUTwoActivity"/>
+        <activity android:name=".ui.text.AnimatorUiTwoActivity"/>
+        <activity android:name=".ui.text.AnimatorUiTwoScaleActivity"/>
+        <activity android:name=".ui.text.AnimatorUIThreeActivity"/>
+        <activity android:name=".ui.text.AnimatorUIThreeOtherActivity"/>
     </application>
 
 </manifest>

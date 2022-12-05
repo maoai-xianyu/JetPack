@@ -22,9 +22,7 @@ import com.mao.jetpack.ui.reflect.ReflectOneActivity
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
 import com.mao.jetpack.ui.task.OneTaskActivity
-import com.mao.jetpack.ui.text.AnimatorUTwoActivity
-import com.mao.jetpack.ui.text.AnimatorUiActivity
-import com.mao.jetpack.ui.text.TextUIActivity
+import com.mao.jetpack.ui.text.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -100,7 +98,18 @@ class HomeFragment : Fragment() {
         }
 
         btnAnimator2.setOnClickListener {
-            startActivity(Intent(activity, AnimatorUTwoActivity::class.java))
+            startActivity(Intent(activity, AnimatorUiTwoActivity::class.java))
+        }
+        btnAnimator3.setOnClickListener {
+            startActivity(Intent(activity, AnimatorUiTwoScaleActivity::class.java))
+        }
+
+        btnAnimator4.setOnClickListener {
+            startActivity(Intent(activity, AnimatorUIThreeActivity::class.java))
+        }
+
+        btnAnimator5.setOnClickListener {
+            startActivity(Intent(activity, AnimatorUIThreeOtherActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)

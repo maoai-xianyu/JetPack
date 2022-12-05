@@ -15,7 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mao.jetpack.databinding.ActivityAnimatorUiBinding;
-import com.mao.jetpack.utils.Logger;
 import com.maoyan.utils.DimenUtils;
 
 /**
@@ -498,24 +497,36 @@ public class AnimatorUiActivity extends AppCompatActivity {
                 movieXv2_1 = roll ? 0 : -30;*/
 
 
+
                 FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),DimenUtils.dp2px(152));
+                params1.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
+
+                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),DimenUtils.dp2px(136));
+                params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
+
+                binding.image1.setLayoutParams(roll ? params2 : params1);
+                binding.image2.setLayoutParams(roll ? params1 : params2);
+
+
+                imageChange1 = roll ? binding.image2 : binding.image1;
+                imageChange2 = roll ? binding.image1 : binding.image2;
+
+
+
+               /* FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),DimenUtils.dp2px(152));
                 params1.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
                 FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),DimenUtils.dp2px(136));
                 params2.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
                 binding.image2.setLayoutParams(roll ? params2 : params1);
                 binding.image1.setLayoutParams(roll ? params1 : params2);
 
-
-                Logger.debug("imageChange1 前  ==  " + imageChange1);
-                Logger.debug("imageChange2 前  ==  " + imageChange2);
                 imageChange1 = roll ? binding.image2 : binding.image1;
-                imageChange2 = roll ? binding.image1 : binding.image2;
-                Logger.debug("imageChange1 后  ==  " + imageChange1);
-                Logger.debug("imageChange2 后  ==  " + imageChange2);
-                Logger.debug("imageChange2 后  ==  " + DimenUtils.dp2px(6));
-                Logger.debug("imageChange2 后  ==  " + DimenUtils.dp2px(12));
+                imageChange2 = roll ? binding.image1 : binding.image2;*/
 
                 mAnimatorSet.start();
+
+
+
             }
         });
 
