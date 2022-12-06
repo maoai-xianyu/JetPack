@@ -106,7 +106,7 @@ public class AnimatorUiTwoScaleActivity extends AppCompatActivity {
         });
 
         // 变化显示
-        ValueAnimator vC1 = ValueAnimator.ofFloat(1, -1);
+        ValueAnimator vC1 = ValueAnimator.ofFloat(1, 0);
         vC1.setDuration(time);
         vC1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -152,7 +152,7 @@ public class AnimatorUiTwoScaleActivity extends AppCompatActivity {
         });
 
         // 变化显示
-        ValueAnimator vC2 = ValueAnimator.ofFloat(-1, 1);
+        ValueAnimator vC2 = ValueAnimator.ofFloat(0, 1);
         vC2.setDuration(time);
         vC2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override

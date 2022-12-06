@@ -52,10 +52,10 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         binding.image1.setTranslationZ(1);
         binding.image1.setAlpha(1f);
 
-        binding.image2.setTranslationZ(0);
+        binding.image2.setTranslationZ(-1);
         binding.image2.setAlpha(0.88f);
 
-        binding.image3.setTranslationZ(-1);
+        binding.image3.setTranslationZ(-2);
         binding.image3.setAlpha(0.3f);
 
         imageChange1 = binding.image1;
@@ -111,7 +111,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         });
 
         // 变化显示
-        ValueAnimator vC1 = ValueAnimator.ofFloat(1, -1);
+        ValueAnimator vC1 = ValueAnimator.ofFloat(1, -2);
         vC1.setDuration(time);
         vC1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -135,7 +135,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         });
 
         // 平移
-        ValueAnimator vT2 = ValueAnimator.ofFloat(0, -DimenUtils.dp2px(10.1f));
+        ValueAnimator vT2 = ValueAnimator.ofFloat(0, -DimenUtils.dp2px(10.3f));
         vT2.setDuration(time);
         vT2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -157,7 +157,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         });
 
         // 变化显示
-        ValueAnimator vC2 = ValueAnimator.ofFloat(0, 1);
+        ValueAnimator vC2 = ValueAnimator.ofFloat(-1, 1);
         vC2.setDuration(time);
         vC2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -181,7 +181,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         });
 
         // 平移
-        ValueAnimator vT3 = ValueAnimator.ofFloat(0, -DimenUtils.dp2px(10.5f));
+        ValueAnimator vT3 = ValueAnimator.ofFloat(0, -DimenUtils.dp2px(10.3f));
         vT3.setDuration(time);
         vT3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -203,7 +203,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         });
 
         // 变化显示
-        ValueAnimator vC3 = ValueAnimator.ofFloat(-1, 0);
+        ValueAnimator vC3 = ValueAnimator.ofFloat(-2, -1);
         vC3.setDuration(time);
         vC3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -227,7 +227,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                 FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106), DimenUtils.dp2px(152));
                 params1.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
                 FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(95.4f), DimenUtils.dp2px(136.8f));
-                params2.rightMargin = DimenUtils.dp2px(5.2f);
+                params2.rightMargin = DimenUtils.dp2px(5f);
                 params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
                 FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(DimenUtils.dp2px(84.8f), DimenUtils.dp2px(121.6f));
