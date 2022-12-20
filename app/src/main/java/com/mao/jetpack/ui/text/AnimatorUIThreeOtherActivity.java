@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleOtherBinding;
 import com.maoyan.utils.DimenUtils;
 
@@ -247,7 +248,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                     binding.image1.setTranslationZ(-1);
                     binding.image1.setAlpha(0.3f);
 
-
+                    binding.image1.setImageResource(R.drawable.a_image_4);
 
                     imageChange1 = binding.image2;
                     imageChange2 = binding.image3;
