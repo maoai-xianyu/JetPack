@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mao.jetpack.widget.MovieLimitLengthTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_fillet_bg"
+    android:layout_width="wrap_content"
+    android:layout_height="25dp"
+    android:background="@drawable/flow_layout_item_selector"
+    android:gravity="center_vertical"
+    android:maxLines="1"
+    android:paddingBottom="4dp"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:paddingTop="4dp"
+    android:textColor="#FFFFFF"
+    android:textSize="12sp"
+    app:limitLength="6"
+    tools:text="啊啊啊啊啊啊啊" />

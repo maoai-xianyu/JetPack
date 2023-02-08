@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--wxm：不能和state_checked一同设置-->
+    <item android:state_selected="false">
+        <shape>
+            <corners android:radius="25dp" />
+            <solid android:color="#40000000" />
+        </shape>
+    </item>
+    <item android:state_selected="true">
+        <shape>
+            <corners android:radius="25dp" />
+            <solid android:color="#dd403b" />
+        </shape>
+    </item>
+</selector>

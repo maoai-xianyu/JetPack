@@ -482,4 +482,13 @@
         <attr name="my_replace_symbol" format="string">使用什么符号代替</attr>
 
     </declare-styleable>
+
+    <declare-styleable name="MovieFlowLayout">
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="horizontalSpacing" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MovieLimitLengthTextView">
+        <attr name="limitLength" format="integer" />
+    </declare-styleable>
 </resources>

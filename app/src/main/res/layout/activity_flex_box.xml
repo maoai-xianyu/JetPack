@@ -186,4 +186,17 @@
         tools:visibility="visible" />
 
 
+    <com.mao.jetpack.widget.flexbox.MovieSingleViewTypeFlowLayout
+        android:id="@+id/movieListFlowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        app:horizontalSpacing="7.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:verticalSpacing="15dp"
+        tools:ignore="RtlHardcoded" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,19 @@ package com.mao.jetpack.ui.fllexbox;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.flexbox.FlexboxLayout;
+import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityFlexBoxBinding;
 import com.mao.jetpack.widget.FlexBoxLayoutMaxLines;
+import com.mao.jetpack.widget.flexbox.MovieSingleViewTypeFlowLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author zhangkun
@@ -49,6 +55,33 @@ public class FlexBoxActivity extends AppCompatActivity {
                     }
                 });
 
+        List<String> strings = new ArrayList<>();
+        strings.add("项目一");
+        strings.add("项目二");
+        strings.add("项目三");
+        strings.add("项目四");
+        strings.add("项目五");
+        strings.add("项目六");
+        strings.add("项目七");
+        strings.add("项目八");
+
+        FlowLayoutAdapter mAdapter = new FlowLayoutAdapter(strings, R.layout.movie_view_flowlayout_item_textview);
+        binding.movieListFlowLayout.setAdapter(mAdapter);
+
+    }
+
+
+    private static final class FlowLayoutAdapter extends MovieSingleViewTypeFlowLayout.Adapter<String> {
+
+        FlowLayoutAdapter(List<String> data, int layoutId) {
+            super(data, layoutId);
+        }
+
+        @Override
+        public void onBindViewHolder(MovieSingleViewTypeFlowLayout.ViewHolder holder, int position) {
+            TextView textView = holder.findView(R.id.tv_fillet_bg);
+            textView.setText((CharSequence) getItem(position));
+        }
     }
 
 }
