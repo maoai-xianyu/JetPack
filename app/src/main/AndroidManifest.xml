@@ -101,6 +101,7 @@
         <activity android:name=".ui.text.AnimatorUiTwoScaleActivity"/>
         <activity android:name=".ui.text.AnimatorUIThreeActivity"/>
         <activity android:name=".ui.text.AnimatorUIThreeOtherActivity"/>
+        <activity android:name=".ui.fllexbox.FlexBoxActivity"/>
     </application>
 
 </manifest>

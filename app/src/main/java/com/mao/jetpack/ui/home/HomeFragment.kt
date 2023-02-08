@@ -17,6 +17,7 @@ import com.mao.jetpack.ui.banner.BannerActivity
 import com.mao.jetpack.ui.button.ButtonShapeActivity
 import com.mao.jetpack.ui.button.ButtonShapeOtherActivity
 import com.mao.jetpack.ui.coroutine.CoroutineActivity
+import com.mao.jetpack.ui.fllexbox.FlexBoxActivity
 import com.mao.jetpack.ui.image.ImageActivity
 import com.mao.jetpack.ui.reflect.ReflectOneActivity
 import com.mao.jetpack.ui.room.RoomActivity
@@ -110,6 +111,10 @@ class HomeFragment : Fragment() {
 
         btnAnimator5.setOnClickListener {
             startActivity(Intent(activity, AnimatorUIThreeOtherActivity::class.java))
+        }
+
+        btnflex.setOnClickListener {
+            startActivity(Intent(activity, FlexBoxActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)

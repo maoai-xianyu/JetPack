@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mao.jetpack.R;
-import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleOtherBinding;
+import com.mao.jetpack.databinding.ActivityAnimatorUiFourBinding;
 import com.maoyan.utils.DimenUtils;
 
 /**
@@ -23,9 +23,9 @@ import com.maoyan.utils.DimenUtils;
  * @time 2022/10/24 16:56
  * @Description
  */
-public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
+public class AnimatorUIFourOtherActivity extends AppCompatActivity {
 
-    private ActivityAnimatorUiThreeScaleOtherBinding binding;
+    private ActivityAnimatorUiFourBinding binding;
     private AnimatorSet mAnimatorSet;
 
     private final long time = 4000;
@@ -47,7 +47,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityAnimatorUiThreeScaleOtherBinding.inflate(LayoutInflater.from(this));
+        binding = ActivityAnimatorUiFourBinding.inflate(LayoutInflater.from(this));
         setContentView(binding.getRoot());
 
         binding.image1.setTranslationZ(1);
@@ -68,6 +68,18 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         mAnimatorSet.start();
 
     }
+
+
+
+    @SuppressLint("Recycle")
+    private void startAn1() {
+
+
+
+    }
+
+
+
 
     @SuppressLint("Recycle")
     private void startAn() {

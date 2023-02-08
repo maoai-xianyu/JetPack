@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexbox_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="nowrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#03A9F4"
+            android:gravity="center"
+            android:text="测试一" />
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#E91E63"
+            android:gravity="center"
+            android:text="测试二" />
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:text="测试三" />
+
+        <TextView
+            android:id="@+id/textview4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#FF5722"
+            android:gravity="center"
+            android:text="测试四" />
+
+        <TextView
+            android:id="@+id/textview5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试五" />
+
+
+        <TextView
+            android:id="@+id/textview6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试六" />
+
+        <TextView
+            android:id="@+id/textview7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试七" />
+
+        <TextView
+            android:id="@+id/textview8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试八" />
+
+        <TextView
+            android:id="@+id/textview9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试九" />
+
+
+        <TextView
+            android:id="@+id/textview10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:text="测试十" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+
+    <com.mao.jetpack.widget.FlexBoxLayoutMaxLines
+        android:id="@+id/hot_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:dividerDrawable="@drawable/divider_flexbox"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexbox_layout"
+        app:maxLine="1"
+        app:showDivider="middle"
+        app:showDividerHorizontal="middle"
+        app:showDividerVertical="middle">
+
+
+        <TextView
+            android:id="@+id/textview11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#03A9F4"
+            android:gravity="center"
+            android:text="测试一" />
+
+        <TextView
+            android:id="@+id/textview22"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#E91E63"
+            android:gravity="center"
+            android:text="测试二" />
+
+        <TextView
+            android:id="@+id/textview33"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:text="测试三" />
+
+        <TextView
+            android:id="@+id/textview44"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#FF5722"
+            android:gravity="center"
+            android:text="测试四" />
+
+        <TextView
+            android:id="@+id/textview55"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#4CAF50"
+            android:gravity="center"
+            android:text="测试五" />
+
+
+        <TextView
+            android:id="@+id/textview66"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="#673AB7"
+            android:gravity="center"
+            android:text="测试六" />
+
+
+    </com.mao.jetpack.widget.FlexBoxLayoutMaxLines>
+
+
+    <ImageView
+        android:id="@+id/iv_arrow_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/hot_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_arrow_down"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
