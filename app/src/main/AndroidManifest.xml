@@ -102,6 +102,7 @@
         <activity android:name=".ui.text.AnimatorUIThreeActivity"/>
         <activity android:name=".ui.text.AnimatorUIThreeOtherActivity"/>
         <activity android:name=".ui.fllexbox.FlexBoxActivity"/>
+        <activity android:name=".ui.seekbar.SeekbarActivity"/>
     </application>
 
 </manifest>

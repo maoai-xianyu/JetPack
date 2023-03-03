@@ -22,6 +22,7 @@ import com.mao.jetpack.ui.image.ImageActivity
 import com.mao.jetpack.ui.reflect.ReflectOneActivity
 import com.mao.jetpack.ui.room.RoomActivity
 import com.mao.jetpack.ui.room.RoomSelectActivity
+import com.mao.jetpack.ui.seekbar.SeekbarActivity
 import com.mao.jetpack.ui.task.OneTaskActivity
 import com.mao.jetpack.ui.text.*
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -115,6 +116,10 @@ class HomeFragment : Fragment() {
 
         btnflex.setOnClickListener {
             startActivity(Intent(activity, FlexBoxActivity::class.java))
+        }
+
+        btnSeekbar.setOnClickListener {
+            startActivity(Intent(activity, SeekbarActivity::class.java))
         }
 
         val p1 = ProgressBarModel(0)
