@@ -122,6 +122,10 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, SeekbarActivity::class.java))
         }
 
+        btnAn.setOnClickListener {
+            startActivity(Intent(activity, AnimatorTotalActivity::class.java))
+        }
+
         val p1 = ProgressBarModel(0)
         val p2 = ProgressBarModel(0)
         val p3 = ProgressBarModel(0)
