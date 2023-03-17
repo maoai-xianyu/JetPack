@@ -169,17 +169,13 @@ public class AnimatorTotalActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                if (times[0] >= 3) {
-
-                } else {
+                if (times[0] < 3) {
                     animatorSetAll.start();
                 }
                 times[0]++;
             }
         });
         animatorSetAll.start();
-
-
     }
 
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/iv_diamond"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/image_girl"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/diamond_spacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_diamond"
+        app:layout_constraintTop_toTopOf="@+id/iv_diamond" />
+
+    <FrameLayout
+        android:id="@+id/fl_diamond_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="36dp"
+        app:layout_constrainedWidth="true"
+        android:background="@drawable/maoyan_adx_bg_tips"
+        app:layout_constraintStart_toStartOf="@+id/diamond_spacer"
+        app:layout_constraintTop_toTopOf="@+id/diamond_spacer">
+
+        <TextView
+            android:id="@+id/tv_diamond_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:textColor="#ffffff"
+            android:textSize="9sp"
+            tools:text="是的撒多撒大声地" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_diamond_tag_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_movie_wish"
+
+        app:layout_constraintTop_toBottomOf="@+id/iv_diamond"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:includeFontPadding="false"
+        android:maxLength="3"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        tools:text="是的撒多撒大声地" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
