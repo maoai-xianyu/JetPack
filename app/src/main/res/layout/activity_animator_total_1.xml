@@ -74,5 +74,42 @@
         tools:text="是的撒多撒大声地" />
 
 
+
+    <TextView
+        android:id="@+id/tv_diamond_tag_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/maoyan_adx_bg_tips"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diamond_tag_1"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLength="3"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        tools:text="是的撒多撒大声地" />
+
+
+    <TextView
+        android:id="@+id/tv_diamond_tag_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_daily_sign_tips"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diamond_tag_2"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLength="3"
+        android:maxLines="1"
+        android:textColor="@color/color_white"
+        android:textSize="9sp"
+        tools:text="是的撒多撒大声地aasdasdasd" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

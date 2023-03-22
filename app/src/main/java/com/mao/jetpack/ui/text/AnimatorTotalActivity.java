@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -13,8 +14,15 @@ import android.view.animation.ScaleAnimation;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.mao.jetpack.databinding.ActivityAnimatorTotalBinding;
+import com.mao.jetpack.widget.rebound.CustomLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author zhangkun
@@ -37,6 +45,85 @@ public class AnimatorTotalActivity extends AppCompatActivity {
 //        anTwo();
         anThree();
 //        anFive();
+
+
+        List<String> list = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            list.add("测试题 + "+i);
+        }
+
+        ReboundAdapter adapter = new ReboundAdapter();
+        adapter.refreshData(list);
+        binding.rv.setAdapter(adapter);
+
+
+
+        ReboundAdapter adapter2 = new ReboundAdapter();
+        adapter2.refreshData(list);
+
+        binding.rv2.setAdapter(adapter2);
+
+
+
+        ReboundAdapter adapter3 = new ReboundAdapter();
+        adapter3.refreshData(list);
+
+        binding.rv3.setAdapter(adapter3);
+
+
+
+        ReboundAdapter adapter4 = new ReboundAdapter();
+        adapter4.refreshData(list);
+        binding.rv4.setAdapter(adapter4);
+
+        LinearSnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(binding.rv4);
+
+
+        ReboundAdapter adapter5 = new ReboundAdapter();
+        adapter5.refreshData(list);
+        binding.rv5.setLayoutManager(new CustomLayoutManager(this));
+        binding.rv5.setAdapter(adapter5);
+
+
+
+        ReboundAdapter adapter6 = new ReboundAdapter();
+        adapter6.refreshData(list);
+        binding.rv6.setAdapter(adapter6);
+
+
+
+        binding.rv6.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+                //判断是当前layoutManager是否为LinearLayoutManager
+                // 只有LinearLayoutManager才有查找第一个和最后一个可见view位置的方法
+                if (layoutManager instanceof LinearLayoutManager) {
+                    LinearLayoutManager linearManager = (LinearLayoutManager) layoutManager;
+                    //获取最后一个可见view的位置
+                    int lastItemPosition = linearManager.findLastVisibleItemPosition();
+                    //获取第一个可见view的位置
+                    int firstItemPosition = linearManager.findFirstVisibleItemPosition();
+                    Log.e("这个是什么子东西啊", lastItemPosition + "   " + firstItemPosition);
+
+                    if (linearManager.findViewByPosition(linearManager.findFirstVisibleItemPosition()).getLeft() == 0
+                            && linearManager.findFirstVisibleItemPosition() == 0) {
+                        Log.e("滑动到了最边界", "最左边=============");
+
+                    }
+
+                }
+            }});
+
+
 
 
     }
