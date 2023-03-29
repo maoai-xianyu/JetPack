@@ -50,13 +50,12 @@ public class AnimatorTotalActivity extends AppCompatActivity {
         List<String> list = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            list.add("测试题 + "+i);
+            list.add("测试题 + " + i);
         }
 
         ReboundAdapter adapter = new ReboundAdapter();
         adapter.refreshData(list);
         binding.rv.setAdapter(adapter);
-
 
 
         ReboundAdapter adapter2 = new ReboundAdapter();
@@ -65,12 +64,10 @@ public class AnimatorTotalActivity extends AppCompatActivity {
         binding.rv2.setAdapter(adapter2);
 
 
-
         ReboundAdapter adapter3 = new ReboundAdapter();
         adapter3.refreshData(list);
 
         binding.rv3.setAdapter(adapter3);
-
 
 
         ReboundAdapter adapter4 = new ReboundAdapter();
@@ -87,11 +84,9 @@ public class AnimatorTotalActivity extends AppCompatActivity {
         binding.rv5.setAdapter(adapter5);
 
 
-
         ReboundAdapter adapter6 = new ReboundAdapter();
         adapter6.refreshData(list);
         binding.rv6.setAdapter(adapter6);
-
 
 
         binding.rv6.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -121,7 +116,22 @@ public class AnimatorTotalActivity extends AppCompatActivity {
                     }
 
                 }
-            }});
+            }
+        });
+
+
+        ReboundAdapter adapter7 = new ReboundAdapter();
+        adapter7.refreshData(list);
+        binding.rv7.setAdapter(adapter7);
+
+
+
+        LinearLayoutManager layout = new LinearLayoutManager(this);
+        layout.setOrientation(RecyclerView.HORIZONTAL);
+        binding.rv8.setLayoutManager(layout);
+        ReboundAdapter adapter8 = new ReboundAdapter();
+        adapter8.refreshData(list);
+        binding.rv8.setAdapter(adapter8);
 
 
 

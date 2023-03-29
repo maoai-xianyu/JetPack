@@ -145,6 +145,18 @@
 
         </com.mao.jetpack.widget.rebound.OverScrollLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下面这个实现了横向阻尼回弹效果"
+            android:textColor="@color/color_theme"
+            android:textSize="16sp" />
 
         <!-- 左右阻尼 -->
         <com.mao.jetpack.widget.rebound.ReboundHorizontalScrollViewRV
@@ -168,6 +180,11 @@
 
         </com.mao.jetpack.widget.rebound.ReboundHorizontalScrollViewRV>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_theme" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv4"
@@ -196,6 +213,13 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下面这个实现了横向阻尼回弹效果"
+            android:textColor="@color/color_theme"
+            android:textSize="16sp" />
+
 
         <com.mao.jetpack.widget.rebound.ReboundHScrollView
             android:layout_width="match_parent"
@@ -219,6 +243,38 @@
             </RelativeLayout>
         </com.mao.jetpack.widget.rebound.ReboundHScrollView>
 
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_theme" />
+
+
+        <com.mao.jetpack.widget.rebound.DampLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </com.mao.jetpack.widget.rebound.DampLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary" />
+
+        <com.mao.jetpack.widget.rebound.ElasticListView
+            android:id="@+id/rv8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
