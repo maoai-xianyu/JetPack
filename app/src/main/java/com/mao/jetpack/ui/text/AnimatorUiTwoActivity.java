@@ -201,6 +201,16 @@ public class AnimatorUiTwoActivity extends AppCompatActivity {
                 FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),DimenUtils.dp2px(136));
                 params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
+
+
+                binding.image2.setTranslationZ(roll ? 1 : -1);
+                binding.image1.setTranslationZ(roll ? -1 : 1);
+                binding.image2.setAlpha(roll ? 1 : 0.88f);
+                binding.image1.setAlpha(roll ? 0.88f : 1);
+                binding.image2.setTranslationX(0);
+                binding.image1.setTranslationX(0);
+
+
                 binding.image1.setLayoutParams(roll ? params2 : params1);
                 binding.image2.setLayoutParams(roll ? params1 : params2);
 

@@ -182,17 +182,22 @@ public class AnimatorUiTwoScaleActivity extends AppCompatActivity {
                 roll = !roll;
 
 
+                binding.image2.setTranslationZ(roll ? 1 : -1);
+                binding.image1.setTranslationZ(roll ? -1 : 1);
+                binding.image2.setAlpha(roll ? 1 : 0.88f);
+                binding.image1.setAlpha(roll ? 0.88f : 1);
+                binding.image2.setTranslationX(0);
+                binding.image1.setTranslationX(0);
+
+                binding.image2.setScaleX(1);
+                binding.image2.setScaleY(1);
+
+                binding.image1.setScaleX(1);
+                binding.image1.setScaleY(1);
+
                 binding.image2.setLayoutParams(roll ? params1 : params2);
                 binding.image1.setLayoutParams(roll ? params2 : params1);
 
-
-        /*        xC1_1 = roll ? changeBig : 1;
-                xC1_2 = roll ? 1 : changeSmall;
-
-
-                xC2_1 = roll ? changeSmall : 1;
-                xC2_2 = roll ? 1 : changeBig;
-                */
 
                 imageChange1 = roll ? binding.image2 : binding.image1;
                 imageChange2 = roll ? binding.image1 : binding.image2;

@@ -230,13 +230,16 @@ public class AnimatorUIThreeActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
-                FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106), DimenUtils.dp2px(152));
+                FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),
+                        DimenUtils.dp2px(152));
                 params1.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
-                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96), DimenUtils.dp2px(136));
+                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),
+                        DimenUtils.dp2px(136));
                 params2.rightMargin = DimenUtils.dp2px(5.2f);
                 params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
-                FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(DimenUtils.dp2px(80), DimenUtils.dp2px(114));
+                FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(DimenUtils.dp2px(80),
+                        DimenUtils.dp2px(114));
                 params3.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
 

@@ -35,11 +35,6 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
     private ImageView imageChange2;
     private ImageView imageChange3;
 
-    private float scale1To8 = 0.8f; // 1 -> 0.8
-    private float scale8To9 = 1.125f; // 0.8 -> 0.9
-    private float scale9To1 = 1.111111111111111f; // 0.9 -> 1
-
-
     private int count = 1;
 
 
@@ -78,6 +73,8 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         AnimatorSet animatorSet = new AnimatorSet();
 
         // 缩放 x
+        // 1 -> 0.8
+        float scale1To8 = 0.8f;
         ValueAnimator vxS1 = ValueAnimator.ofFloat(1f, scale1To8);
         vxS1.setDuration(time);
         vxS1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -124,6 +121,8 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
 
         // 缩放 x
+        // 0.9 -> 1
+        float scale9To1 = 1.111111111111111f;
         ValueAnimator vxS2 = ValueAnimator.ofFloat(1f, scale9To1);
         vxS2.setDuration(time);
         vxS2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -170,6 +169,8 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
 
         // 第三张海报
+        // 0.8 -> 0.9
+        float scale8To9 = 1.125f;
         ValueAnimator vxS3 = ValueAnimator.ofFloat(1, scale8To9);
         vxS3.setDuration(time);
         vxS3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -225,30 +226,44 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
 
-                FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106), DimenUtils.dp2px(152));
+                FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),
+                        DimenUtils.dp2px(152));
                 params1.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
-                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(95.4f), DimenUtils.dp2px(136.8f));
+                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(95.4f),
+                        DimenUtils.dp2px(136.8f));
                 params2.rightMargin = DimenUtils.dp2px(5f);
                 params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
-                FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(DimenUtils.dp2px(84.8f), DimenUtils.dp2px(121.6f));
+                FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(DimenUtils.dp2px(84.8f),
+                        DimenUtils.dp2px(121.6f));
                 params3.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
 
 
                 if (count == 1) {
-                   /* binding.image1.setLayoutParams(params3);
-                    binding.image2.setLayoutParams(params1);
-                    binding.image3.setLayoutParams(params2);
-
-
                     binding.image2.setTranslationZ(1);
                     binding.image2.setAlpha(1f);
-                    binding.image3.setTranslationZ(0);
+                    binding.image2.setTranslationX(0);
+                    binding.image2.setScaleX(1);
+                    binding.image2.setScaleY(1);
+
+                    binding.image3.setTranslationZ(-1);
                     binding.image3.setAlpha(0.88f);
-                    binding.image1.setTranslationZ(-1);
-                    binding.image1.setAlpha(0.3f);*/
+                    binding.image3.setTranslationX(0);
+                    binding.image3.setScaleX(1);
+                    binding.image3.setScaleY(1);
+
+                    binding.image1.setTranslationZ(-2);
+                    binding.image1.setAlpha(0.3f);
+                    binding.image1.setTranslationX(0);
+                    binding.image1.setScaleX(1);
+                    binding.image1.setScaleY(1);
 
                     binding.image1.setImageResource(R.drawable.a_image_4);
+
+
+                    binding.image1.setLayoutParams(params3);
+                    binding.image2.setLayoutParams(params1);
+                    binding.image3.setLayoutParams(params2);
 
                     imageChange1 = binding.image2;
                     imageChange2 = binding.image3;
@@ -256,16 +271,29 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
                 } else if (count == 2) {
 
-                 /*   binding.image1.setLayoutParams(params2);
-                    binding.image2.setLayoutParams(params3);
-                    binding.image3.setLayoutParams(params1);
 
                     binding.image3.setTranslationZ(1);
                     binding.image3.setAlpha(1f);
-                    binding.image1.setTranslationZ(0);
+                    binding.image3.setTranslationX(0);
+                    binding.image3.setScaleX(1);
+                    binding.image3.setScaleY(1);
+
+                    binding.image1.setTranslationZ(-1);
                     binding.image1.setAlpha(0.88f);
-                    binding.image2.setTranslationZ(-1);
-                    binding.image2.setAlpha(0.3f);*/
+                    binding.image1.setTranslationX(0);
+                    binding.image1.setScaleX(1);
+                    binding.image1.setScaleY(1);
+
+                    binding.image2.setTranslationZ(-2);
+                    binding.image2.setAlpha(0.3f);
+                    binding.image2.setTranslationX(0);
+                    binding.image2.setScaleX(1);
+                    binding.image2.setScaleY(1);
+
+
+                    binding.image1.setLayoutParams(params2);
+                    binding.image2.setLayoutParams(params3);
+                    binding.image3.setLayoutParams(params1);
 
 
                     imageChange1 = binding.image3;
@@ -273,17 +301,31 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                     imageChange3 = binding.image2;
 
                 } else {
+
+
+                    binding.image1.setTranslationZ(1);
+                    binding.image1.setAlpha(1f);
+                    binding.image1.setTranslationX(0);
+                    binding.image1.setScaleX(1);
+                    binding.image1.setScaleY(1);
+
+                    binding.image2.setTranslationZ(-1);
+                    binding.image2.setAlpha(0.88f);
+                    binding.image2.setTranslationX(0);
+                    binding.image2.setScaleX(1);
+                    binding.image2.setScaleY(1);
+
+                    binding.image3.setTranslationZ(-2);
+                    binding.image3.setAlpha(0.3f);
+                    binding.image3.setTranslationX(0);
+                    binding.image3.setScaleX(1);
+                    binding.image3.setScaleY(1);
+
+
                     binding.image1.setLayoutParams(params1);
                     binding.image2.setLayoutParams(params2);
                     binding.image3.setLayoutParams(params3);
 
-/*
-                    binding.image1.setTranslationZ(1);
-                    binding.image1.setAlpha(1f);
-                    binding.image2.setTranslationZ(0);
-                    binding.image2.setAlpha(0.88f);
-                    binding.image3.setTranslationZ(-1);
-                    binding.image3.setAlpha(0.3f);*/
 
                     imageChange1 = binding.image1;
                     imageChange2 = binding.image2;
