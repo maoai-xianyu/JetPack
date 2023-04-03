@@ -114,6 +114,10 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, AnimatorUIThreeOtherActivity::class.java))
         }
 
+        btnAnimator6.setOnClickListener {
+            startActivity(Intent(activity, AnimatorUIFourOtherActivity::class.java))
+        }
+
         btnflex.setOnClickListener {
             startActivity(Intent(activity, FlexBoxActivity::class.java))
         }

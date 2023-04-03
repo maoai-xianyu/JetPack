@@ -21,7 +21,7 @@ import com.maoyan.utils.DimenUtils;
 /**
  * @author zhangkun
  * @time 2022/10/24 16:56
- * @Description
+ * @Description  多海报正确显示
  */
 public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
@@ -60,6 +60,7 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
 
         mAnimatorSet = new AnimatorSet();
         startAn();
+        ValueAnimatorUtil.resetDurationScaleIfDisable();
         mAnimatorSet.start();
 
     }

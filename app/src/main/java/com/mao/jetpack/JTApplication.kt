@@ -6,6 +6,7 @@ import com.mao.jetpack.utils.Logger
 
 import com.kingja.loadsir.core.LoadSir
 import com.mao.base.loadsir.*
+import me.weishu.reflection.Reflection
 
 
 /**
@@ -31,6 +32,9 @@ class JTApplication : BaseApplication() {
             .addCallback(CustomCallback())
             .setDefaultCallback(LoadingCallback::class.java) //设置默认状态页
             .commit()
+
+
+        Reflection.unseal(this)
     }
 
 }

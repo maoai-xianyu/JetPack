@@ -20,7 +20,7 @@ import com.maoyan.utils.DimenUtils;
 /**
  * @author zhangkun
  * @time 2022/10/24 16:56
- * @Description
+ * @Description  多海报运行动画有问题
  */
 public class AnimatorUIThreeActivity extends AppCompatActivity {
 

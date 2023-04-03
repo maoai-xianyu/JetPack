@@ -405,6 +405,28 @@
                 tools:iconTint="@color/color_3d3"
                 tools:textColor="@color/color_3d3" />
 
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAnimator6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="动画变化-缩放宽高3张 属性动画"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:backgroundTint="#ffffff"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/icon_cell_like"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@color/color_theme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAnimator5"
+                tools:icon="@drawable/icon_cell_like"
+                tools:iconTint="@color/color_3d3"
+                tools:textColor="@color/color_3d3" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnflex"
                 android:layout_width="wrap_content"
@@ -421,7 +443,7 @@
                 app:iconTint="@color/color_theme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnAnimator5"
+                app:layout_constraintTop_toBottomOf="@+id/btnAnimator6"
                 tools:icon="@drawable/icon_cell_like"
                 tools:iconTint="@color/color_3d3"
                 tools:textColor="@color/color_3d3" />
@@ -442,7 +464,7 @@
                 app:iconTint="@color/color_theme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnAnimator5"
+                app:layout_constraintTop_toBottomOf="@+id/btnflex"
                 tools:icon="@drawable/icon_cell_like"
                 tools:iconTint="@color/color_3d3"
                 tools:textColor="@color/color_3d3" />
@@ -464,7 +486,7 @@
                 app:iconTint="@color/color_theme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnAnimator5"
+                app:layout_constraintTop_toBottomOf="@+id/btnSeekbar"
                 tools:icon="@drawable/icon_cell_like"
                 tools:iconTint="@color/color_3d3"
                 tools:textColor="@color/color_3d3" />

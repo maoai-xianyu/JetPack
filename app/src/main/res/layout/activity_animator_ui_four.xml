@@ -32,15 +32,6 @@
             android:layout_gravity="end|center_vertical"
             android:src="@drawable/a_image_1" />
 
-        <View
-            android:id="@+id/vShadow"
-            android:layout_width="10dp"
-            tools:layout_marginEnd="5dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_vertical|end"
-            android:background="@color/colorPrimary"
-            tools:visibility="visible" />
-
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image1"
