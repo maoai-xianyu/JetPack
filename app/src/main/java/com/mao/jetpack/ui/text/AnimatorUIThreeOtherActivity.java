@@ -14,9 +14,12 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleOtherBinding;
 import com.maoyan.utils.DimenUtils;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
 
 /**
  * @author zhangkun
@@ -62,6 +65,21 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
         startAn();
         ValueAnimatorUtil.resetDurationScaleIfDisable();
         mAnimatorSet.start();
+
+
+        // https://p0.pipi.cn/adAdmin/fb73860203092387a902ffd05f30ba16777c9.jpg?imageMogr2/quality/85
+        // https://p0.pipi.cn/adAdmin/fb738602e7ab12af33f0eef934a479a1ef511.jpg?imageMogr2/quality/85
+
+        Glide.with(this)
+                .load("https://p0.pipi.cn/adAdmin/fb73860203092387a902ffd05f30ba16777c9.jpg?imageMogr2/quality/85")
+                // 设置高斯模糊,模糊程度(最大25)  缩放比例
+                .bitmapTransform(new BlurTransformation(this, 14, 10))
+                .into(binding.ivCover);
+
+        Glide.with(this)
+                .load("https://p0.pipi.cn/adAdmin/fb73860203092387a902ffd05f30ba16777c9.jpg?imageMogr2/quality/85")
+                // 设置高斯模糊,模糊程度(最大25)  缩放比例
+                .into(binding.ivCover1);
 
     }
 
