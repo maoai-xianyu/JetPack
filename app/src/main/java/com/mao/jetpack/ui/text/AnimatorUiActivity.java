@@ -58,6 +58,7 @@ public class AnimatorUiActivity extends AppCompatActivity {
         imageChange1 = binding.image1;
         imageChange2 = binding.image2;
         mAnimatorSet = new AnimatorSet();
+        ValueAnimatorUtil.setAnimationScale(mAnimatorSet);
         startAn3();
         mAnimatorSet.start();
 

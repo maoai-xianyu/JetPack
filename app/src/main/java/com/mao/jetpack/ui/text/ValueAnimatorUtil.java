@@ -1,10 +1,13 @@
 package com.mao.jetpack.ui.text;
 
+import android.animation.Animator;
 import android.animation.ValueAnimator;
 
 import androidx.annotation.NonNull;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 public class ValueAnimatorUtil {
 
@@ -41,5 +44,19 @@ public class ValueAnimatorUtil {
         Field field = ValueAnimator.class.getDeclaredField("sDurationScale");
         field.setAccessible(true);
         return field;
+    }
+
+
+    // 解决用户关闭动画后动画闪烁问题
+    // 在动画创建之后，调用这个方法
+    // 参考 https://blog.csdn.net/zoulutaisao/article/details/125294074
+    // 参考 https://blog.csdn.net/weimiannihao/article/details/124825888
+    public static void setAnimationScale(Animator animator) {
+        try {
+            Method setAnimationScale = ValueAnimator.class.getMethod("setDurationScale", float.class);
+            setAnimationScale.invoke(animator, 1);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 }
