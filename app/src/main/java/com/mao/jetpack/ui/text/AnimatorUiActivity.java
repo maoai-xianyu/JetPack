@@ -6,6 +6,8 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -58,9 +60,22 @@ public class AnimatorUiActivity extends AppCompatActivity {
         imageChange1 = binding.image1;
         imageChange2 = binding.image2;
         mAnimatorSet = new AnimatorSet();
+
+        // 解决开发者模式关闭的显示
+        /*
         ValueAnimatorUtil.setAnimationScale(mAnimatorSet);
         startAn3();
-        mAnimatorSet.start();
+        mAnimatorSet.start();*/
+
+        // 开启动画使用延迟4s
+        startAn5();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mAnimatorSet.start();
+//                mAnimatorSet.cancel();
+            }
+        },4000);
 
 
 
@@ -492,11 +507,6 @@ public class AnimatorUiActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 roll = !roll;
-                /*movieXv1_0 = roll ? -30 : 0;
-                movieXv1_1 = roll ? 0 : 30;
-                movieXv2_0 = roll ? 30 : 0;
-                movieXv2_1 = roll ? 0 : -30;*/
-
 
 
                 FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),DimenUtils.dp2px(152));
@@ -508,31 +518,174 @@ public class AnimatorUiActivity extends AppCompatActivity {
                 binding.image1.setLayoutParams(roll ? params2 : params1);
                 binding.image2.setLayoutParams(roll ? params1 : params2);
 
+                imageChange1 = roll ? binding.image2 : binding.image1;
+                imageChange2 = roll ? binding.image1 : binding.image2;
+
+                mAnimatorSet.start();
+            }
+        });
+    }
+
+
+    // 将延时写在外面
+    private void startAn5() {
+
+        // 缩放 x
+        ValueAnimator vxS1 = ValueAnimator.ofInt(DimenUtils.dp2px(106), DimenUtils.dp2px(96));
+        vxS1.setDuration(time);
+        vxS1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int v = (int) animation.getAnimatedValue();
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageChange1.getLayoutParams();
+                layoutParams.width = v;
+                imageChange1.setLayoutParams(layoutParams);
+            }
+        });
+
+        // 缩放 y
+        ValueAnimator vyS1 = ValueAnimator.ofInt(DimenUtils.dp2px(152), DimenUtils.dp2px(136));
+        vyS1.setDuration(time);
+        vyS1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int v = (int) animation.getAnimatedValue();
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageChange1.getLayoutParams();
+                layoutParams.height = v;
+                imageChange1.setLayoutParams(layoutParams);
+            }
+        });
+
+        // 平移
+        ValueAnimator vT1 = ValueAnimator.ofFloat(0, DimenUtils.dp2px(18f));
+        vT1.setDuration(time);
+        vT1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange1.setTranslationX(v);
+            }
+        });
+
+        //透明度
+        ValueAnimator vA1 = ValueAnimator.ofFloat(1, 0.88f);
+        vA1.setDuration(time);
+        vA1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange1.setAlpha(v);
+            }
+        });
+
+        // 变化显示
+        ValueAnimator vC1 = ValueAnimator.ofFloat(1, -1);
+        vC1.setDuration(time);
+        vC1.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange1.setTranslationZ(v);
+            }
+        });
+
+
+        // 缩放 x
+        ValueAnimator vxS2 = ValueAnimator.ofInt(DimenUtils.dp2px(96), DimenUtils.dp2px(106));
+        vxS2.setDuration(time);
+        vxS2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int v = (int) animation.getAnimatedValue();
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageChange2.getLayoutParams();
+                layoutParams.width = v;
+                imageChange2.setLayoutParams(layoutParams);
+            }
+        });
+
+        // 缩放 y
+        ValueAnimator vyS2 = ValueAnimator.ofInt(DimenUtils.dp2px(136), DimenUtils.dp2px(152));
+        vyS2.setDuration(time);
+        vyS2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int v = (int) animation.getAnimatedValue();
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageChange2.getLayoutParams();
+                layoutParams.height = v;
+                imageChange2.setLayoutParams(layoutParams);
+            }
+        });
+
+        // 平移
+        ValueAnimator vT2 = ValueAnimator.ofFloat(0, -DimenUtils.dp2px(8f));
+        vT2.setDuration(time);
+        vT2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange2.setTranslationX(v);
+            }
+        });
+
+
+        //透明度
+        ValueAnimator vA2 = ValueAnimator.ofFloat(0.88f, 1f);
+        vA2.setDuration(time);
+        vA2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange2.setAlpha(v);
+            }
+        });
+
+
+        ValueAnimator vC2 = ValueAnimator.ofFloat(-1, 1);
+        vC2.setDuration(time);
+        vC2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float v = (float) animation.getAnimatedValue();
+                imageChange2.setTranslationZ(v);
+            }
+        });
+
+        mAnimatorSet.playTogether(vxS1, vyS1, vT1, vA1, vC1, vxS2, vyS2, vT2, vA2, vC2);
+
+        mAnimatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+
+                Log.e("----","执行end");
+                roll = !roll;
+
+                FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),DimenUtils.dp2px(152));
+                params1.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
+
+                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),DimenUtils.dp2px(136));
+                params2.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
+
+                binding.image1.setLayoutParams(roll ? params2 : params1);
+                binding.image2.setLayoutParams(roll ? params1 : params2);
+
+                binding.image1.setTranslationX(0);
+                binding.image2.setTranslationX(0);
 
                 imageChange1 = roll ? binding.image2 : binding.image1;
                 imageChange2 = roll ? binding.image1 : binding.image2;
 
-
-
-               /* FrameLayout.LayoutParams params1 = new FrameLayout.LayoutParams(DimenUtils.dp2px(106),DimenUtils.dp2px(152));
-                params1.gravity = Gravity.END | Gravity.CENTER_VERTICAL;
-                FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(DimenUtils.dp2px(96),DimenUtils.dp2px(136));
-                params2.gravity = Gravity.START | Gravity.CENTER_VERTICAL;
-                binding.image2.setLayoutParams(roll ? params2 : params1);
-                binding.image1.setLayoutParams(roll ? params1 : params2);
-
-                imageChange1 = roll ? binding.image2 : binding.image1;
-                imageChange2 = roll ? binding.image1 : binding.image2;*/
-
-                mAnimatorSet.start();
-
-
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAnimatorSet.start();
+                    }
+                },4000);
 
             }
         });
 
     }
-
 
 
 
