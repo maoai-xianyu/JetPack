@@ -6,7 +6,6 @@ buildscript { ScriptHandler scriptHandler ->
     repositories {
         google()
         mavenCentral()
-        maven { url 'http://depot.sankuai.com/nexus/content/groups/public/' }
         jcenter()
         maven { url 'https://jitpack.io' }
     }
@@ -23,7 +22,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'http://depot.sankuai.com/nexus/content/groups/public/' }
         jcenter()
         maven { url 'https://jitpack.io' }
     }
