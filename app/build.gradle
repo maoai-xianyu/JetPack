@@ -92,9 +92,6 @@ dependencies {
 
     implementation project(':webview')
 
-
-    implementation 'com.squareup.picasso:picasso:10000.0.0.137'
-
     implementation "androidx.activity:activity-ktx:1.2.4"
     //implementation 'com.github.ai2101039:YLCircleImageView:v1.0.8'
 }
