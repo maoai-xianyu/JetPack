@@ -53,6 +53,7 @@ apply from: 'common.gradle'
 //apply from: this.file('common.gradle')
 
 task clean(type: Delete) {
+    println "clean  --- 执行"
     delete rootProject.buildDir
 }
 
@@ -170,7 +171,7 @@ println "the build file path is " + getBuildDir().absolutePath
 println "the project path is " + getProjectDir().absolutePath
 
 
-println "--- 文件内容 ${getContent('common.gradle')}"
+//println "--- 文件内容 ${getContent('common.gradle')}"
 
 def getContent(String path) {
     try {

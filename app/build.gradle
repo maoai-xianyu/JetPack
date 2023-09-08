@@ -135,3 +135,139 @@ fileTree('build/outputs/apk/') { FileTree fileTree ->
 
 }
 
+// 新建task
+
+task(helloTask, {
+    println "i am hello task"
+})
+
+task helleTask {
+    println "i am helle task"
+}
+
+this.tasks.create(name: 'helloTask2') {
+    println "i am helleTask2"
+}
+
+
+task helloTask3(group: 'coding', description: 'task Study') {
+    println "helloTask3 分组 在 coding"
+    // 推荐用法
+    //可以多次调用
+    doFirst {
+        println 'doFirst the task group is: ' + group
+    }
+    //可以多次调用
+    doLast {
+        println 'doLast the task group is: ' + group
+    }
+}
+
+this.helloTask3.doFirst {
+    println '外面调用 doFirst the task group is: ' + description
+}
+
+
+this.tasks.create(name: "helloTask4") {
+    setGroup('coding')
+    setDescription('task Study')
+    println 'helloTask4 分组 在 coding"'
+}
+
+// 统计打包市场
+
+def startBuildTime, endBuildTime
+
+this.afterEvaluate {
+    // 保证要找的task已经配置完毕
+    def preBuild = this.project.tasks.getByName('preBuild')
+    preBuild.doFirst {
+        startBuildTime = System.currentTimeMillis()
+        println "preBuild 构建开始 start time is ${startBuildTime}"
+    }
+
+    def build = this.project.tasks.getByName('build')
+    build.doLast {
+        endBuildTime = System.currentTimeMillis()
+        println "build 构建完成 end time is ${endBuildTime}"
+        println "build 构建完成 buid time is ${endBuildTime - startBuildTime}"
+    }
+}
+
+
+task taskX {
+    doLast {
+        println "taskX 执行"
+    }
+}
+
+task taskY {
+    doLast {
+        println "taskY 执行"
+    }
+}
+
+
+task taskZ {
+    dependsOn this.tasks.findAll {
+        return it.name.startsWith('lib')
+    }
+
+    this.tasks.findAll { task ->
+        def with = task.name.startsWith('testlib')
+        println "---${with}"
+    }
+
+    def name = this.tasks.findByName('testlib1')
+
+    println "lib1 ---${name}"
+
+    doLast {
+        println "taskZ 执行"
+    }
+}
+
+// 依赖多个
+task taskM(dependsOn: [taskX,taskY]) {
+    // 动态依赖 lib开头的库，类似于依赖库工程的基础task
+    dependsOn this.tasks.findAll { task ->
+        return task.name.startsWith('lib')
+    }
+
+    doLast {
+        println "taskM 执行"
+    }
+}
+
+
+task lib1 {
+    doLast {
+        println "lib1 执行"
+    }
+}
+
+task lib2 {
+    doLast {
+        println "lib2 执行"
+    }
+}
+
+task nolib2 {
+    doLast {
+        println "nolib2 执行"
+    }
+}
+
+this.tasks.create(name:'testlib1') {
+    doLast {
+        println "testlib1 执行"
+    }
+}
+
+
+this.tasks.create(name:'testlib2') {
+    doLast {
+        println "testlib2 执行"
+    }
+}
+
