@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleOtherBinding;
 import com.maoyan.utils.DimenUtils;
@@ -80,6 +83,30 @@ public class AnimatorUIThreeOtherActivity extends AppCompatActivity {
                 .load("https://p0.pipi.cn/adAdmin/fb73860203092387a902ffd05f30ba16777c9.jpg?imageMogr2/quality/85")
                 // 设置高斯模糊,模糊程度(最大25)  缩放比例
                 .into(binding.ivCover1);
+
+
+        Glide.with(this)
+                .load("https://obj.pipi.cn/festatic/common/image/77b99cd95a1051b5d5e8b9c797ea96f7.gif")
+                .asBitmap()
+                .into(binding.ivCover2);
+
+
+
+        Glide.with(this)
+                .load("https://obj.pipi.cn/festatic/common/image/77b99cd95a1051b5d5e8b9c797ea96f7.gif")
+                .asGif()
+                .into(binding.ivCover3);
+
+
+        Glide.with(this)
+                .load("https://obj.pipi.cn/festatic/common/image/77b99cd95a1051b5d5e8b9c797ea96f7.gif")
+                .asBitmap()
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                        binding.ivCover4.setImageBitmap(resource);
+                    }
+                });
 
     }
 

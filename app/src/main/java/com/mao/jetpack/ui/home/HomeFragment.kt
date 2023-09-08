@@ -130,6 +130,11 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, AnimatorTotalActivity::class.java))
         }
 
+
+        btnClip.setOnClickListener {
+            startActivity(Intent(activity, ActivityOneActivity::class.java))
+        }
+
         val p1 = ProgressBarModel(0)
         val p2 = ProgressBarModel(0)
         val p3 = ProgressBarModel(0)
@@ -160,7 +165,6 @@ class HomeFragment : Fragment() {
             },500)*/
 
         }, 5000)
-
 
     }
 }

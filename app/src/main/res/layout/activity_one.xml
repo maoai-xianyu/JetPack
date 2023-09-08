@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:clipChildren="false"
+    android:layout_height="match_parent">
+
+
+
+    <include
+        android:id="@+id/ivCover"
+        layout="@layout/activity_one_item"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="76dp" />
+
+
+    <ImageView
+        android:id="@+id/ivCover3"
+        android:layout_width="106dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/a_image_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover" />
+
+    <ImageView
+        android:id="@+id/ivCover2"
+        android:layout_width="106dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/a_image_1"
+        android:alpha="0.5"
+        app:layout_constraintBottom_toBottomOf="@+id/line"
+        android:layout_height="192dp"
+        android:scaleType="centerCrop" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivCover3">
+
+        <ImageView
+            android:id="@+id/fi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="#ff0000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivCover3">
+
+            <FrameLayout
+                android:id="@+id/fl_im"
+                android:layout_width="106dp"
+                android:layout_height="152dp"
+                android:clipChildren="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivCover3">
+
+
+                <ImageView
+                    android:id="@+id/two"
+                    android:layout_width="116dp"
+                    android:layout_height="192dp"
+                    android:alpha="0.5"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a_image_3" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/one"
+                    android:layout_width="106dp"
+                    android:layout_height="152dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a_image_2" />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/three"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="centerCrop"
+                android:src="#ff00ff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fl_im" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/forever"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:scaleType="centerCrop"
+            android:src="#ff0000" />
+    </LinearLayout>
+
+
+
+    <!--<FrameLayout
+        android:id="@+id/fl_im"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        app:layout_constraintTop_toBottomOf="@+id/ivCover3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/two"
+            android:layout_width="116dp"
+            android:layout_height="192dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/a_image_3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/one"
+            android:layout_width="106dp"
+            android:layout_height="152dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/a_image_2" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/three"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:src="#ff00ff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fl_im" />-->
+
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
+
+
+        <View
+            android:background="@color/color_theme"
+            android:layout_width="100dp"
+            android:layout_gravity="center"
+            android:layout_height="100dp"/>
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
