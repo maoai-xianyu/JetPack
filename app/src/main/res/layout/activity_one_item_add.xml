@@ -7,15 +7,14 @@
     android:layout_height="wrap_content">
 
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image1"
         android:layout_width="106dp"
         android:layout_height="152dp"
+        android:src="@drawable/a_image_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/a_image_2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

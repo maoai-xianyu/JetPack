@@ -20,7 +20,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.mao.jetpack.R;
 import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleOtherBinding;
-import com.maoyan.utils.DimenUtils;
+import com.mao.jetpack.utils.DimenUtils;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 

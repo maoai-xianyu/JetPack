@@ -94,15 +94,12 @@ dependencies {
     implementation project(':webview')
 
 
-    implementation 'com.squareup.picasso:picasso:10000.0.0.137'
+    //implementation 'com.squareup.picasso:picasso:10000.0.0.137'
 
     implementation "androidx.activity:activity-ktx:1.2.4"
-    implementation "com.maoyan.android.common:view:10000.4.82"
     //implementation 'com.github.ai2101039:YLCircleImageView:v1.0.8'
 
     implementation 'com.google.android:flexbox:1.0.0'
 
     implementation 'com.github.tiann:FreeReflection:3.1.0'
-
-    implementation "com.maoyan.android.business:medium:10000.3.dp.118"
 }
