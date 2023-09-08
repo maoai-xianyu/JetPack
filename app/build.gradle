@@ -95,5 +95,4 @@ dependencies {
     implementation project(':jp-livedata-java')
 
 
-    implementation 'com.squareup.picasso:picasso:10000.0.0.137'
 }
