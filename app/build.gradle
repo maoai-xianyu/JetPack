@@ -94,7 +94,6 @@ dependencies {
     implementation project(':webview')
 
 
-    implementation 'com.squareup.picasso:picasso:10000.0.0.137'
 }
 
 
