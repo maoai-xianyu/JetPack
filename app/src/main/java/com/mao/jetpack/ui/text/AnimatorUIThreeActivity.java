@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.mao.jetpack.databinding.ActivityAnimatorUiThreeScaleBinding;
-import com.maoyan.utils.DimenUtils;
+import com.mao.jetpack.utils.DimenUtils;
 
 /**
  * @author zhangkun

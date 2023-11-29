@@ -133,7 +133,7 @@
             android:id="@+id/clt_content"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/maoyan_common_hex_ffffff"
+            android:background="#ffffff"
             app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
