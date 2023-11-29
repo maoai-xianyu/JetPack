@@ -184,28 +184,7 @@
             </LinearLayout>
 
 
-            <com.maoyan.android.common.view.ellipsize.TextViewEllipsize
-                android:id="@+id/tv_ticket_desc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_marginStart="4dp"
-                android:paddingEnd="8dp"
-                android:includeFontPadding="false"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:textColor="#333333"
-                android:textSize="13sp"
-                app:layout_constrainedWidth="true"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/tv_limit_use"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_title"
-                tools:text="《这个杀手不太冷》专享" />
-
-
-            <!--<com.mao.jetpack.ui.image.TextViewEllipsize
+            <!--<com.maoyan.android.common.view.ellipsize.TextViewEllipsize
                 android:id="@+id/tv_ticket_desc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -224,6 +203,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ll_title"
                 tools:text="《这个杀手不太冷》专享" />-->
+
+
+            <com.mao.jetpack.ui.image.TextViewEllipsize
+                android:id="@+id/tv_ticket_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                android:paddingEnd="8dp"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#333333"
+                android:textSize="13sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_limit_use"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_title"
+                tools:text="《这个杀手不太冷》专享" />
 
 
             <TextView
