@@ -49,28 +49,6 @@ class ButtonShapeOtherActivity : AppCompatActivity() {
             }
         }
 
-
-
-        binding.tvMY.setOnClickListener {
-            if (wishOhter) {
-                wishOhter = false
-                binding.tvMY.text = "想看"
-                binding.tvMY.setTextColor(Color.parseColor("#FFFFFF"))
-                binding.tvMY.setBackgroundColor(Color.parseColor("#FAAF00"))
-                binding.shadowLayoutMY.setShadowColor(Color.parseColor("#2EFAAF00"))
-                binding.shadowLayoutMY.setStrokeColor(Color.parseColor("#2EFAAF00"))
-
-            } else {
-                wishOhter = true
-                binding.tvMY.text = "已想看"
-                binding.tvMY.setTextColor(Color.parseColor("#666666"))
-                binding.tvMY.setBackgroundColor(Color.parseColor("#FFFFFF"))
-                binding.shadowLayoutMY.setShadowColor(Color.parseColor("#12000000"))
-                binding.shadowLayoutMY.setStrokeColor(Color.parseColor("#12000000"))
-            }
-        }
-
-
         binding.tvMMM.setTextColor(
             ColorStateList(
                 arrayOf(
