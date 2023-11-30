@@ -512,6 +512,29 @@
                 tools:icon="@drawable/icon_cell_like"
                 tools:iconTint="@color/color_3d3"
                 tools:textColor="@color/color_3d3" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="recyclerview"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:backgroundTint="#ffffff"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/icon_cell_like"
+                app:iconGravity="textStart"
+                app:iconPadding="4dp"
+                app:iconTint="@color/color_theme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnClip"
+                tools:icon="@drawable/icon_cell_like"
+                tools:iconTint="@color/color_3d3"
+                tools:textColor="@color/color_3d3" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
